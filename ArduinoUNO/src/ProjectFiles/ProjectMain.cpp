@@ -37,7 +37,7 @@ void setup()
 
 	TCCR2A |= (1 << COM2A1);
 	// set none-inverting mode
-l
+
 	TCCR2A |= (1 << WGM21) | (1 << WGM20);
 	// set fast PWM Mode
 
