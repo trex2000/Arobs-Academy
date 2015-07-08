@@ -14,15 +14,12 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
+/*Include C Files*/
+#include "TaskFunctions.c"
+
 /*
 * Main code called on reset is in  Arduino.h
 */
-
-void task20ms(void) {};
-void task40ms(void) {};
-void task60ms(void) {};
-void task100ms(void) {};
-void task1000ms(void) {};
 
 static TaskType_stType tasks_st[] = {
 	{ T_INTERVAL_20MS,	task20ms },
@@ -32,28 +29,39 @@ static TaskType_stType tasks_st[] = {
 	{ T_INTERVAL_1000MS,task1000ms },
 };
 
+/** 
+ * Function Implementation
+ * Return a pointer to tasks configuration table 
+ */	
 TaskType_stType *taskGetConfigPtr(void) {
 	return tasks_st;
 }
 
+/** 
+ * Function Implementation
+ * Return the number of current tasks scheduled to run 
+ */	
 uint8_t getNrTasks(void) {
 	return sizeof(tasks_st) / sizeof(*tasks_st);
 }
 
-
+/** 
+ * Function Implementation
+ * Initialize the timer 
+ */	
 void timer1_init() {
-	// set the timer with a prescaler = 1024;
-	TCCR1B |= (1<<CS02)|(1<<CS00); 
+	// set the timer with a prescaler = 256;
+	TCCR1B |= (1<<CS12);
 	
 	// initialize counter
-	TCNT1 = T_TIMER_START;	
+	TCNT1 = T_TIMER_START;
 	
 	// enable overflow interrupt
 	TIMSK1 |= (1<<TOIE1);
 	
 	//enable global intterupts
 	sei();
-}
+}	
 
 uint16_t stui_tick;						
 							

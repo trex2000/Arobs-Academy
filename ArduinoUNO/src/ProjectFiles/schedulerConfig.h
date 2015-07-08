@@ -38,7 +38,7 @@
  * The start value of the Timer                                                                       
  */
 // TODO:
-#define T_TIMER_START 50035
+#define T_TIMER_START 64286
 
 
 /**
