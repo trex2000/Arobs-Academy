@@ -1,0 +1,206 @@
+\hypertarget{_project_main_8cpp}{}\section{Project\+Main.\+cpp File Reference}
+\label{_project_main_8cpp}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+{\ttfamily \#include $<$Project\+Main.\+h$>$}\\*
+{\ttfamily \#include $<$scheduler\+Config.\+h$>$}\\*
+{\ttfamily \#include $<$avr/io.\+h$>$}\\*
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_project_main_8cpp_aa0a2444ea9e75ec2a583b7e8a38560a6}{task20ms} (void)
+\item 
+void \hyperlink{_project_main_8cpp_aca27d12738aa55893e5242ed21ab789c}{task40ms} (void)
+\item 
+void \hyperlink{_project_main_8cpp_ada995e88886fe969d52c9f551201f7bc}{task60ms} (void)
+\item 
+void \hyperlink{_project_main_8cpp_abc513c77d3ae6919b5983e6564643c11}{task100ms} (void)
+\item 
+void \hyperlink{_project_main_8cpp_acf0bcd0e759358b9284f65e0a55bc193}{task1000ms} (void)
+\item 
+\hyperlink{struct_task_type__st_type}{Task\+Type\+\_\+st\+Type} $\ast$ \hyperlink{_project_main_8cpp_a612f7225aba66da17398c5472584559d}{task\+Get\+Config\+Ptr} (void)
+\item 
+uint8\+\_\+t \hyperlink{_project_main_8cpp_aac54e2201642d6b9c94f85ad2adbc7da}{get\+Nr\+Tasks} (void)
+\item 
+void \hyperlink{_project_main_8cpp_abb302081b7dbd40d0fea4bbe53fd9b7b}{timer1\+\_\+init} ()
+\item 
+\hyperlink{_project_main_8cpp_ab16889ae984b9b798989a0d239283cac}{I\+S\+R} (T\+I\+M\+E\+R1\+\_\+\+O\+V\+F\+\_\+vect)
+\item 
+void \hyperlink{_project_main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup} ()
+\item 
+void \hyperlink{_project_main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{_project_main_8cpp_a0398a7500ce4e501d43eb6ae5b828e8d}{stui\+\_\+tick}
+\item 
+uint8\+\_\+t \hyperlink{_project_main_8cpp_ad626e67a0337fbbad267d2ea8187a995}{stui\+\_\+\+Task\+Index}
+\item 
+volatile uint8\+\_\+t \hyperlink{_project_main_8cpp_a771478af671521a8cc845b8efbf0855e}{task\+Time\+Counter\+Flag\+\_\+u8}
+\item 
+volatile uint8\+\_\+t \hyperlink{_project_main_8cpp_aef920dc87f0a96b97b10da1251f9d821}{task\+Time\+Counter\+\_\+u8}
+\item 
+const uint8\+\_\+t \hyperlink{_project_main_8cpp_a364618e091f6af2a4ee81e8a38f2f974}{cui\+\_\+number\+Of\+Tasks} = \hyperlink{_project_main_8cpp_aac54e2201642d6b9c94f85ad2adbc7da}{get\+Nr\+Tasks}()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_project_main_8cpp_aac54e2201642d6b9c94f85ad2adbc7da}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!get\+Nr\+Tasks@{get\+Nr\+Tasks}}
+\index{get\+Nr\+Tasks@{get\+Nr\+Tasks}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{get\+Nr\+Tasks(void)}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t get\+Nr\+Tasks (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_aac54e2201642d6b9c94f85ad2adbc7da}
+
+
+Definition at line 39 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_ab16889ae984b9b798989a0d239283cac}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!I\+S\+R@{I\+S\+R}}
+\index{I\+S\+R@{I\+S\+R}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{I\+S\+R(\+T\+I\+M\+E\+R1\+\_\+\+O\+V\+F\+\_\+vect)}]{\setlength{\rightskip}{0pt plus 5cm}I\+S\+R (
+\begin{DoxyParamCaption}
+\item[{T\+I\+M\+E\+R1\+\_\+\+O\+V\+F\+\_\+vect}]{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_ab16889ae984b9b798989a0d239283cac}
+
+
+Definition at line 67 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_afe461d27b9c48d5921c00d521181f12f}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!loop@{loop}}
+\index{loop@{loop}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{loop()}]{\setlength{\rightskip}{0pt plus 5cm}void loop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_afe461d27b9c48d5921c00d521181f12f}
+
+
+Definition at line 113 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!setup@{setup}}
+\index{setup@{setup}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{setup()}]{\setlength{\rightskip}{0pt plus 5cm}void setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}
+
+
+Definition at line 73 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_acf0bcd0e759358b9284f65e0a55bc193}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!task1000ms@{task1000ms}}
+\index{task1000ms@{task1000ms}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{task1000ms(void)}]{\setlength{\rightskip}{0pt plus 5cm}void task1000ms (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_acf0bcd0e759358b9284f65e0a55bc193}
+
+
+Definition at line 25 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_abc513c77d3ae6919b5983e6564643c11}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!task100ms@{task100ms}}
+\index{task100ms@{task100ms}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{task100ms(void)}]{\setlength{\rightskip}{0pt plus 5cm}void task100ms (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_abc513c77d3ae6919b5983e6564643c11}
+
+
+Definition at line 24 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_aa0a2444ea9e75ec2a583b7e8a38560a6}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!task20ms@{task20ms}}
+\index{task20ms@{task20ms}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{task20ms(void)}]{\setlength{\rightskip}{0pt plus 5cm}void task20ms (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_aa0a2444ea9e75ec2a583b7e8a38560a6}
+
+
+Definition at line 21 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_aca27d12738aa55893e5242ed21ab789c}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!task40ms@{task40ms}}
+\index{task40ms@{task40ms}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{task40ms(void)}]{\setlength{\rightskip}{0pt plus 5cm}void task40ms (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_aca27d12738aa55893e5242ed21ab789c}
+
+
+Definition at line 22 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_ada995e88886fe969d52c9f551201f7bc}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!task60ms@{task60ms}}
+\index{task60ms@{task60ms}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{task60ms(void)}]{\setlength{\rightskip}{0pt plus 5cm}void task60ms (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_ada995e88886fe969d52c9f551201f7bc}
+
+
+Definition at line 23 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_a612f7225aba66da17398c5472584559d}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!task\+Get\+Config\+Ptr@{task\+Get\+Config\+Ptr}}
+\index{task\+Get\+Config\+Ptr@{task\+Get\+Config\+Ptr}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{task\+Get\+Config\+Ptr(void)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Type\+\_\+st\+Type}$\ast$ task\+Get\+Config\+Ptr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_a612f7225aba66da17398c5472584559d}
+
+
+Definition at line 35 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_abb302081b7dbd40d0fea4bbe53fd9b7b}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!timer1\+\_\+init@{timer1\+\_\+init}}
+\index{timer1\+\_\+init@{timer1\+\_\+init}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{timer1\+\_\+init()}]{\setlength{\rightskip}{0pt plus 5cm}void timer1\+\_\+init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_abb302081b7dbd40d0fea4bbe53fd9b7b}
+
+
+Definition at line 44 of file Project\+Main.\+cpp.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_project_main_8cpp_a364618e091f6af2a4ee81e8a38f2f974}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!cui\+\_\+number\+Of\+Tasks@{cui\+\_\+number\+Of\+Tasks}}
+\index{cui\+\_\+number\+Of\+Tasks@{cui\+\_\+number\+Of\+Tasks}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{cui\+\_\+number\+Of\+Tasks}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t cui\+\_\+number\+Of\+Tasks = {\bf get\+Nr\+Tasks}()}\label{_project_main_8cpp_a364618e091f6af2a4ee81e8a38f2f974}
+
+
+Definition at line 63 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_ad626e67a0337fbbad267d2ea8187a995}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!stui\+\_\+\+Task\+Index@{stui\+\_\+\+Task\+Index}}
+\index{stui\+\_\+\+Task\+Index@{stui\+\_\+\+Task\+Index}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{stui\+\_\+\+Task\+Index}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t stui\+\_\+\+Task\+Index}\label{_project_main_8cpp_ad626e67a0337fbbad267d2ea8187a995}
+
+
+Definition at line 60 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_a0398a7500ce4e501d43eb6ae5b828e8d}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!stui\+\_\+tick@{stui\+\_\+tick}}
+\index{stui\+\_\+tick@{stui\+\_\+tick}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{stui\+\_\+tick}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t stui\+\_\+tick}\label{_project_main_8cpp_a0398a7500ce4e501d43eb6ae5b828e8d}
+
+
+Definition at line 58 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_aef920dc87f0a96b97b10da1251f9d821}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!task\+Time\+Counter\+\_\+u8@{task\+Time\+Counter\+\_\+u8}}
+\index{task\+Time\+Counter\+\_\+u8@{task\+Time\+Counter\+\_\+u8}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{task\+Time\+Counter\+\_\+u8}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\+\_\+t task\+Time\+Counter\+\_\+u8}\label{_project_main_8cpp_aef920dc87f0a96b97b10da1251f9d821}
+
+
+Definition at line 62 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_a771478af671521a8cc845b8efbf0855e}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!task\+Time\+Counter\+Flag\+\_\+u8@{task\+Time\+Counter\+Flag\+\_\+u8}}
+\index{task\+Time\+Counter\+Flag\+\_\+u8@{task\+Time\+Counter\+Flag\+\_\+u8}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{task\+Time\+Counter\+Flag\+\_\+u8}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\+\_\+t task\+Time\+Counter\+Flag\+\_\+u8}\label{_project_main_8cpp_a771478af671521a8cc845b8efbf0855e}
+
+
+Definition at line 61 of file Project\+Main.\+cpp.
+
