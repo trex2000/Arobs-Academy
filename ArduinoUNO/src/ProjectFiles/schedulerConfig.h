@@ -49,6 +49,7 @@
 typedef struct {
 	uint16_t interval_u16;			// defines how often a task will run
 	void(*ptrFunc)(void);		    // function pointer to the task		
+	uint8_t led;
 } TaskType_stType;
 
 #endif // end SCHEDULERCONFIG_H
