@@ -16,24 +16,73 @@
 #include <avr/interrupt.h>
 
 /*Include C Files*/
-#include "TaskFunctions.c"
+#include "TaskFunctions.h"
 
+
+/** 
+ * Function Implementation
+ * Task function scheduled to run every 20ms
+ */
+void task20ms(void) {
+	static uint8_t flag = 0;
+	flag = 1 - flag;
+	digitalWrite(13, flag);
+	
+	};
+
+/** 
+ * Function Implementation
+ * Task function scheduled to run every 40ms
+ */
+void task40ms(void) {
+	static uint8_t flag = 0;
+	flag = 1 - flag;
+	digitalWrite(12, flag);
+	
+	};
+	
+/** 
+ * Function Implementation
+ * Task function scheduled to run every 60ms
+ */
+void task60ms(void) {
+	static uint8_t flag = 0;
+	flag = 1 - flag;
+	digitalWrite(11, flag);
+	};
+	
+/** 
+ * Function Implementation
+ * Task function scheduled to run every 100ms
+ */
+void task100ms(void) {
+	static uint8_t flag = 0;
+	flag = 1 - flag;
+	digitalWrite(10, flag);
+	};
+	
+/** 
+ * Function Implementation
+ * Task function scheduled to run every 1000ms
+ */
+void task1000ms(void) {
+	static uint8_t flag = 0;
+	flag = 1 - flag;
+	digitalWrite(9, flag);	
+};
+
+void InitPWM(char pin);
 /*
 * Main code called on reset is in  Arduino.h
 */
 
-void task20ms(void) {};
-void task40ms(void) {};
-void task60ms(void) {};
-void task100ms(void) {};
-void task1000ms(void) {};
 
 static TaskType_stType tasks_st[] = {
-	{ T_INTERVAL_20MS,	task20ms },
-	{ T_INTERVAL_40MS,	task40ms },
-	{ T_INTERVAL_60MS,	task60ms },
-	{ T_INTERVAL_100MS,	task100ms },
-	{ T_INTERVAL_1000MS,task1000ms },
+	{ T_INTERVAL_20MS,	task20ms, 13 },
+	{ T_INTERVAL_40MS,	task40ms, 12 },
+	{ T_INTERVAL_60MS,	task60ms, 11 },
+	{ T_INTERVAL_100MS,	task100ms, 10 },
+	{ T_INTERVAL_1000MS,task1000ms, 9 },
 };
 
 /** 
@@ -57,22 +106,48 @@ uint8_t getNrTasks(void) {
  * Initialize the timer 
  */	
 void timer1_init() {
-	// set the timer with a prescaler = 256;
-	TCCR1B |= (1<<CS12);
+	pinMode(13, OUTPUT);
+	pinMode(12, OUTPUT);
+	pinMode(11, OUTPUT);
+	pinMode(10, OUTPUT);
+	pinMode(9, OUTPUT);
+	
+	
+	// initialize Timer1
+	cli();             // disable global interrupts
+	TCCR1A = 0;        // set entire TCCR1A register to 0
+	TCCR1B = 0;
 	
 	// initialize counter
-	TCNT1 = T_TIMER_START;	
+	TCNT1 = T_TIMER_START;
 	
-	// enable overflow interrupt
-	TIMSK1 |= (1<<TOIE1);
-	
-	//enable global intterupts
+	// enable Timer1 overflow interrupt:
+	TIMSK1 = (1 << TOIE1);
+	// set the timer with a prescaller of 256
+	TCCR1B |= (1 << CS12);
+	// enable global interrupts:
 	sei();
+}
+
+uint16_t stui_tick;
+
+uint8_t stui_TaskIndex;
+volatile uint8_t taskTimeCounterFlag_u8;
+volatile uint8_t taskTimeCounter_u8;
+const uint8_t cui_numberOfTasks = getNrTasks();
+
+static TaskType_stType *taskPtr;
+
+
+ISR(TIMER1_OVF_vect) {
+	TCNT1 = T_TIMER_START;
+	taskTimeCounterFlag_u8 = 1;
+	taskTimeCounter_u8++;
 }
 
 void PWM_Init() {
 	//PWM setup
-	DDRD |= (1 << DDD5) | (1 << DDD6 ));
+	DDRD |= (1 << DDD5) | (1 << DDD6 );
 	// PD6 is now an output
 
 	//OCR2A = PWM_DC_Max/(100/PWM_DC);
@@ -90,23 +165,9 @@ void PWM_Init() {
 	// set prescaler to ??? and starts PWM*/
 }
 
-uint16_t stui_tick;						
-							
-uint8_t stui_TaskIndex;
-volatile uint8_t taskTimeCounterFlag_u8;
-volatile uint8_t taskTimeCounter_u8;
-const uint8_t cui_numberOfTasks = getNrTasks();
-
-static TaskType_stType *taskPtr;
-
-ISR(TIMER1_OVF_vect) {
-	TCNT1 = T_TIMER_START;
-	taskTimeCounterFlag_u8 = 1;
-	taskTimeCounter_u8++;
-}
-
 void setup()
 {
+	char pin = 12;
 	taskTimeCounterFlag_u8 = 0;
 	taskTimeCounter_u8 = 0;
 	InitPWM(pin); /*Functia de initializare pwm*/
@@ -154,6 +215,7 @@ void loop()
 			
 				if((taskPtr[stui_TaskIndex].ptrFunc) != NULL) {
 					(*taskPtr[stui_TaskIndex].ptrFunc)();	
+					digitalWrite(taskPtr[stui_TaskIndex].led, HIGH);
 				} else {
 					// do nothing
 				}
@@ -228,13 +290,13 @@ int DOPWM_setValue(char pin, int duty)
 	//Setam duty cycle pentru fiecare pin cu registrii OCR2A, OCR2B
 	OCR2A = value;
 	
-
-
+	return 0;
+	
 
 	
 }
 //functie de initializare pwm
-InitPWM(char pin)
+void InitPWM(char pin)
 {
 	//setam pinii ca si output
 	if (pin == 3)
