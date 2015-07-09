@@ -8,18 +8,22 @@
 /*Include Header files*/
 #include <ProjectMain.h>
 #include <schedulerConfig.h>
+#include <PWM.h>
 
 
 /*FOR PWM*/
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-/*Include C Files*/
-#include "TaskFunctions.c"
-
 /*
 * Main code called on reset is in  Arduino.h
 */
+
+void task20ms(void) {};
+void task40ms(void) {};
+void task60ms(void) {};
+void task100ms(void) {};
+void task1000ms(void) {};
 
 static TaskType_stType tasks_st[] = {
 	{ T_INTERVAL_20MS,	task20ms },
@@ -29,39 +33,48 @@ static TaskType_stType tasks_st[] = {
 	{ T_INTERVAL_1000MS,task1000ms },
 };
 
-/** 
- * Function Implementation
- * Return a pointer to tasks configuration table 
- */	
 TaskType_stType *taskGetConfigPtr(void) {
 	return tasks_st;
 }
 
-/** 
- * Function Implementation
- * Return the number of current tasks scheduled to run 
- */	
 uint8_t getNrTasks(void) {
 	return sizeof(tasks_st) / sizeof(*tasks_st);
 }
 
-/** 
- * Function Implementation
- * Initialize the timer 
- */	
+
 void timer1_init() {
-	// set the timer with a prescaler = 256;
-	TCCR1B |= (1<<CS12);
+	// set the timer with a prescaler = 1024;
+	TCCR1B |= (1<<CS02)|(1<<CS00); 
 	
 	// initialize counter
-	TCNT1 = T_TIMER_START;
+	TCNT1 = T_TIMER_START;	
 	
 	// enable overflow interrupt
 	TIMSK1 |= (1<<TOIE1);
 	
 	//enable global intterupts
 	sei();
-}	
+}
+
+void PWM_Init() {
+	//PWM setup
+	DDRD |= (1 << DDD5) | (1 << DDD6 ));
+	// PD6 is now an output
+
+	//OCR2A = PWM_DC_Max/(100/PWM_DC);
+	//OCR2B = PWM_DC_Max/(100/PWM_DC);
+	//functie apelata ciclic cu request-ul respectiv
+	// set PWM for 50% duty cycle
+
+	TCCR2A |= (1 << COM2A1);
+	// set none-inverting mode
+
+	TCCR2A |= (1 << WGM21) | (1 << WGM20);
+	// set fast PWM Mode
+
+	TCCR2B |= (1 << CS20) | (1 << CS21) | (1 << CS22); //????
+	// set prescaler to ??? and starts PWM*/
+}
 
 uint16_t stui_tick;						
 							
@@ -83,8 +96,29 @@ void setup()
 	taskTimeCounterFlag_u8 = 0;
 	taskTimeCounter_u8 = 0;
 	
+	/*This is the setup function. It will be called once
+	pinMode(13,OUTPUT);
+	Serial.begin(9600);
+	Serial.print("Hello World!");
 
-	InitPWM(pin); /*Functia de initializare pwm*/
+	//PWM setup
+	DDRD |= (1 << DDD6);
+	// PD6 is now an output
+
+	OCR2A = 128;
+	// set PWM for 50% duty cycle
+
+	
+	
+	TCCR2A |= (1 << COM2A1);
+	// set none-inverting mode
+
+	TCCR2A |= (1 << WGM21) | (1 << WGM20);
+	// set fast PWM Mode
+
+	TCCR2B |= (1 << CS21);
+	// set prescaler to 8 and starts PWM*/
+	
 	
 	timer1_init();	
 	
@@ -122,94 +156,3 @@ void loop()
 	
 }
 
-						//------------------------Cod pentru Citire IMPUTS---------------
-#define CHECK_BIT(var,pos) ((var) & (1<<(pos))) //macro care verifica o pozitie din registru daca e pe 1 logic
-//functia pentru citirea unui pin
-int getValue(uint8_t pin){
-	
-uint8_t Register; // variabila in care stocam valoarea registrului din care citim
-
-	//cautam registrul aferent piniului selectat, PINx de unde citim starea pinului
-	if ((0 <=pin)||(pin <=7))
-	{
-		Register = PIND; //Registrii PINx sunt Read Only
-	}
-	else if((8 >=pin)||(pin <=13))
-	{
-		Register = PINB;
-		//pin= pin-7; resetam pinul astfel incat sa putem citi din registrul pinB daca acesta nu e setat in memorie in continuare la PIND
-	}
-	else if((14 >=pin)||(pin <=19))
-	{
-		Register = PINC;
-		//pin= pin-13;
-	}
-
-	else
-	Register=NOT_A_PIN;
-
-	//cautam pinul din registrul aferent,de aici putem afla starea pinilor daca sunt Input (1), sau Output (0);
-	if(CHECK_BIT(Register,pin)==1)
-	{ return true;}
-	else
-	{return false;}
-	
-}
-
-//-------------Cod pentru Setare Output PWM-----------------
-int DOPWM_setValue(char pin, int duty)
-{
-		//setam pinii ca si output
-	if (pin == 3)
-	{
-		//setam pinul 3 ca output
-		DDRD |= (1 << DDD3);
-		// PD3 is now an output, pin Digital 3
-	}
-	else if (pin == 11)
-	{
-		DDRB |= (1 <<DDB3); // DDRB l-am gasit in fisierul iom328p.h ???
-		// PB3 is now an output, pin Digital 11
-	}
-	
-	char value;
-
-	//formula pentru duty cycle in procente
-	value = (duty*256)/100;
-	
-	//Setam duty cycle pentru fiecare pin cu registrii OCR2A, OCR2B
-	OCR2A = value;
-	
-
-
-
-	
-}
-//functie de initializare pwm
-InitPWM(char pin)
-{
-	//setam pinii ca si output
-	if (pin == 3)
-	{
-		//setam pinul 3 ca output
-		DDRD |= (1 << DDD3);
-		// PD3 is now an output, pin Digital 3
-	}
-	else if (pin == 11)
-	{
-		DDRB |= (1 <<DDB3); // DDRB l-am gasit in fisierul iom328p.h ???
-		// PB3 is now an output, pin Digital 11
-	}
-	/* SETAM TIMERUL 2 PENTRU Modul PHASE CORRECTED PWM*/
-	//setam Timer Counter Control Register A pe None-inverting mode si PWM Phase Corrected Mode
-	TCCR2A |= (1 << COM2A1) | (0 << COM2A0) | (1 << COM2B1)| (0 << COM2B0);
-	// set none-inverting mode on bytes (7,6,5,4) for timer 2
-
-	TCCR2A |= (0 << WGM21) | (1 << WGM20);
-	// set  PWM Phase Corrected Mode using OCR2A TOP value on bytes (1,0)
-
-	// setam Timer Counter Control Register B pe PWM Phase Corrected Mode si cu un prescaler de 64
-	TCCR2B |= (1 << CS22) | (1 << WGM22);
-	// set prescaler to 64 and starts PWM and sets  PWM Phase Corrected Mode
-	
-}
