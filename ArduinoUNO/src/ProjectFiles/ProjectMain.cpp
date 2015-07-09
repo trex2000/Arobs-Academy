@@ -70,15 +70,12 @@ void task1000ms(void) {
 	flag = 1 - flag;
 	digitalWrite(9, flag);	
 };
+
+void InitPWM(char pin);
 /*
 * Main code called on reset is in  Arduino.h
 */
 
-void task20ms(void) {};
-void task40ms(void) {};
-void task60ms(void) {};
-void task100ms(void) {};
-void task1000ms(void) {};
 
 static TaskType_stType tasks_st[] = {
 	{ T_INTERVAL_20MS,	task20ms, 13 },
@@ -150,7 +147,7 @@ ISR(TIMER1_OVF_vect) {
 
 void PWM_Init() {
 	//PWM setup
-	DDRD |= (1 << DDD5) | (1 << DDD6 ));
+	DDRD |= (1 << DDD5) | (1 << DDD6 );
 	// PD6 is now an output
 
 	//OCR2A = PWM_DC_Max/(100/PWM_DC);
@@ -170,6 +167,7 @@ void PWM_Init() {
 
 void setup()
 {
+	char pin = 12;
 	taskTimeCounterFlag_u8 = 0;
 	taskTimeCounter_u8 = 0;
 	InitPWM(pin); /*Functia de initializare pwm*/
@@ -292,13 +290,13 @@ int DOPWM_setValue(char pin, int duty)
 	//Setam duty cycle pentru fiecare pin cu registrii OCR2A, OCR2B
 	OCR2A = value;
 	
-
-
+	return 0;
+	
 
 	
 }
 //functie de initializare pwm
-InitPWM(char pin)
+void InitPWM(char pin)
 {
 	//setam pinii ca si output
 	if (pin == 3)
