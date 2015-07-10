@@ -167,6 +167,7 @@
     <Folder Include="src\arduino\variants" />
     <Folder Include="src\arduino\variants\standard" />
     <Folder Include="src\ProjectFiles" />
+    <Folder Include="src\ProjectFiles\IO_HAL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\arduino\cores\arduino\abi.cpp">
@@ -296,6 +297,15 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\arduino\variants\standard\pins_arduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ProjectFiles\IO_HAL\IO.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ProjectFiles\IO_HAL\IO.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ProjectFiles\IO_HAL\IO_extern.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\ProjectFiles\ProjectMain.cpp">
