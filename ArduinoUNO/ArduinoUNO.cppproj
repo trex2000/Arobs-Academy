@@ -304,10 +304,10 @@
     <Compile Include="src\ProjectFiles\ProjectMain.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\ProjectFiles\schedulerConfig.h">
+    <Compile Include="src\ProjectFiles\PWM.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\ProjectFiles\TaskFunctions.c">
+    <Compile Include="src\ProjectFiles\schedulerConfig.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\ProjectFiles\TaskFunctions.h">
