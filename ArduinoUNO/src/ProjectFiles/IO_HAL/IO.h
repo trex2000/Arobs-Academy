@@ -32,19 +32,7 @@
 
 #ifndef _IO_
 #define _IO_
-
-
-/**
- * @brief New datatype used in table which connects Logical Input Definitions to Physical Input Def
- *
- * New datatype used in table which connects Logical Input Definitions to Physical Input Def
- */
-typedef struct port_types_struct
-{
-	uint8_t portVal_u8;			/**< Bit position of port */
-	EN_PORT_ENUMS  portName_en;	/**< Selection of the port */
-	PORT_TYPES_EN portType_en; /**< Type of the port ( Digital, Analog..) */
-} PORT_TYPES_ST;
+#include "IO_extern.h"
 
 /**
  * @brief Defines type of physical port
@@ -60,10 +48,24 @@ typedef enum port_type_enum
 	EN_PORT_LAST_ELEMENT
 } PORT_TYPES_EN;
 
+
 /**
  * @brief New datatype used in table which connects Logical Input Definitions to Physical Input Def
  *
  * New datatype used in table which connects Logical Input Definitions to Physical Input Def
+ */
+typedef struct port_types_struct
+{
+	uint8_t portVal_u8;			/**< Bit position of port */
+	EN_PORT_ENUMS  portName_en;	/**< Selection of the port */
+	PORT_TYPES_EN portType_en; /**< Type of the port ( Digital, Analog..) */
+} PORT_TYPES_ST;
+
+
+/**
+ * @brief New datatype used in table which connects Logical Outputs Definitions to Physical Outputs Def
+ *
+ * New datatype used in table which connects Logical Outputs Definitions to Physical Outputs Def
  */
 PORT_TYPES_ST const matchingTableOutputPins_acst[EN_NUMBER_OF_ELEMENTS_OUTPUTS] = {
 	{PORTD2, EN_PORT_D, EN_PORT_DO},  /**< SOD_Motor12_0 */
@@ -74,16 +76,21 @@ PORT_TYPES_ST const matchingTableOutputPins_acst[EN_NUMBER_OF_ELEMENTS_OUTPUTS] 
 	{PORTD5, EN_PORT_D, EN_PORT_DOPWM},//SODPWM_EnableMotor2
 	{PORTC2, EN_PORT_C, EN_PORT_DO}, //SOD_LeftFlasher
 	{PORTC1, EN_PORT_C, EN_PORT_DO}, //SOD_RightFlasher
-	{PORTD4, EN_PORT_D, EN_PORT_DO}, //SOD_LowBeam
-}
-
+	{PORTD4, EN_PORT_D, EN_PORT_DO} //SOD_LowBeam
+};
+/**
+ * @brief New datatype used in table which connects Logical Input Definitions to Physical Input Def
+ *
+ * New datatype used in table which connects Logical Input Definitions to Physical Input Def
+ */
 PORT_TYPES_ST const matchingTableInputPins_acst[EN_NUMBER_OF_ELEMENTS_INPUT] = {
-	{PORTC0, EN_PORT_C},     /**< EN_SIA_LIGHTSENSOR */
-	{PORTD7, EN_PORT_D},	 /**< EN_SID_WIFI_CONTROL_UP */
-	{PORTB0, EN_PORT_B},	 /**< EN_SID_WIFI_CONTROL_DOWN */
-	{PORTB5, EN_PORT_B},	 /**< EN_SID_WIFI_CONTROL_RIGHT */
-	{PORTB4, EN_PORT_B},	 /**< EN_SID_WIFI_CONTROL_LEFT */
-}
+	{PORTC0, EN_PORT_C, EN_PORT_AI},     /**< EN_SIA_LIGHTSENSOR */
+	{PORTD7, EN_PORT_D, EN_PORT_DI}, 	 /**< EN_SID_WIFI_CONTROL_UP */
+	{PORTB0, EN_PORT_B, EN_PORT_DI},	 /**< EN_SID_WIFI_CONTROL_DOWN */
+	{PORTB5, EN_PORT_B, EN_PORT_DI},	 /**< EN_SID_WIFI_CONTROL_RIGHT */
+	{PORTB4, EN_PORT_B, EN_PORT_DI}	 /**< EN_SID_WIFI_CONTROL_LEFT */
+};
+
 
 
 #endif

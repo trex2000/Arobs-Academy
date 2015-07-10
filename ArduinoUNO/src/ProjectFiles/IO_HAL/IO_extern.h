@@ -87,6 +87,20 @@ typedef enum en_port_enums
 	EN_PORT_D,
 }EN_PORT_ENUMS;
 
+/**
+ * @brief A simple stub function to show how links do work.
+ *
+ * Links are generated automatically for webpages (like http://www.google.co.uk)
+ * and for structures, like BoxStruct_struct. For typedef-ed types use
+ * #BoxStruct.
+ * For functions, automatic links are generated when the parenthesis () follow
+ * the name of the function, like Box_The_Function_Name().
+ * Alternatively, you can use #Box_The_Function_Name.
+ * @return @c NULL is always returned.
+ */
+extern uint8_t GetInputPin (EN_INPUT_PINS pinId_en);
+
+
 
 
 #endif
