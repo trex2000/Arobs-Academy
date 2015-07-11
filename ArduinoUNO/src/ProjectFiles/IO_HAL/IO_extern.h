@@ -51,10 +51,10 @@
 typedef enum en_input_pins {
 	EN_SIA_LIGHTSENSOR ,				/**< Lightsensor analogic input */
 	EN_SID_WIFI_CONTROL_UP ,			/**< WifiControl Up. */
-	EN_SID_WIFI_CONTROL_DOWN ,
-	EN_SID_WIFI_CONTROL_RIGHT ,
-	EN_SID_WIFI_CONTROL_LEFT ,
-	EN_NUMBER_OF_ELEMENTS_INPUT ,
+	EN_SID_WIFI_CONTROL_DOWN ,          /**< WifiControl Down*/
+	EN_SID_WIFI_CONTROL_RIGHT ,         /**< WifiControl Right*/
+	EN_SID_WIFI_CONTROL_LEFT ,          /**< WifiControl Left */
+	EN_NUMBER_OF_ELEMENTS_INPUT ,       /**< Number of input pins*/
 } EN_INPUT_PINS;
 
 /**
@@ -63,16 +63,16 @@ typedef enum en_input_pins {
  * Enumeration of logical outputs.
  */
 typedef enum en_output_pins {
-	EN_SOD_MOTOR12_0,					/**< Motor 0 digital output  */
-	EN_SOD_MOTOR12_1,
-	EN_SOD_MOTOR12_2,
-	EN_SOD_MOTOR12_3,
-	EN_SODPWM_ENABLE_MOTOR1 ,
-	EN_SODPWM_ENABLE_MOTOR2,
-	EN_SOD_LEFT_FLASHER,
-	EN_SOD_RIGHT_FLASHER,
-	EN_SOD_LOW_BEAM,
-	EN_NUMBER_OF_ELEMENTS_OUTPUTS
+	EN_SOD_MOTOR12_0,					/**< Motor 12 digital output 1 */
+	EN_SOD_MOTOR12_1,				    /**< Motor 12 digital output 2 */
+	EN_SOD_MOTOR12_2,				    /**< Motor 12 digital output 3 */
+	EN_SOD_MOTOR12_3,					/**< Motor 12 digital output 4 */
+	EN_SODPWM_ENABLE_MOTOR1 ,			/**< Digital out PWM on  Motor1 */
+	EN_SODPWM_ENABLE_MOTOR2,			/**< Digital out PWM on  Motor2 */
+	EN_SOD_LEFT_FLASHER,				/**< Digital out for Left Flasher */
+	EN_SOD_RIGHT_FLASHER,				/**< Digital out for Right Flasher */
+	EN_SOD_LOW_BEAM,					/**< Digital out for Low Beam */
+	EN_NUMBER_OF_ELEMENTS_OUTPUTS       /**< Number of output pins  */
 }EN_OUTPUT_PINS;
 
 /**
@@ -83,8 +83,8 @@ typedef enum en_output_pins {
 typedef enum en_port_enums
 {
 	EN_PORT_B,			/**< Port B  */
-	EN_PORT_C,
-	EN_PORT_D,
+	EN_PORT_C,			/**< Port C  */
+	EN_PORT_D			/**< Port D  */
 }EN_PORT_ENUMS;
 
 /**
@@ -99,8 +99,5 @@ typedef enum en_port_enums
  * @return @c NULL is always returned.
  */
 extern uint8_t GetInputPin (EN_INPUT_PINS pinId_en);
-
-
-
 
 #endif
