@@ -123,7 +123,7 @@ void processOutputBuffer();
  * Alternatively, you can use #Box_The_Function_Name.
  * @return void
  */
-void int getValue(uint8_t pin);
+int getValue(uint8_t pin);
 
 
 /**

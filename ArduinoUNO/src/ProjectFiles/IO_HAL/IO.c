@@ -65,9 +65,6 @@ uint8_t outputBuffer_u8[EN_NUMBER_OF_ELEMENTS_OUTPUTS];
   * @param pinId_en logical input pin name. range: EN_INPUT_PINS
  * @return @c state of the pin.
  */
-
-
-
 uint8_t GetInputPin (EN_INPUT_PINS pinId_en)
 {	
 	if (pinId_en>=EN_NUMBER_OF_ELEMENTS_INPUT)
@@ -203,9 +200,13 @@ int getValue(uint8_t pin){
 
 	//cautam pinul din registrul aferent,de aici putem afla starea pinilor daca sunt Input (1), sau Output (0);
 	if(CHECK_BIT(Register,pin)==1)
-	{ return true;}
+	{ 
+		return true;
+	}
 	else
-	{return false;}
+	{	
+		return false;
+	}
 	
 }
 
