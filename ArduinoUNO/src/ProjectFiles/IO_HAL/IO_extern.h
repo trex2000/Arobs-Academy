@@ -42,6 +42,19 @@
 #include "IO.h"
 
 
+/**
+ * @brief maximum value for PWM
+ *
+ * maximum value for PWM
+ */
+#define MAX_PWM_VALUE  100u
+
+/**
+ * @brief maximum value for digital out
+ *
+ * maximum value for digital out
+ */
+#define MAX_DIGITAL_VALUE 1u
 
 /**
  * @brief Enumeration of logical inputs
