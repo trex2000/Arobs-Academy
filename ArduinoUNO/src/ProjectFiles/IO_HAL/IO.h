@@ -91,4 +91,62 @@ PORT_TYPES_ST const matchingTableInputPins_acst[EN_NUMBER_OF_ELEMENTS_INPUT] = {
 	{PORTB4, EN_PORT_B, EN_PORT_DI}	     /**< EN_SID_WIFI_CONTROL_LEFT */
 };
 
+/**
+ * @brief Function definition for processing input buffer
+ *
+ * Function implementation for processing input buffer.
+ * For functions, automatic links are generated when the parenthesis () follow
+ * the name of the function, like Box_The_Function_Name().
+ * Alternatively, you can use #Box_The_Function_Name.
+ * @return void
+ */
+void processInputBuffer();
+
+
+/**
+ * @brief Function definition for processing output buffer
+ *
+ * Function implementation for processing output buffer.
+ * For functions, automatic links are generated when the parenthesis () follow
+ * the name of the function, like Box_The_Function_Name().
+ * Alternatively, you can use #Box_The_Function_Name.
+ * @return void
+ */
+void processOutputBuffer();
+
+/**
+ * @brief Function definition for get value
+ *
+ * Function definition for set output pin
+ * For functions, automatic links are generated when the parenthesis () follow
+ * the name of the function, like Box_The_Function_Name().
+ * Alternatively, you can use #Box_The_Function_Name.
+ * @return void
+ */
+void int getValue(uint8_t pin);
+
+
+/**
+ * @brief Function definition for processing Digital output
+ *
+ * Function definition for set output pin
+ * For functions, automatic links are generated when the parenthesis () follow
+ * the name of the function, like Box_The_Function_Name().
+ * Alternatively, you can use #Box_The_Function_Name.
+ * @return void
+ */
+void processDigitalOutput(EN_OUTPUT_PINS bufferIndex_len);
+
+/**
+ * @brief Function definition for processDigitalOutputPWM
+ *
+ * Function definition for set output pin
+ * For functions, automatic links are generated when the parenthesis () follow
+ * the name of the function, like Box_The_Function_Name().
+ * Alternatively, you can use #Box_The_Function_Name.
+ * @return void
+ */
+void processDigitalOutputPWM(EN_OUTPUT_PINS bufferIndex_len);
+
+
 #endif
