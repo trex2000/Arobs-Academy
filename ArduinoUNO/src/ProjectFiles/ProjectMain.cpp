@@ -226,7 +226,7 @@ void setup()
 	
 	timer1_init();	
 	
-	stui_tick = 0;						// System tick
+	
 	stui_TaskIndex = 0;				
 	
 	taskPtr = taskGetConfigPtr();
