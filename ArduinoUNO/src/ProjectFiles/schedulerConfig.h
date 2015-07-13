@@ -40,16 +40,14 @@
 // TODO:
 #define T_TIMER_START 64286
 
-
 /**
- * Struct TaskType
- * TaskType structure is used to define the parameters required in order to
- * configure a task.
+ * @brief Structure used to define a task and the interval of the execution
+ *
+ * Structure used to define a task and the interval of the execution
  */
 typedef struct {
 	uint16_t interval_u16;			// defines how often a task will run
 	void(*ptrFunc)(void);		    // function pointer to the task		
-	uint8_t led;
 } TaskType_stType;
 
 #endif // end SCHEDULERCONFIG_H
