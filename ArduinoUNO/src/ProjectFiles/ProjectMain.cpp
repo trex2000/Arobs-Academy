@@ -1,15 +1,39 @@
-/*
- * ProjectMain.cpp
+/****************************************************************************
+ * Copyright (C) 2015														*
+ *                                                                          *
+ * This file is part of RC CAR                                              *
+ *                                                                          *
+ *   Box is free software: you can redistribute it and/or modify it         *
+ *   under the terms of the GNU Lesser General Public License as published  *
+ *   by the Free Software Foundation, either version 3 of the License, or   *
+ *   (at your option) any later version.                                    *
+ *                                                                          *
+ *   Box is distributed in the hope that it will be useful,                 *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of         *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the          *
+ *   GNU Lesser General Public License for more details.                    *
+ *                                                                          *
+ *   You should have received a copy of the GNU Lesser General Public       *
+ *   License along with Box.  If not, see <http://www.gnu.org/licenses/>.   *
+ ****************************************************************************/
+
+/**
+ * @file ProjectMain.cpp
+ * @author Adrian
+ * @date 26/05/2015
+ * @brief File containing functions for IO External
  *
- * Created: 5/26/2015 2:22:43 PM
- *  Author: barna.peto
- */ 
+ * Here typically goes a more extensive explanation of what the header
+ * defines. Doxygens tags are words preceeded by either a backslash @\
+ * or by an at symbol @@.
+ * @see http://www.stack.nl/~dimitri/doxygen/docblocks.html
+ * @see http://www.stack.nl/~dimitri/doxygen/commands.html
+ */
 
 /*Include Header files*/
 #include <ProjectMain.h>
 #include <schedulerConfig.h>
 #include <PWM.h>
-
 
 /*FOR PWM*/
 #include <avr/io.h>
@@ -18,11 +42,13 @@
 /*Include C Files*/
 #include "TaskFunctions.h"
 
-
-/** 
- * Function Implementation
- * Task function scheduled to run every 20ms
- */
+/**
+* @brief Implementation of function that handle the 20ms requests
+*
+* Implementation of function that handle the 20ms requests
+* @return void
+* @note Void function with no return.
+*/
 void task20ms(void) {
 	static uint8_t flag = 0;
 	flag = 1 - flag;
@@ -30,10 +56,13 @@ void task20ms(void) {
 	
 	};
 
-/** 
- * Function Implementation
- * Task function scheduled to run every 40ms
- */
+/**
+* @brief Implementation of function that handle the 40ms requests
+*
+* Implementation of function that handle the 40ms requests
+* @return void
+* @note Void function with no return.
+*/
 void task40ms(void) {
 	static uint8_t flag = 0;
 	flag = 1 - flag;
@@ -41,30 +70,39 @@ void task40ms(void) {
 	
 	};
 	
-/** 
- * Function Implementation
- * Task function scheduled to run every 60ms
- */
+/**
+* @brief Implementation of function that handle the 60ms requests
+*
+* Implementation of function that handle the 60ms requests
+* @return void
+* @note Void function with no return.
+*/
 void task60ms(void) {
 	static uint8_t flag = 0;
 	flag = 1 - flag;
 	digitalWrite(11, flag);
 	};
 	
-/** 
- * Function Implementation
- * Task function scheduled to run every 100ms
- */
+/**
+* @brief Implementation of function that handle the 100ms requests
+*
+* Implementation of function that handle the 100ms requests
+* @return void
+* @note Void function with no return.
+*/
 void task100ms(void) {
 	static uint8_t flag = 0;
 	flag = 1 - flag;
 	digitalWrite(10, flag);
 	};
 	
-/** 
- * Function Implementation
- * Task function scheduled to run every 1000ms
- */
+/**
+* @brief Implementation of function that handle the 1000ms requests
+*
+* Implementation of function that handle the 1000ms requests
+* @return void
+* @note Void function with no return.
+*/
 void task1000ms(void) {
 	static uint8_t flag = 0;
 	flag = 1 - flag;
@@ -76,35 +114,45 @@ void InitPWM(char pin);
 * Main code called on reset is in  Arduino.h
 */
 
-
+/**
+ * @brief Array of tasks and interval of execution
+ *
+ * Array of tasks and interval of execution
+ */
 static TaskType_stType tasks_st[] = {
-	{ T_INTERVAL_20MS,	task20ms, 13 },
-	{ T_INTERVAL_40MS,	task40ms, 12 },
-	{ T_INTERVAL_60MS,	task60ms, 11 },
-	{ T_INTERVAL_100MS,	task100ms, 10 },
-	{ T_INTERVAL_1000MS,task1000ms, 9 },
+	{ T_INTERVAL_20MS,	task20ms },
+	{ T_INTERVAL_40MS,	task40ms },
+	{ T_INTERVAL_60MS,	task60ms },
+	{ T_INTERVAL_100MS,	task100ms },
+	{ T_INTERVAL_1000MS,task1000ms},
 };
 
-/** 
- * Function Implementation
- * Return a pointer to tasks configuration table 
- */	
+/**
+ * @brief Implementation of the function that returns a pointer to the tasks array
+ *
+ * @return A pointer to the array of tasks
+ * @see tasks_st[];
+ */
 TaskType_stType *taskGetConfigPtr(void) {
 	return tasks_st;
 }
 
-/** 
- * Function Implementation
- * Return the number of current tasks scheduled to run 
- */	
+/**
+ * @brief Implementation of the function that returns the number of current tasks cheduled to run
+ *
+ * @return number of tasks
+ */
 uint8_t getNrTasks(void) {
 	return sizeof(tasks_st) / sizeof(*tasks_st);
 }
 
-/** 
- * Function Implementation
- * Initialize the timer 
- */	
+/**
+ * @brief Implementation of the function that initialize the timer 
+ * 
+ * Implementation of the function that initialize the timer 1 used in task scheduler
+ * @return void
+ *  
+ */
 void timer1_init() {
 	pinMode(13, OUTPUT);
 	pinMode(12, OUTPUT);
@@ -129,8 +177,6 @@ void timer1_init() {
 	sei();
 }
 
-uint16_t stui_tick;
-
 uint8_t stui_TaskIndex;
 volatile uint8_t taskTimeCounterFlag_u8;
 volatile uint8_t taskTimeCounter_u8;
@@ -138,7 +184,13 @@ const uint8_t cui_numberOfTasks = getNrTasks();
 
 static TaskType_stType *taskPtr;
 
-
+/**
+ * @brief Implementation of the function that thandle timer overflow ISR
+ * 
+ * Implementation of the function that thandle timer overflow ISR
+ * @return void
+ *  
+ */
 ISR(TIMER1_OVF_vect) {
 	TCNT1 = T_TIMER_START;
 	taskTimeCounterFlag_u8 = 1;
@@ -171,29 +223,6 @@ void setup()
 	taskTimeCounterFlag_u8 = 0;
 	taskTimeCounter_u8 = 0;
 	InitPWM(pin); /*Functia de initializare pwm*/
-	/*This is the setup function. It will be called once
-	pinMode(13,OUTPUT);
-	Serial.begin(9600);
-	Serial.print("Hello World!");
-
-	//PWM setup
-	DDRD |= (1 << DDD6);
-	// PD6 is now an output
-
-	OCR2A = 128;
-	// set PWM for 50% duty cycle
-
-	
-	
-	TCCR2A |= (1 << COM2A1);
-	// set none-inverting mode
-
-	TCCR2A |= (1 << WGM21) | (1 << WGM20);
-	// set fast PWM Mode
-
-	TCCR2B |= (1 << CS21);
-	// set prescaler to 8 and starts PWM*/
-	
 	
 	timer1_init();	
 	
