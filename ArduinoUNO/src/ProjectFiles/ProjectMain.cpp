@@ -42,7 +42,7 @@
 /*Include C Files*/
 #include "TaskFunctions.h"
 
-uint8_t light=0;		/**<the value from the analog input*/
+volatile uint16_t lightVal_u8=0;		/**<the value from the analog input*/
 
 /**
 * @brief Implementation of function that handle the 20ms requests
@@ -51,9 +51,12 @@ uint8_t light=0;		/**<the value from the analog input*/
 * @return void
 * @note Void function with no return.
 */
-void task20ms(void) {
+void task20ms(void) {	
+	processADCconversion();
+	processInputBuffer();
 	processOutputBuffer();
 	processDigitalOutputPWM();	
+	
 };
 
 /**
@@ -158,7 +161,6 @@ void timer0_init()
 	DDRD=(1<<PORTD6);/**< digital pin6 is an output for lowbeam*/
 	TCCR0A=(1<<COM0A1);		/**<Clear OC0A on Compare Match */
 	TIMSK0=(1<<TOIE0);		/**<enable interrupt on compare */
-	setupADC();
 	sei();
 	TCCR0B=(1<<CS02)|(1<<CS00); /**< sets the prescaler to 1024;*/
 }
@@ -216,22 +218,6 @@ ISR(TIMER1_OVF_vect) {
 
 
 /**
- * @brief Implementation of the function that handle ADC conversion ISR
- * 
- * Implementation of the function that handle ADC conversion ISR
- * @return void
- *  
- */
-
-
-
-ISR(ADC_vect)
-{
-	light=ADC;
-	startConversion();
-}
-
-/**
  * @brief Implementation of the function that handle timer0 overflow ISR
  * 
  * Implementation of the function that handle timer0 overflow ISR
@@ -239,7 +225,7 @@ ISR(ADC_vect)
  *  
  */
 ISR(TIMER0_OVF_vect) {
-	OCR0A=light;
+	OCR0A=lightVal_u8;
 }
 
 void PWM_Init() {
@@ -268,6 +254,7 @@ void setup()
 	taskTimeCounter_u8 = 0;
 	initIO(); /*Functia de initializare IO*/
 	timer0_init();
+	setupADC();
 	timer1_init();		
 	stui_TaskIndex = 0;				
 	taskPtr = taskGetConfigPtr();	
@@ -287,15 +274,9 @@ void loop()
 				} else {
 					// do nothing
 				}
-				
 			}
 		
 		}
 		taskTimeCounterFlag_u8 = 0;
 	}
-	
-	
-	
-	
-	
 }

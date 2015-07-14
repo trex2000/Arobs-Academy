@@ -44,7 +44,15 @@
  *
  * Detailed buffer holds the value of the inputs.
  */
-uint8_t inputBuffer_u8[EN_NUMBER_OF_ELEMENTS_INPUT];
+uint16_t inputBuffer_u16[EN_NUMBER_OF_ELEMENTS_INPUT];
+
+/**
+ * @brief array holds the results of ADC conversion
+ *
+ * array holds the results of ADC conversion
+ */
+
+uint16_t adc_Result_u16[MAX_ADC_CHANNELS];
 
 /**
  * @brief buffer holds the value of the outputs.
@@ -52,6 +60,8 @@ uint8_t inputBuffer_u8[EN_NUMBER_OF_ELEMENTS_INPUT];
  * Detailed buffer holds the value of the outputs.
  */
 uint8_t outputBuffer_u8[EN_NUMBER_OF_ELEMENTS_OUTPUTS];
+
+
 
 /**
  * @brief Returns status of logical Input Pin.
@@ -78,7 +88,7 @@ uint8_t GetInputPin (EN_INPUT_PINS pinId_en)
 	{
 		if ((matchingTableInputPins_acst[pinId_en].portType_en==EN_PORT_AI)||(matchingTableInputPins_acst[pinId_en].portType_en==EN_PORT_DI))
 		{	
-				return inputBuffer_u8[pinId_en];
+				return inputBuffer_u16[pinId_en];
 		}	
 		else
 		{	
@@ -145,6 +155,7 @@ void setOutputPin (EN_OUTPUT_PINS pinId_en, uint8_t value_u8)
  * Function implementation for processing output buffer
  * @return void
  */
+
 void processOutputBuffer() {
 	EN_OUTPUT_PINS bufferIndex_len;
 	for(bufferIndex_len=0; bufferIndex_len<EN_NUMBER_OF_ELEMENTS_OUTPUTS; bufferIndex_len++) {
@@ -155,14 +166,14 @@ void processOutputBuffer() {
 				break; /**<end case EN_PORT_DO  */
 				
 			case EN_PORT_DOPWM:
-				
+				processDigitalOutputPWM(bufferIndex_len);
 				break;
 				
 			default:
 				break;	
 		} /**< end switch port type  */
 	}
-}
+	}
 
 /**< functia pentru citirea unui pin */
 int getValue(uint8_t pin){
@@ -285,7 +296,8 @@ void processDigitalOutput(EN_OUTPUT_PINS bufferIndex_len) {
 void processDigitalOutputPWM(EN_OUTPUT_PINS bufferIndex_len) {
 	uint8_t tempValue_lu8;
 	tempValue_lu8 = (outputBuffer_u8[bufferIndex_len] *MAX_PWM_VALUE_REG)/ MAX_PWM_VALUE;
-	if(matchingTableOutputPins_acst[bufferIndex_len].portType_en==EN_PORT_DOPWM) {
+	//if(matchingTableOutputPins_acst[bufferIndex_len].portType_en==EN_PORT_DOPWM) {
+		//conditia de mai sus este testata in funtia apelanta: processOutputBuffer() , in switch
 		switch(bufferIndex_len) {
 			// TODO: to be checked if correct
 			case EN_SODPWM_ENABLE_MOTOR1:
@@ -299,11 +311,57 @@ void processDigitalOutputPWM(EN_OUTPUT_PINS bufferIndex_len) {
 			default:
 				break;
 		}
-	} else {
+	//} else {
 		//do nothing
-	}
+	//}
 
 }
+
+
+/**
+ * @brief Function implementation for processing output buffer
+ *
+ * Function implementation for processing output buffer
+ * @return void
+ */
+
+void processInputBuffer() {
+	EN_INPUT_PINS bufferIndex_len;
+	for(bufferIndex_len=0; bufferIndex_len<EN_NUMBER_OF_ELEMENTS_INPUT; bufferIndex_len++) {
+		switch (matchingTableOutputPins_acst[bufferIndex_len].portType_en)
+		{
+			case EN_PORT_AI:
+			processAnalogInput(bufferIndex_len);
+			break; /**<end case EN_PORT_AI  */
+			
+			case EN_PORT_DI:
+			processDigitalInput(bufferIndex_len);
+			break;
+			
+			default:
+			break;
+			} /**< end switch port type  */
+		}
+	}
+
+void processAnalogInput(EN_INPUT_PINS bufferIndex_len) 
+{
+	if(matchingTableInputPins_acst[bufferIndex_len].portType_en==EN_PORT_AI)
+	{
+		inputBuffer_u16[bufferIndex_len]=adc_Result_u16[matchingTableInputPins_acst[bufferIndex_len].portVal_u8];
+	}
+	else
+	{
+		/**<do nothing */
+	}
+}
+	
+
+void processDigitalInput(EN_INPUT_PINS bufferIndex_len)
+{
+	inputBuffer_u16[bufferIndex_len]=matchingTableOutputPins_acst[bufferIndex_len].portVal_u8;
+}
+
 
 /**
  * @brief Function implementation for analog input from lightsensor
@@ -312,28 +370,71 @@ void processDigitalOutputPWM(EN_OUTPUT_PINS bufferIndex_len) {
  * @return void
  */
 
-
 void setupADC()
 {
-	ADMUX=(1<<REFS0);/**<Function implementation for analog input from lightsensor*/
-	/**<the lightsensor is in ADC0 input*/
-	/**<the MUX2:0 pins are 000 for ADC0 input*/
-	ADCSRA=(1<<ADEN)|(1<<ADIE)|(1<<ADPS0)|(1<<ADPS1)|(1<<ADPS2);
+	uint8_t adc_index_lu8;
+	ADCSRA=(1<<ADEN)|(1<<ADPS0)|(1<<ADPS1)|(1<<ADPS2);
 		/**<it is set the ADC enable bit and the ADC interrupt enable bit*/
 		/**<it is set the ADC prescaler for 128 cycles*/
-	DIDR0=(1<<ADC0D);
-	startConversion();		
+	DIDR0=0;
+	for(adc_index_lu8=0;adc_index_lu8<EN_NUMBER_OF_ELEMENTS_INPUT;adc_index_lu8++){
+		if(matchingTableInputPins_acst[adc_index_lu8].portType_en==EN_PORT_AI)
+		{
+			DIDR0|=(1<<matchingTableInputPins_acst[adc_index_lu8].portVal_u8);
+		}
+		else
+		{
+			/**<do nothing */
+		}
+	}
+	//START_CONVERSION();		
 }
 
 /**
- * @brief Function implementation for starting the ADC conversion
+ * @brief Function processes ADC conversion
  *
- * Function implementation for starting the ADC conversion
+ * Function processes ADC conversion
  * @return void
  */
-
-void startConversion()
+void processADCconversion()
 {
-	ADCSRA|=(1<<ADSC);/**< sets the bit to start the conversion */
+	static uint8_t adc_channel_id_lu8=0;
+	
+	if(CHECK_BIT(DIDR0,adc_channel_id_lu8))
+	{
+		if(CHECK_BIT(ADCSRA,ADSC))
+		{
+			// do nothing - ADC conversion is in progress
+		}
+		else //
+		{
+			adc_Result_u16[adc_channel_id_lu8]=ADC;
+			if(adc_channel_id_lu8<MAX_ADC_CHANNELS)
+			{
+				adc_channel_id_lu8++;
+				ADCSRA|=
+			}
+			else
+			{
+				adc_channel_id_lu8=0;
+			}			
+		}
+	}
+	else
+	{
+		if(adc_channel_id_lu8<MAX_ADC_CHANNELS)
+		{
+			adc_channel_id_lu8++;
+		}
+		else
+		{
+			adc_channel_id_lu8=0;
+		}
+	}
+	
 }
+
+
+
+
 

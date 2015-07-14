@@ -34,14 +34,15 @@
 #define _IO_
 #include "IO_extern.h"
 
-
+#define CHECK_BIT(var,pos) ((var) & (1<<(pos))) //macro care verifica o pozitie din registru daca e pe 1 logic
+#define MAX_PWM_VALUE_REG 256
 /**
  * @brief Macro implementation for starting the ADC conversion
  *
  * Macro implementation for starting the ADC conversion
  * @return void
  */
-#define startConversion() ADCSRA|=(1<<ADSC);/**< sets the bit to start the conversion */
+#define START_CONVERSION() ADCSRA|=(1<<ADSC)  /**< sets the bit to start the conversion */
 
 /**
  * @brief Defines type of physical port
@@ -57,6 +58,12 @@ typedef enum port_type_enum
 	EN_PORT_LAST_ELEMENT	/**< Number of port types */
 } PORT_TYPES_EN;
 
+/**
+ * @brief Defines maximum number of analog channels
+ *
+ * Defines maximum number of analog channels
+ */
+#define MAX_ADC_CHANNELS 6u 
 
 /**
  * @brief New datatype used in table which connects Logical Input Definitions to Physical Input Def
@@ -93,7 +100,7 @@ PORT_TYPES_ST const matchingTableOutputPins_acst[EN_NUMBER_OF_ELEMENTS_OUTPUTS] 
  * New datatype used in table which connects Logical Input Definitions to Physical Input Def
  */
 PORT_TYPES_ST const matchingTableInputPins_acst[EN_NUMBER_OF_ELEMENTS_INPUT] = {
-	{PORTC0, EN_PORT_C, EN_PORT_AI},     /**< EN_SIA_LIGHTSENSOR */
+	{ADC0D, EN_PORT_C, EN_PORT_AI},     /**< EN_SIA_LIGHTSENSOR */
 	{PORTD7, EN_PORT_D, EN_PORT_DI}, 	 /**< EN_SID_WIFI_CONTROL_UP */
 	{PORTB0, EN_PORT_B, EN_PORT_DI},	 /**< EN_SID_WIFI_CONTROL_DOWN */
 	{PORTB5, EN_PORT_B, EN_PORT_DI},	 /**< EN_SID_WIFI_CONTROL_RIGHT */
@@ -110,7 +117,8 @@ PORT_TYPES_ST const matchingTableInputPins_acst[EN_NUMBER_OF_ELEMENTS_INPUT] = {
  * @return void
  */
 void processInputBuffer();
-
+void processAnalogInput(EN_INPUT_PINS bufferIndex_len);
+void processDigitalInput(EN_INPUT_PINS bufferIndex_len);
 
 /**
  * @brief Function definition for processing output buffer
@@ -165,5 +173,14 @@ void processDigitalOutputPWM(EN_OUTPUT_PINS bufferIndex_len);
  * @return void
  */
 void setupADC();
+
+
+/**
+ * @brief Function processes ADC conversion
+ *
+ * Function processes ADC conversion
+ * @return void
+ */
+void processADCconversion();
 
 #endif

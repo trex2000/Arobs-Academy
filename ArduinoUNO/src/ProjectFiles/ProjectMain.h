@@ -39,5 +39,16 @@
 //#include <Tone.cpp>
 #pragma GCC diagnostic pop
 
+/**
+ * @brief Function definition for PWM initialization
+ *
+ * Function definition for PWM initialization
+ * For functions, automatic links are generated when the parenthesis () follow
+ * the name of the function, like Box_The_Function_Name().
+ * Alternatively, you can use #Box_The_Function_Name.
+ * @return void
+ */
+void PWM_Init();
+
 
 #endif /* PROJECTMAIN_H_ */
