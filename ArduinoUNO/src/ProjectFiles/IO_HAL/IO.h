@@ -34,6 +34,15 @@
 #define _IO_
 #include "IO_extern.h"
 
+
+/**
+ * @brief Macro implementation for starting the ADC conversion
+ *
+ * Macro implementation for starting the ADC conversion
+ * @return void
+ */
+#define startConversion() ADCSRA|=(1<<ADSC);/**< sets the bit to start the conversion */
+
 /**
  * @brief Defines type of physical port
  *
@@ -123,7 +132,7 @@ void processOutputBuffer();
  * Alternatively, you can use #Box_The_Function_Name.
  * @return void
  */
-void int getValue(uint8_t pin);
+int getValue(uint8_t pin);
 
 
 /**
@@ -148,5 +157,13 @@ void processDigitalOutput(EN_OUTPUT_PINS bufferIndex_len);
  */
 void processDigitalOutputPWM(EN_OUTPUT_PINS bufferIndex_len);
 
+
+/**
+ * @brief Function implementation for analog input from lightsensor
+ *
+ * Function implementation for analog input from lightsensor
+ * @return void
+ */
+void setupADC();
 
 #endif

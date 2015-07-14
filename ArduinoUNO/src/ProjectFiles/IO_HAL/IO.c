@@ -102,45 +102,37 @@ uint8_t GetInputPin (EN_INPUT_PINS pinId_en)
   * @param pinId_en logical output pin name. range: EN_OUPUT_PINS
  * @return @c state of the pin.
  */
-void setOutputPin (EN_OUTPUT_PINS pinId_en, uint8_t value_u8) //void sau uint8_t ??? (posibil sa fie void pentru ca nu avem nevoie de confirmarea valorii)
+void setOutputPin (EN_OUTPUT_PINS pinId_en, uint8_t value_u8) 
 {
-	if (pinId_en>=EN_NUMBER_OF_ELEMENTS_OUTPUTS) //verificam daca pinul exista fizic (sa nu fie out of range)
+	if (pinId_en>=EN_NUMBER_OF_ELEMENTS_OUTPUTS) /**< tests if the pin is out of range */
 	{
 		return ;
 	}
-	else if (matchingTableOutputPins_acst[pinId_en].portType_en==EN_PORT_DOPWM)   //verificam daca portul e de tip PWM
+	else if (matchingTableOutputPins_acst[pinId_en].portType_en==EN_PORT_DOPWM)   /**<verificam daca portul e de tip PWM  */
 		{
-			//avem port cu pwm
-			if (value_u8 <= MAX_PWM_VALUE)
+			/**<PWM port  */
+			 if (value_u8 > MAX_PWM_VALUE)
 			{
-				outputBuffer_u8[pinId_en]=value_u8; 
-				//DOPWM_setValue(EN_OUTPUT_PINS pinId_en, uint8_t value_u8); //setam ciclul PWM
+				value_u8 = MAX_PWM_VALUE; /**< sets the value to be put in output buffer to the maximum PWM value */
+				
 			}
-			else if (value_u8 > MAX_PWM_VALUE)
-			{
-				value_u8 = MAX_PWM_VALUE; //tratam cazul unui dutycycle peste 100% si apoi introducem valoarea in buffer
-				outputBuffer_u8[pinId_en]=value_u8;
-			}
-			else
-			{
-				//do nothing
-			}
+			outputBuffer_u8[pinId_en]=value_u8;
 		}
-	else
-	{
-			//nu este port cu pwm
+		else
+		{
+			/**<not a PWM port  */
 			if (matchingTableOutputPins_acst[pinId_en].portType_en==EN_PORT_DO)
 			{
-				if(value_u8 > MAX_DIGITAL_VALUE) //implementat pentru robustete
+				if(value_u8 > MAX_DIGITAL_VALUE) /**<implementat pentru robustete  */
 				{
 					value_u8 = MAX_DIGITAL_VALUE;
 				}
 				outputBuffer_u8[pinId_en] = value_u8;
-				//functia de Set pini digitali
+				/**< functia de Set pini digitali */
 			}
 			else
 			{
-				//nu facem nimic
+				/**<do nothing  */
 			}
 	}
 }	
@@ -151,11 +143,6 @@ void setOutputPin (EN_OUTPUT_PINS pinId_en, uint8_t value_u8) //void sau uint8_t
  * @brief Function implementation for processing output buffer
  *
  * Function implementation for processing output buffer
- * and for structures, like BoxStruct_struct. For typedef-ed types use
- * #BoxStruct.
- * For functions, automatic links are generated when the parenthesis () follow
- * the name of the function, like Box_The_Function_Name().
- * Alternatively, you can use #Box_The_Function_Name.
  * @return void
  */
 void processOutputBuffer() {
@@ -165,7 +152,7 @@ void processOutputBuffer() {
 		{
 			case EN_PORT_DO: 
 				processDigitalOutput(bufferIndex_len);								
-				break; // end case EN_PORT_DO
+				break; /**<end case EN_PORT_DO  */
 				
 			case EN_PORT_DOPWM:
 				
@@ -173,35 +160,35 @@ void processOutputBuffer() {
 				
 			default:
 				break;	
-		} // end switch port type
+		} /**< end switch port type  */
 	}
 }
 
-//functia pentru citirea unui pin
+/**< functia pentru citirea unui pin */
 int getValue(uint8_t pin){
 	
-	uint8_t Register; // variabila in care stocam valoarea registrului din care citim
+	uint8_t Register; /**< variabila in care stocam valoarea registrului din care citim */
 
-	//cautam registrul aferent piniului selectat, PINx de unde citim starea pinului
+	/**< cautam registrul aferent piniului selectat, PINx de unde citim starea pinului */
 	if ((0 <=pin)||(pin <=7))
 	{
-		Register = PIND; //Registrii PINx sunt Read Only
+		Register = PIND; /**< Registrii PINx sunt Read Only */
 	}
 	else if((8 >=pin)||(pin <=13))
 	{
 		Register = PINB;
-		//pin= pin-7; resetam pinul astfel incat sa putem citi din registrul pinB daca acesta nu e setat in memorie in continuare la PIND
+		/**< pin= pin-7; resetam pinul astfel incat sa putem citi din registrul pinB daca acesta nu e setat in memorie in continuare la PIND */
 	}
 	else if((14 >=pin)||(pin <=19))
 	{
 		Register = PINC;
-		//pin= pin-13;
+		/**< pin= pin-13; */
 	}
 
 	else
 	Register=NOT_A_PIN;
 
-	//cautam pinul din registrul aferent,de aici putem afla starea pinilor daca sunt Input (1), sau Output (0);
+	/**< cautam pinul din registrul aferent,de aici putem afla starea pinilor daca sunt Input (1), sau Output (0); */
 	if(CHECK_BIT(Register,pin)==1)
 	{ return true;}
 	else
@@ -256,11 +243,6 @@ void initIO()
  * @brief Function implementation for processing output buffer
  *
  * Function implementation for processing output buffer
- * and for structures, like BoxStruct_struct. For typedef-ed types use
- * #BoxStruct.
- * For functions, automatic links are generated when the parenthesis () follow
- * the name of the function, like Box_The_Function_Name().
- * Alternatively, you can use #Box_The_Function_Name.
  * @return void
  */
 
@@ -298,11 +280,6 @@ void processDigitalOutput(EN_OUTPUT_PINS bufferIndex_len) {
  * @brief Function implementation for processing output buffer
  *
  * Function implementation for processing output buffer
- * and for structures, like BoxStruct_struct. For typedef-ed types use
- * #BoxStruct.
- * For functions, automatic links are generated when the parenthesis () follow
- * the name of the function, like Box_The_Function_Name().
- * Alternatively, you can use #Box_The_Function_Name.
  * @return void
  */
 void processDigitalOutputPWM(EN_OUTPUT_PINS bufferIndex_len) {
@@ -327,3 +304,36 @@ void processDigitalOutputPWM(EN_OUTPUT_PINS bufferIndex_len) {
 	}
 
 }
+
+/**
+ * @brief Function implementation for analog input from lightsensor
+ *
+ * Function implementation for analog input from lightsensor
+ * @return void
+ */
+
+
+void setupADC()
+{
+	ADMUX=(1<<REFS0);/**<Function implementation for analog input from lightsensor*/
+	/**<the lightsensor is in ADC0 input*/
+	/**<the MUX2:0 pins are 000 for ADC0 input*/
+	ADCSRA=(1<<ADEN)|(1<<ADIE)|(1<<ADPS0)|(1<<ADPS1)|(1<<ADPS2);
+		/**<it is set the ADC enable bit and the ADC interrupt enable bit*/
+		/**<it is set the ADC prescaler for 128 cycles*/
+	DIDR0=(1<<ADC0D);
+	startConversion();		
+}
+
+/**
+ * @brief Function implementation for starting the ADC conversion
+ *
+ * Function implementation for starting the ADC conversion
+ * @return void
+ */
+
+void startConversion()
+{
+	ADCSRA|=(1<<ADSC);/**< sets the bit to start the conversion */
+}
+

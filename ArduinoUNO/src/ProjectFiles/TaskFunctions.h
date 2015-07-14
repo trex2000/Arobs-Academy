@@ -41,7 +41,12 @@ void task1000ms(void);
 
 /** 
  * Function prototype
- * Initialize the timer 
+ * Initialize the timer0 for ADC conversion
+ */
+void timer0_init();
+/** 
+ * Function prototype
+ * Initialize the timer1 
  */
 void timer1_init();
 

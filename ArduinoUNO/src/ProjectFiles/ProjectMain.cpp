@@ -42,6 +42,8 @@
 /*Include C Files*/
 #include "TaskFunctions.h"
 
+uint8_t light=0;		/**<the value from the analog input*/
+
 /**
 * @brief Implementation of function that handle the 20ms requests
 *
@@ -145,6 +147,23 @@ uint8_t getNrTasks(void) {
 }
 
 /**
+ * @brief Implementation of the function that initialize the timer0 
+ * 
+ * Implementation of the function that initialize the timer 0 used in ADC conversion
+ * @return void
+ *  
+ */
+void timer0_init() 
+{
+	DDRD=(1<<PORTD6);/**< digital pin6 is an output for lowbeam*/
+	TCCR0A=(1<<COM0A1);		/**<Clear OC0A on Compare Match */
+	TIMSK0=(1<<TOIE0);		/**<enable interrupt on compare */
+	setupADC();
+	sei();
+	TCCR0B=(1<<CS02)|(1<<CS00); /**< sets the prescaler to 1024;*/
+}
+
+/**
  * @brief Implementation of the function that initialize the timer 
  * 
  * Implementation of the function that initialize the timer 1 used in task scheduler
@@ -183,7 +202,7 @@ const uint8_t cui_numberOfTasks = getNrTasks();
 static TaskType_stType *taskPtr;
 
 /**
- * @brief Implementation of the function that thandle timer overflow ISR
+ * @brief Implementation of the function that handle timer overflow ISR
  * 
  * Implementation of the function that thandle timer overflow ISR
  * @return void
@@ -193,6 +212,34 @@ ISR(TIMER1_OVF_vect) {
 	TCNT1 = T_TIMER_START;
 	taskTimeCounterFlag_u8 = 1;
 	taskTimeCounter_u8++;
+}
+
+
+/**
+ * @brief Implementation of the function that handle ADC conversion ISR
+ * 
+ * Implementation of the function that handle ADC conversion ISR
+ * @return void
+ *  
+ */
+
+
+
+ISR(ADC_vect)
+{
+	light=ADC;
+	startConversion();
+}
+
+/**
+ * @brief Implementation of the function that handle timer0 overflow ISR
+ * 
+ * Implementation of the function that handle timer0 overflow ISR
+ * @return void
+ *  
+ */
+ISR(TIMER0_OVF_vect) {
+	OCR0A=light;
 }
 
 void PWM_Init() {
@@ -220,7 +267,7 @@ void setup()
 	taskTimeCounterFlag_u8 = 0;
 	taskTimeCounter_u8 = 0;
 	initIO(); /*Functia de initializare IO*/
-	
+	timer0_init();
 	timer1_init();		
 	stui_TaskIndex = 0;				
 	taskPtr = taskGetConfigPtr();	
