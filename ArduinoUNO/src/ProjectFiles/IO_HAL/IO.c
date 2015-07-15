@@ -383,6 +383,7 @@ void setupADC()
 			/**<do nothing */
 		}
 	}		
+	START_CONVERSION();
 }
 
 /**
@@ -395,26 +396,32 @@ void setupADC()
 void processADCconversion()
 {
 	static uint8_t adc_channel_id_lu8=0;	/**< index for result ADC conversion array */
-	
+	static EN_CONVERSION_STATE conversion_state = EN_CONVERSION_IDLE;
+		
 	if(CHECK_BIT(DIDR0,adc_channel_id_lu8))	/**< current channel is enabled */
 	{
-		if(CHECK_BIT(ADCSRA,ADSC))			/**< ADSC bit is set - meaning the ADC conversion is still in progress  */
+		switch (conversion_state)
 		{
-			/**< do nothing - ADC conversion is in progress */
-		}
-		else								/**< ADSC bit is not set - the conversion is finished	*/
-		{
-			adc_Result_u16[adc_channel_id_lu8]=ADC;/**< array of result gets ADC value for the specified channel */
-			
-			if(adc_channel_id_lu8<MAX_ADC_CHANNELS)
-			{
-				adc_channel_id_lu8++;	/**<passes to the next ADC channel  */
-				ADMUX=(ADMUX & 0xF0)|(adc_channel_id_lu8 & 0x0F); /**< updates ADMUX register */
-			}
-			else
-			{
-				adc_channel_id_lu8=0;/**< resets the initial value */
-			}						
+			case EN_CONVERSION_IDLE:
+				adc_Result_u16[adc_channel_id_lu8] = ADC;	/**< array of result gets ADC value for the specified channel */
+				if(adc_channel_id_lu8<MAX_ADC_CHANNELS) 
+				{
+					adc_channel_id_lu8++;		/**<passes to the next ADC channel  */
+					ADMUX=(ADMUX & 0xF0)|(adc_channel_id_lu8 & 0x0F); /**< updates ADMUX register */
+				} else 
+				{
+					adc_channel_id_lu8 = 0; /**< resets the initial value */
+				}
+				START_CONVERSION();
+				break;
+			case EN_CONVERSION_IN_PROGRESS:
+				if(!CHECK_BIT(ADCSRA, ADSC)) {	/**< ADSC bit is not set - meaning the ADC conversion is not in progress  */
+					conversion_state = EN_CONVERSION_IDLE;
+				}
+				break;
+			default:
+				/* Your code here */
+				break;
 		}
 	}
 	else /**< current channel is NOT enabled */
@@ -429,38 +436,9 @@ void processADCconversion()
 			adc_channel_id_lu8=0;/**< resets the initial value */
 		}
 	}
-	
 }
 
-cyclicADC() {
-	static EN_CONVERSION_STATE conversion_state = EN_CONVERSION_IDLE;
 	
-	switch(conversion_state) {
-		
-		case EN_CONVERSION_IDLE:
-			// no conversion in progress
-			// we can start a conversion 
-			// process conversion
-			processADCconversion();
-			// start conversion
-			START_CONVERSION();
-			conversion_state = EN_CONVERSION_IN_PROGRESS;
-			break;
-			
-		case EN_CONVERSION_IN_PROGRESS:
-			if(!CHECK_BIT(ADCSRA,ADSC)) 
-			{
-				conversion_state = EN_CONVERSION_IDLE;	
-			} else {
-				// do nothing
-			}
-			break;
-			
-		default: 
-			break;
-	}
-	
-}
 
 
 

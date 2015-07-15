@@ -51,4 +51,7 @@
 void PWM_Init();
 
 
+void InitPWM(char pin);
+void timer0_init();
+
 #endif /* PROJECTMAIN_H_ */

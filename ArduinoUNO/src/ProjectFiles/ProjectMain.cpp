@@ -44,75 +44,6 @@
 
 volatile uint16_t lightVal_u8=0;		/**<the value from the analog input*/
 
-/**
-* @brief Implementation of function that handle the 20ms requests
-*
-* Implementation of function that handle the 20ms requests
-* @return void
-* @note Void function with no return.
-*/
-void task20ms(void) {	
-	processADCconversion();
-	processInputBuffer();
-	processOutputBuffer();
-	processDigitalOutputPWM();	
-	
-};
-
-/**
-* @brief Implementation of function that handle the 40ms requests
-*
-* Implementation of function that handle the 40ms requests
-* @return void
-* @note Void function with no return.
-*/
-void task40ms(void) {
-	static uint8_t flag = 0;
-	flag = 1 - flag;
-	digitalWrite(12, flag);
-	
-	};
-	
-/**
-* @brief Implementation of function that handle the 60ms requests
-*
-* Implementation of function that handle the 60ms requests
-* @return void
-* @note Void function with no return.
-*/
-void task60ms(void) {
-	static uint8_t flag = 0;
-	flag = 1 - flag;
-	digitalWrite(11, flag);
-	};
-	
-/**
-* @brief Implementation of function that handle the 100ms requests
-*
-* Implementation of function that handle the 100ms requests
-* @return void
-* @note Void function with no return.
-*/
-void task100ms(void) {
-	static uint8_t flag = 0;
-	flag = 1 - flag;
-	digitalWrite(10, flag);
-	};
-	
-/**
-* @brief Implementation of function that handle the 1000ms requests
-*
-* Implementation of function that handle the 1000ms requests
-* @return void
-* @note Void function with no return.
-*/
-void task1000ms(void) {
-	static uint8_t flag = 0;
-	flag = 1 - flag;
-	digitalWrite(9, flag);	
-};
-
-void InitPWM(char pin);
 /*
 * Main code called on reset is in  Arduino.h
 */
@@ -149,52 +80,6 @@ uint8_t getNrTasks(void) {
 	return sizeof(tasks_st) / sizeof(*tasks_st);
 }
 
-/**
- * @brief Implementation of the function that initialize the timer0 
- * 
- * Implementation of the function that initialize the timer 0 used in ADC conversion
- * @return void
- *  
- */
-void timer0_init() 
-{
-	DDRD=(1<<PORTD6);/**< digital pin6 is an output for lowbeam*/
-	TCCR0A=(1<<COM0A1);		/**<Clear OC0A on Compare Match */
-	TIMSK0=(1<<TOIE0);		/**<enable interrupt on compare */
-	sei();
-	TCCR0B=(1<<CS02)|(1<<CS00); /**< sets the prescaler to 1024;*/
-}
-
-/**
- * @brief Implementation of the function that initialize the timer 
- * 
- * Implementation of the function that initialize the timer 1 used in task scheduler
- * @return void
- *  
- */
-void timer1_init() {
-	pinMode(13, OUTPUT);
-	pinMode(12, OUTPUT);
-	pinMode(11, OUTPUT);
-	pinMode(10, OUTPUT);
-	pinMode(9, OUTPUT);
-	
-	
-	// initialize Timer1
-	cli();             // disable global interrupts
-	TCCR1A = 0;        // set entire TCCR1A register to 0
-	TCCR1B = 0;
-	
-	// initialize counter
-	TCNT1 = T_TIMER_START;
-	
-	// enable Timer1 overflow interrupt:
-	TIMSK1 = (1 << TOIE1);
-	// set the timer with a prescaller of 256
-	TCCR1B |= (1 << CS12);
-	// enable global interrupts:
-	sei();
-}
 
 uint8_t stui_TaskIndex;
 volatile uint8_t taskTimeCounterFlag_u8;
@@ -203,50 +88,7 @@ const uint8_t cui_numberOfTasks = getNrTasks();
 
 static TaskType_stType *taskPtr;
 
-/**
- * @brief Implementation of the function that handle timer overflow ISR
- * 
- * Implementation of the function that thandle timer overflow ISR
- * @return void
- *  
- */
-ISR(TIMER1_OVF_vect) {
-	TCNT1 = T_TIMER_START;
-	taskTimeCounterFlag_u8 = 1;
-	taskTimeCounter_u8++;
-}
 
-
-/**
- * @brief Implementation of the function that handle timer0 overflow ISR
- * 
- * Implementation of the function that handle timer0 overflow ISR
- * @return void
- *  
- */
-ISR(TIMER0_OVF_vect) {
-	OCR0A=lightVal_u8;
-}
-
-void PWM_Init() {
-	//PWM setup
-	DDRD |= (1 << DDD5) | (1 << DDD6 );
-	// PD6 is now an output
-
-	//OCR2A = PWM_DC_Max/(100/PWM_DC);
-	//OCR2B = PWM_DC_Max/(100/PWM_DC);
-	//functie apelata ciclic cu request-ul respectiv
-	// set PWM for 50% duty cycle
-
-	TCCR2A |= (1 << COM2A1);
-	// set none-inverting mode
-
-	TCCR2A |= (1 << WGM21) | (1 << WGM20);
-	// set fast PWM Mode
-
-	TCCR2B |= (1 << CS20) | (1 << CS21) | (1 << CS22); //????
-	// set prescaler to ??? and starts PWM*/
-}
 
 void setup()
 {
@@ -279,4 +121,159 @@ void loop()
 		}
 		taskTimeCounterFlag_u8 = 0;
 	}
+}
+
+/**
+* @brief Implementation of function that handle the 20ms requests
+*
+* Implementation of function that handle the 20ms requests
+* @return void
+* @note Void function with no return.
+*/
+void task20ms(void) {
+	processADCconversion();
+	processInputBuffer();
+	processOutputBuffer();
+	processDigitalOutputPWM();
+	
+};
+
+/**
+* @brief Implementation of function that handle the 40ms requests
+*
+* Implementation of function that handle the 40ms requests
+* @return void
+* @note Void function with no return.
+*/
+void task40ms(void) {
+	static uint8_t flag = 0;
+	flag = 1 - flag;
+	digitalWrite(12, flag);
+	
+};
+
+/**
+* @brief Implementation of function that handle the 60ms requests
+*
+* Implementation of function that handle the 60ms requests
+* @return void
+* @note Void function with no return.
+*/
+void task60ms(void) {
+	static uint8_t flag = 0;
+	flag = 1 - flag;
+	digitalWrite(11, flag);
+};
+
+/**
+* @brief Implementation of function that handle the 100ms requests
+*
+* Implementation of function that handle the 100ms requests
+* @return void
+* @note Void function with no return.
+*/
+void task100ms(void) {
+	static uint8_t flag = 0;
+	flag = 1 - flag;
+	digitalWrite(10, flag);
+};
+
+/**
+* @brief Implementation of function that handle the 1000ms requests
+*
+* Implementation of function that handle the 1000ms requests
+* @return void
+* @note Void function with no return.
+*/
+void task1000ms(void) {
+	static uint8_t flag = 0;
+	flag = 1 - flag;
+	digitalWrite(9, flag);
+};
+
+/**
+ * @brief Implementation of the function that initialize the timer0 
+ * 
+ * Implementation of the function that initialize the timer 0 used in ADC conversion
+ * @return void
+ *  
+ */
+void timer0_init() 
+{
+	DDRD=(1<<PORTD6);/**< digital pin6 is an output for lowbeam*/
+	TCCR0A=(1<<COM0A1);		/**<Clear OC0A on Compare Match */
+	TIMSK0=(1<<TOIE0);		/**<enable interrupt on compare */
+	sei();
+	TCCR0B=(1<<CS02)|(1<<CS00); /**< sets the prescaler to 1024;*/
+}
+
+/**
+ * @brief Implementation of the function that initialize the timer1
+ * 
+ * Implementation of the function that initialize the timer 1 
+ * @return void
+ *  
+ */
+void timer1_init() {
+	
+	// initialize Timer1
+	cli();             // disable global interrupts
+	TCCR1A = 0;        // set entire TCCR1A register to 0
+	TCCR1B = 0;
+	
+	// initialize counter
+	TCNT1 = T_TIMER_START;
+	
+	// enable Timer1 overflow interrupt:
+	TIMSK1 = (1 << TOIE1);
+	// set the timer with a prescaller of 256
+	TCCR1B |= (1 << CS12);
+	// enable global interrupts:
+	sei();
+}
+
+/**
+ * @brief Implementation of the function that handle timer1 overflow ISR
+ * 
+ * Implementation of the function that handle timer1 overflow ISR
+ * @return void
+ *  
+ */
+ISR(TIMER1_OVF_vect) {
+	TCNT1 = T_TIMER_START;
+	taskTimeCounterFlag_u8 = 1;
+	taskTimeCounter_u8++;
+}
+
+
+/**
+ * @brief Implementation of the function that handle timer0 overflow ISR
+ * 
+ * Implementation of the function that handle timer0 overflow ISR
+ * @return void
+ *  
+ */
+ISR(TIMER0_OVF_vect) {
+	OCR0A=lightVal_u8;
+}
+
+
+void PWM_Init() {
+	//PWM setup
+	DDRD |= (1 << DDD5) | (1 << DDD6 );
+	// PD6 is now an output
+
+	//OCR2A = PWM_DC_Max/(100/PWM_DC);
+	//OCR2B = PWM_DC_Max/(100/PWM_DC);
+	//functie apelata ciclic cu request-ul respectiv
+	// set PWM for 50% duty cycle
+
+	TCCR2A |= (1 << COM2A1);
+	// set none-inverting mode
+
+	TCCR2A |= (1 << WGM21) | (1 << WGM20);
+	// set fast PWM Mode
+
+	TCCR2B |= (1 << CS20) | (1 << CS21) | (1 << CS22); //????
+	// set prescaler to ??? and starts PWM*/
 }
