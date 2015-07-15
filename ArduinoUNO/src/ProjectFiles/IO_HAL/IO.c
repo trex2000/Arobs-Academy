@@ -158,16 +158,16 @@ void setOutputPin (EN_OUTPUT_PINS pinId_en, uint8_t value_u8)
  */
 
 void processOutputBuffer() {
-	EN_OUTPUT_PINS bufferIndex_len;
+	uint8_t bufferIndex_len;
 	for(bufferIndex_len=0; bufferIndex_len<EN_NUMBER_OF_ELEMENTS_OUTPUTS; bufferIndex_len++) {
 		switch (matchingTableOutputPins_acst[bufferIndex_len].portType_en)
 		{
 			case EN_PORT_DO: 
-				processDigitalOutput(bufferIndex_len);								
+				processDigitalOutput((EN_OUTPUT_PINS)bufferIndex_len);								
 				break; /**<end case EN_PORT_DO  */
 				
 			case EN_PORT_DOPWM:
-				processDigitalOutputPWM(bufferIndex_len);
+				processDigitalOutputPWM((EN_OUTPUT_PINS)bufferIndex_len);
 				break;
 				
 			default:
@@ -230,11 +230,33 @@ int DOPWM_setValue(char pin, int duty)
 //functie de initializare pwm
 void initIO()
 {
-	//setam pinul 3 ca output
-	DDRD |= (1 << DDD3);
+	uint8_t Index_len;
+	//all ports are inputs
+	DDRC = 0x00;
+	DDRD = 0x00;
+	DDRB = 0x00;
+	//set port direction to output for ports  which are defined as outputs
+	for(Index_len=0; Index_len<EN_NUMBER_OF_ELEMENTS_OUTPUTS; Index_len++)
+		{
+			switch (matchingTableOutputPins_acst[Index_len].portName_en)
+			{
+				case EN_PORT_C:
+					 DDRC |= (1 << matchingTableOutputPins_acst[Index_len].portName_en);
+				break;
+				case EN_PORT_B:
+					 DDRB |= (1 << matchingTableOutputPins_acst[Index_len].portName_en);
+				break;
+				case EN_PORT_D:
+					 DDRD |= (1 << matchingTableOutputPins_acst[Index_len].portName_en);
+				break;
+				
+				default:
+				break;
+				
+			}
+		}
 	
-	DDRB |= (1 <<DDB3); // DDRB l-am gasit in fisierul iom328p.h ???
-	// PB3 is now an output, pin Digital 11
+	
 	
 	/* SETAM TIMERUL 2 PENTRU Modul PHASE CORRECTED PWM*/
 	//setam Timer Counter Control Register A pe None-inverting mode si PWM Phase Corrected Mode
@@ -320,16 +342,16 @@ void processDigitalOutputPWM(EN_OUTPUT_PINS bufferIndex_len) {
  */
 
 void processInputBuffer() {
-	EN_INPUT_PINS bufferIndex_len;
+	uint8_t bufferIndex_len;
 	for(bufferIndex_len=0; bufferIndex_len<EN_NUMBER_OF_ELEMENTS_INPUT; bufferIndex_len++) {
 		switch (matchingTableOutputPins_acst[bufferIndex_len].portType_en)
 		{
 			case EN_PORT_AI:
-			processAnalogInput(bufferIndex_len);
+			processAnalogInput((EN_INPUT_PINS)bufferIndex_len);
 			break; /**<end case EN_PORT_AI  */
 			
 			case EN_PORT_DI:
-			processDigitalInput(bufferIndex_len);
+			processDigitalInput((EN_INPUT_PINS) bufferIndex_len);
 			break;
 			
 			default:
@@ -371,8 +393,8 @@ void setupADC()
 	/**<it is set the ADC enable bit*/
 	/**<it is set the ADC prescaler for 128 cycles*/
 	ADCSRA=(1<<ADEN)|(1<<ADPS0)|(1<<ADPS1)|(1<<ADPS2);
-		
-	DIDR0=0;	/**< no analog input channel is yet open*/
+	
+	//DIDR0=0;	/**< no analog input channel is yet open*/
 	
 	for(adc_index_lu8=0;adc_index_lu8<EN_NUMBER_OF_ELEMENTS_INPUT;adc_index_lu8++){
 		if(matchingTableInputPins_acst[adc_index_lu8].portType_en==EN_PORT_AI)
@@ -383,14 +405,14 @@ void setupADC()
 		{
 			/**<do nothing */
 		}
-	}		
+	}
 	START_CONVERSION();
 }
 
 /**
  * @brief Function processes ADC conversion
  *
- * Function verifies enabled ADC channels and stores the ADC conversion values in an array of results
+ * Function verifies enabled ADC channels and stores the ADC conversion values in an arrayf results
  * On each enabled ADC channel, the ADMUX register is updated 
  * @return void
  */

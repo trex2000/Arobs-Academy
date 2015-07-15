@@ -41,8 +41,9 @@
 
 /*Include C Files*/
 #include "TaskFunctions.h"
+		/**<the value from the analog input*/
 
-volatile uint16_t lightVal_u8=0;		/**<the value from the analog input*/
+#include "App/lights/lights_extern.h"
 
 /*
 * Main code called on reset is in  Arduino.h
@@ -138,6 +139,21 @@ void task20ms(void) {
 	
 };
 
+void test_lights(void){
+	
+	
+	if(GetInputPin (EN_SID_WIFI_CONTROL_UP))
+	{
+		setOutputPin (EN_SOD_MOTOR12_0, 1);
+	}
+	else{
+		
+		setOutputPin (EN_SOD_MOTOR12_0, 0);
+	}
+
+}
+
+
 /**
 * @brief Implementation of function that handle the 40ms requests
 *
@@ -146,9 +162,7 @@ void task20ms(void) {
 * @note Void function with no return.
 */
 void task40ms(void) {
-	static uint8_t flag = 0;
-	flag = 1 - flag;
-	digitalWrite(12, flag);
+	test_lights();
 	
 };
 
@@ -253,9 +267,7 @@ ISR(TIMER1_OVF_vect) {
  * @return void
  *  
  */
-ISR(TIMER0_OVF_vect) {
-	OCR0A=lightVal_u8;
-}
+
 
 
 void PWM_Init() {

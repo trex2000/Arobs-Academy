@@ -167,7 +167,9 @@
     <Folder Include="src\arduino\variants" />
     <Folder Include="src\arduino\variants\standard" />
     <Folder Include="src\ProjectFiles" />
+    <Folder Include="src\ProjectFiles\App\lights" />
     <Folder Include="src\ProjectFiles\IO_HAL" />
+    <Folder Include="src\ProjectFiles\App" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\arduino\cores\arduino\abi.cpp">
@@ -297,6 +299,15 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\arduino\variants\standard\pins_arduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ProjectFiles\App\lights\lights.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ProjectFiles\App\lights\lights.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ProjectFiles\App\lights\lights_extern.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\ProjectFiles\IO_HAL\IO.c">

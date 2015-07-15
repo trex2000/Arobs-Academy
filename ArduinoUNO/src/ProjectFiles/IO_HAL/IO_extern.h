@@ -76,16 +76,16 @@ typedef enum en_input_pins {
  * Enumeration of logical outputs.
  */
 typedef enum en_output_pins {
-	EN_SOD_MOTOR12_0=0,					/**< Motor 12 digital output 1 */
-	EN_SOD_MOTOR12_1=1,				    /**< Motor 12 digital output 2 */
-	EN_SOD_MOTOR12_2=2,				    /**< Motor 12 digital output 3 */
-	EN_SOD_MOTOR12_3=3,					/**< Motor 12 digital output 4 */
-	EN_SODPWM_ENABLE_MOTOR1 =4,			/**< Digital out PWM on  Motor1 */
-	EN_SODPWM_ENABLE_MOTOR2=5,			/**< Digital out PWM on  Motor2 */
-	EN_SOD_LEFT_FLASHER=6,				/**< Digital out for Left Flasher */
-	EN_SOD_RIGHT_FLASHER=7,				/**< Digital out for Right Flasher */
-	EN_SOD_LOW_BEAM=8,					/**< Digital out for Low Beam */
-	EN_NUMBER_OF_ELEMENTS_OUTPUTS=9       /**< Number of output pins  */
+	EN_SOD_MOTOR12_0,					/**< Motor 12 digital output 1 */
+	EN_SOD_MOTOR12_1,				    /**< Motor 12 digital output 2 */
+	EN_SOD_MOTOR12_2,				    /**< Motor 12 digital output 3 */
+	EN_SOD_MOTOR12_3,					/**< Motor 12 digital output 4 */
+	EN_SODPWM_ENABLE_MOTOR1,			/**< Digital out PWM on  Motor1 */
+	EN_SODPWM_ENABLE_MOTOR2,			/**< Digital out PWM on  Motor2 */
+	EN_SOD_LEFT_FLASHER,				/**< Digital out for Left Flasher */
+	EN_SOD_RIGHT_FLASHER,				/**< Digital out for Right Flasher */
+	EN_SOD_LOW_BEAM,					/**< Digital out for Low Beam */
+	EN_NUMBER_OF_ELEMENTS_OUTPUTS       /**< Number of output pins  */
 }EN_OUTPUT_PINS;
 
 /**
@@ -112,5 +112,5 @@ typedef enum en_port_enums
  * @return @c NULL is always returned.
  */
 extern uint8_t GetInputPin (EN_INPUT_PINS pinId_en);
-
+extern void setOutputPin (EN_OUTPUT_PINS pinId_en, uint8_t value_u8);
 #endif
