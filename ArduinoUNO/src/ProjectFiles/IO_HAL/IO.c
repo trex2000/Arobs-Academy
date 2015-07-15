@@ -31,6 +31,7 @@
  */
 
 #include <avr/io.h>
+#include <Arduino.h>
 #include "IO.h"
 #include "IO_extern.h"
 

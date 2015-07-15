@@ -32,6 +32,8 @@
 #ifndef TASKFUNCTIONS_H
 #define TASKFUNCTIONS_H
 
+#include "IO_HAL\IO.c"
+
 /**
  * @brief Function declaration for tasks which are executed every 20ms
  * Function declaration for tasks which are executed every 20ms.
@@ -72,8 +74,7 @@ void task100ms(void);
  */
 void task1000ms(void);
 
-<<<<<<< HEAD
-/** 
+/** HEAD
  * Function prototype
  * Initialize the timer0 for ADC conversion
  */
@@ -82,7 +83,7 @@ void timer0_init();
  * Function prototype
  * Initialize the timer1 
 =======
-/**
+*
  * @brief Function definition for timer initialization
  * Function implementation for timer initialization.
  * Alternatively, you can use #Box_The_Function_Name.

@@ -134,7 +134,7 @@ void task20ms(void) {
 	processADCconversion();
 	processInputBuffer();
 	processOutputBuffer();
-	processDigitalOutputPWM();
+	//processDigitalOutputPWM();
 	
 };
 
