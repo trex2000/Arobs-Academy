@@ -34,8 +34,26 @@
 #define _IO_
 #include "IO_extern.h"
 
-#define CHECK_BIT(var,pos) ((var) & (1<<(pos))) //macro care verifica o pozitie din registru daca e pe 1 logic
+/**
+ * @brief Macro for testing if a bit is set
+ *
+ * Macro for testing if a bit is set
+ */
+#define CHECK_BIT(var,pos) ((var) & (1<<(pos))) 
+
+/**
+ * @brief Macro for max PWM value
+ *
+ * Macro for max PWM value
+ */
 #define MAX_PWM_VALUE_REG 256
+/**
+ * @brief Defines maximum number of analog channels
+ *
+ * Defines maximum number of analog channels
+ */
+#define MAX_ADC_CHANNELS 6u 
+
 /**
  * @brief Macro implementation for starting the ADC conversion
  *
@@ -59,11 +77,14 @@ typedef enum port_type_enum
 } PORT_TYPES_EN;
 
 /**
- * @brief Defines maximum number of analog channels
+ * @brief Defines the states for ADC conversion
  *
- * Defines maximum number of analog channels
+ * Defines the states for ADC conversion
  */
-#define MAX_ADC_CHANNELS 6u 
+typedef enum en_conversion_state{
+	EN_CONVERSION_IN_PROGRESS,		/**< Current conversion in progress  */
+	EN_CONVERSION_IDLE				/**< No conversion in progress */
+} EN_CONVERSION_STATE;
 
 /**
  * @brief New datatype used in table which connects Logical Input Definitions to Physical Input Def

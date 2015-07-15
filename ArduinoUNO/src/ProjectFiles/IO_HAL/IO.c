@@ -246,7 +246,6 @@ void initIO()
 	// setam Timer Counter Control Register B pe PWM Phase Corrected Mode si cu un prescaler de 64
 	TCCR2B |= (1 << CS22) | (1 << WGM22);
 	// set prescaler to 64 and starts PWM and sets  PWM Phase Corrected Mode
-	
 }
 
 
@@ -367,10 +366,13 @@ void processDigitalInput(EN_INPUT_PINS bufferIndex_len)
 void setupADC()
 {
 	uint8_t adc_index_lu8;
+	
+	/**<it is set the ADC enable bit*/
+	/**<it is set the ADC prescaler for 128 cycles*/
 	ADCSRA=(1<<ADEN)|(1<<ADPS0)|(1<<ADPS1)|(1<<ADPS2);
-		/**<it is set the ADC enable bit and the ADC interrupt enable bit*/
-		/**<it is set the ADC prescaler for 128 cycles*/
+		
 	DIDR0=0;	/**< no analog input channel is yet open*/
+	
 	for(adc_index_lu8=0;adc_index_lu8<EN_NUMBER_OF_ELEMENTS_INPUT;adc_index_lu8++){
 		if(matchingTableInputPins_acst[adc_index_lu8].portType_en==EN_PORT_AI)
 		{
@@ -380,8 +382,7 @@ void setupADC()
 		{
 			/**<do nothing */
 		}
-	}
-	//START_CONVERSION();		
+	}		
 }
 
 /**
@@ -401,18 +402,19 @@ void processADCconversion()
 		{
 			/**< do nothing - ADC conversion is in progress */
 		}
-		else //
+		else								/**< ADSC bit is not set - the conversion is finished	*/
 		{
 			adc_Result_u16[adc_channel_id_lu8]=ADC;/**< array of result gets ADC value for the specified channel */
+			
 			if(adc_channel_id_lu8<MAX_ADC_CHANNELS)
 			{
 				adc_channel_id_lu8++;	/**<passes to the next ADC channel  */
-				ADMUX=(ADMUX & 0xF0)|adc_channel_id_lu8; /**< updates ADMUX register */
+				ADMUX=(ADMUX & 0xF0)|(adc_channel_id_lu8 & 0x0F); /**< updates ADMUX register */
 			}
 			else
 			{
 				adc_channel_id_lu8=0;/**< resets the initial value */
-			}			
+			}						
 		}
 	}
 	else /**< current channel is NOT enabled */
@@ -420,7 +422,7 @@ void processADCconversion()
 		if(adc_channel_id_lu8<MAX_ADC_CHANNELS)
 		{
 			adc_channel_id_lu8++; /**<passes to the next ADC channel  */
-			ADMUX=(ADMUX & 0xF0)|adc_channel_id_lu8;/**< updates ADMUX register */
+			ADMUX=(ADMUX & 0xF0)|(adc_channel_id_lu8 & 0x0F);/**< updates ADMUX register */
 		}
 		else
 		{
@@ -430,6 +432,35 @@ void processADCconversion()
 	
 }
 
+cyclicADC() {
+	static EN_CONVERSION_STATE conversion_state = EN_CONVERSION_IDLE;
+	
+	switch(conversion_state) {
+		
+		case EN_CONVERSION_IDLE:
+			// no conversion in progress
+			// we can start a conversion 
+			// process conversion
+			processADCconversion();
+			// start conversion
+			START_CONVERSION();
+			conversion_state = EN_CONVERSION_IN_PROGRESS;
+			break;
+			
+		case EN_CONVERSION_IN_PROGRESS:
+			if(!CHECK_BIT(ADCSRA,ADSC)) 
+			{
+				conversion_state = EN_CONVERSION_IDLE;	
+			} else {
+				// do nothing
+			}
+			break;
+			
+		default: 
+			break;
+	}
+	
+}
 
 
 
