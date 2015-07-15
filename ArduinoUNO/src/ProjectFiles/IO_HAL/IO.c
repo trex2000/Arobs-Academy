@@ -296,9 +296,7 @@ void processDigitalOutput(EN_OUTPUT_PINS bufferIndex_len) {
 void processDigitalOutputPWM(EN_OUTPUT_PINS bufferIndex_len) {
 	uint8_t tempValue_lu8;
 	tempValue_lu8 = (outputBuffer_u8[bufferIndex_len] *MAX_PWM_VALUE_REG)/ MAX_PWM_VALUE;
-	//if(matchingTableOutputPins_acst[bufferIndex_len].portType_en==EN_PORT_DOPWM) {
-		//conditia de mai sus este testata in funtia apelanta: processOutputBuffer() , in switch
-		switch(bufferIndex_len) {
+			switch(bufferIndex_len) {
 			// TODO: to be checked if correct
 			case EN_SODPWM_ENABLE_MOTOR1:
 				OCR2A = tempValue_lu8;
@@ -311,10 +309,6 @@ void processDigitalOutputPWM(EN_OUTPUT_PINS bufferIndex_len) {
 			default:
 				break;
 		}
-	//} else {
-		//do nothing
-	//}
-
 }
 
 
@@ -376,11 +370,11 @@ void setupADC()
 	ADCSRA=(1<<ADEN)|(1<<ADPS0)|(1<<ADPS1)|(1<<ADPS2);
 		/**<it is set the ADC enable bit and the ADC interrupt enable bit*/
 		/**<it is set the ADC prescaler for 128 cycles*/
-	DIDR0=0;
+	DIDR0=0;	/**< no analog input channel is yet open*/
 	for(adc_index_lu8=0;adc_index_lu8<EN_NUMBER_OF_ELEMENTS_INPUT;adc_index_lu8++){
 		if(matchingTableInputPins_acst[adc_index_lu8].portType_en==EN_PORT_AI)
 		{
-			DIDR0|=(1<<matchingTableInputPins_acst[adc_index_lu8].portVal_u8);
+			DIDR0|=(1<<matchingTableInputPins_acst[adc_index_lu8].portVal_u8); /**< enables analog input channels*/
 		}
 		else
 		{
@@ -393,42 +387,44 @@ void setupADC()
 /**
  * @brief Function processes ADC conversion
  *
- * Function processes ADC conversion
+ * Function verifies enabled ADC channels and stores the ADC conversion values in an array of results
+ * On each enabled ADC channel, the ADMUX register is updated 
  * @return void
  */
 void processADCconversion()
 {
-	static uint8_t adc_channel_id_lu8=0;
+	static uint8_t adc_channel_id_lu8=0;	/**< index for result ADC conversion array */
 	
-	if(CHECK_BIT(DIDR0,adc_channel_id_lu8))
+	if(CHECK_BIT(DIDR0,adc_channel_id_lu8))	/**< current channel is enabled */
 	{
-		if(CHECK_BIT(ADCSRA,ADSC))
+		if(CHECK_BIT(ADCSRA,ADSC))			/**< ADSC bit is set - meaning the ADC conversion is still in progress  */
 		{
-			// do nothing - ADC conversion is in progress
+			/**< do nothing - ADC conversion is in progress */
 		}
 		else //
 		{
-			adc_Result_u16[adc_channel_id_lu8]=ADC;
+			adc_Result_u16[adc_channel_id_lu8]=ADC;/**< array of result gets ADC value for the specified channel */
 			if(adc_channel_id_lu8<MAX_ADC_CHANNELS)
 			{
-				adc_channel_id_lu8++;
-				ADCSRA|=
+				adc_channel_id_lu8++;	/**<passes to the next ADC channel  */
+				ADMUX=(ADMUX & 0xF0)|adc_channel_id_lu8; /**< updates ADMUX register */
 			}
 			else
 			{
-				adc_channel_id_lu8=0;
+				adc_channel_id_lu8=0;/**< resets the initial value */
 			}			
 		}
 	}
-	else
+	else /**< current channel is NOT enabled */
 	{
 		if(adc_channel_id_lu8<MAX_ADC_CHANNELS)
 		{
-			adc_channel_id_lu8++;
+			adc_channel_id_lu8++; /**<passes to the next ADC channel  */
+			ADMUX=(ADMUX & 0xF0)|adc_channel_id_lu8;/**< updates ADMUX register */
 		}
 		else
 		{
-			adc_channel_id_lu8=0;
+			adc_channel_id_lu8=0;/**< resets the initial value */
 		}
 	}
 	
