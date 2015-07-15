@@ -142,14 +142,31 @@ void task20ms(void) {
 void test_lights(void){
 	
 	
+	
+	setOutputPin(EN_SODPWM_ENABLE_MOTOR1,70);
+	setOutputPin(EN_SODPWM_ENABLE_MOTOR2,70);
+		
 	if(GetInputPin (EN_SID_WIFI_CONTROL_UP))
-	{
+	{	
+		static uint8_t flag=0;
+		flag=1-flag;
+		digitalWrite(6,flag);
+	
 		setOutputPin (EN_SOD_MOTOR12_0, 1);
+		setOutputPin (EN_SOD_MOTOR12_1, 0);
+		setOutputPin (EN_SOD_MOTOR12_2, 1);
+		setOutputPin (EN_SOD_MOTOR12_3, 0);
+		
 	}
 	else{
 		
-		setOutputPin (EN_SOD_MOTOR12_0, 0);
+			setOutputPin (EN_SOD_MOTOR12_0, 0);
+			setOutputPin (EN_SOD_MOTOR12_1, 0);
+			setOutputPin (EN_SOD_MOTOR12_2, 0);
+			setOutputPin (EN_SOD_MOTOR12_3, 0);
 	}
+	
+
 
 }
 
@@ -164,6 +181,9 @@ void test_lights(void){
 void task40ms(void) {
 	test_lights();
 	
+	//digitalWrite(2,flag);
+	
+	
 };
 
 /**
@@ -174,9 +194,7 @@ void task40ms(void) {
 * @note Void function with no return.
 */
 void task60ms(void) {
-	static uint8_t flag = 0;
-	flag = 1 - flag;
-	digitalWrite(11, flag);
+	
 };
 
 /**
@@ -187,9 +205,7 @@ void task60ms(void) {
 * @note Void function with no return.
 */
 void task100ms(void) {
-	static uint8_t flag = 0;
-	flag = 1 - flag;
-	digitalWrite(10, flag);
+
 };
 
 /**
@@ -200,9 +216,7 @@ void task100ms(void) {
 * @note Void function with no return.
 */
 void task1000ms(void) {
-	static uint8_t flag = 0;
-	flag = 1 - flag;
-	digitalWrite(9, flag);
+	
 };
 
 /**

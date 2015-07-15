@@ -81,15 +81,19 @@ uint8_t outputBuffer_u8[EN_NUMBER_OF_ELEMENTS_OUTPUTS];
 
 uint8_t GetInputPin (EN_INPUT_PINS pinId_en)
 {	
+			
 	if (pinId_en>=EN_NUMBER_OF_ELEMENTS_INPUT)
 {	
+		
 		return 0;
 }	
 	else
 	{
 		if ((matchingTableInputPins_acst[pinId_en].portType_en==EN_PORT_AI)||(matchingTableInputPins_acst[pinId_en].portType_en==EN_PORT_DI))
 		{	
+			
 				return inputBuffer_u16[pinId_en];
+				
 		}	
 		else
 		{	
@@ -342,11 +346,14 @@ void processDigitalOutputPWM(EN_OUTPUT_PINS bufferIndex_len) {
  */
 
 void processInputBuffer() {
+	
+	
 	uint8_t bufferIndex_len;
 	for(bufferIndex_len=0; bufferIndex_len<EN_NUMBER_OF_ELEMENTS_INPUT; bufferIndex_len++) {
-		switch (matchingTableOutputPins_acst[bufferIndex_len].portType_en)
+		switch (matchingTableInputPins_acst[bufferIndex_len].portType_en)
 		{
 			case EN_PORT_AI:
+			
 			processAnalogInput((EN_INPUT_PINS)bufferIndex_len);
 			break; /**<end case EN_PORT_AI  */
 			
@@ -375,7 +382,33 @@ void processAnalogInput(EN_INPUT_PINS bufferIndex_len)
 
 void processDigitalInput(EN_INPUT_PINS bufferIndex_len)
 {
-	inputBuffer_u16[bufferIndex_len]=matchingTableOutputPins_acst[bufferIndex_len].portVal_u8;
+
+	
+	uint8_t tempVal_ula=0;
+	
+	switch (matchingTableInputPins_acst[bufferIndex_len].portName_en)
+	{
+		case EN_PORT_C:
+		tempVal_ula=PINC;
+		break;
+		
+		case EN_PORT_B:
+		tempVal_ula=PINB;
+		break;
+		
+		case EN_PORT_D:
+		tempVal_ula=PIND;
+	
+		break;		
+		
+		default:
+		break;
+		
+	}
+	tempVal_ula &= 1<<matchingTableInputPins_acst[bufferIndex_len].portVal_u8;
+	tempVal_ula = tempVal_ula>>matchingTableInputPins_acst[bufferIndex_len].portVal_u8;
+	inputBuffer_u16[bufferIndex_len]=tempVal_ula;
+
 }
 
 
