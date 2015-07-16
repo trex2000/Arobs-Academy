@@ -16,12 +16,13 @@
  *   You should have received a copy of the GNU Lesser General Public       *
  *   License along with Box.  If not, see <http://www.gnu.org/licenses/>.   *
  ****************************************************************************/
+#pragma once
 
 /**
- * @file lights.c
- * @author Alex
- * @date 10 Jul 2015
- * @brief File containing functions for IO 
+ * @file motors_extern.h
+ * @author Barney
+ * @date 16 Jul 2015
+ * @brief File containing functions for Motor control
  *
  * Here typically goes a more extensive explanation of what the header
  * defines. Doxygens tags are words preceeded by either a backslash @\
@@ -30,33 +31,30 @@
  * @see http://www.stack.nl/~dimitri/doxygen/commands.html
  */
 
+#pragma once
 
-#include "lights.h"
-#include "IO_extern.h"
+#ifndef MOTORS_EXTERN_H_
+#define MOTORS_EXTERN_H_
 
+	
 /**
-* @brief Implementation of function that handles the initialization of light control
+* @brief Implementation of function that handles the initialization of motor control
 *
-* mplementation of function that handles the initialization of light control
+* mplementation of function that handles the initialization of motor control
 * @return void
 * @note Void function with no return.
 */
-void lightsInit()
-{
-	
-}
+void motorsInit();
 
 /**
-* @brief Implementation of function that handles the light control
+* @brief Implementation of function that handles the motor control
 *
-* Implementation of function that handles the light control
+* Implementation of function that handles the motor control
 * @return void
 * @note Void function with no return.
 */
-void lightsCyclic()
-{
-	
-	
-}
+extern void motorsCyclic();
 
 
+
+#endif /* MOTORS_EXTERN_H_ */

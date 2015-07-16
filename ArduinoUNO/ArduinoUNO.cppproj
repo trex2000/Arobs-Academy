@@ -107,6 +107,7 @@
       <Value>../src/ProjectFiles</Value>
       <Value>../src/ProjectFiles/App/lights</Value>
       <Value>../src/ProjectFiles/IO_HAL</Value>
+      <Value>../src/ProjectFiles/App/motors</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
@@ -138,6 +139,7 @@
       <Value>../src/ProjectFiles</Value>
       <Value>../src/ProjectFiles/App/lights</Value>
       <Value>../src/ProjectFiles/IO_HAL</Value>
+      <Value>../src/ProjectFiles/App/motors</Value>
     </ListValues>
   </avrgcccpp.compiler.directories.IncludePaths>
   <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
@@ -172,6 +174,7 @@
     <Folder Include="src\arduino\variants\standard" />
     <Folder Include="src\ProjectFiles" />
     <Folder Include="src\ProjectFiles\App\lights" />
+    <Folder Include="src\ProjectFiles\App\motors" />
     <Folder Include="src\ProjectFiles\IO_HAL" />
     <Folder Include="src\ProjectFiles\App" />
   </ItemGroup>
@@ -312,6 +315,15 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\ProjectFiles\App\lights\lights_extern.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ProjectFiles\App\motors\motors.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ProjectFiles\App\motors\motors.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ProjectFiles\App\motors\motors_extern.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\ProjectFiles\IO_HAL\IO.cpp">

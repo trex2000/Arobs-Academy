@@ -18,7 +18,7 @@
  ****************************************************************************/
 
 /**
- * @file lights.c
+ * @file motors.cpp
  * @author Alex
  * @date 10 Jul 2015
  * @brief File containing functions for IO 
@@ -29,34 +29,56 @@
  * @see http://www.stack.nl/~dimitri/doxygen/docblocks.html
  * @see http://www.stack.nl/~dimitri/doxygen/commands.html
  */
+	
 
-
-#include "lights.h"
+#include "motors.h"
 #include "IO_extern.h"
-
+	
 /**
-* @brief Implementation of function that handles the initialization of light control
+* @brief Implementation of function that handles the initialization of motor control
 *
-* mplementation of function that handles the initialization of light control
+* mplementation of function that handles the initialization of motor control
 * @return void
 * @note Void function with no return.
 */
-void lightsInit()
+void motorsInit()
 {
 	
 }
 
+
+
 /**
-* @brief Implementation of function that handles the light control
+* @brief Implementation of function that handles the motor control
 *
-* Implementation of function that handles the light control
+* Implementation of function that handles the motor control
 * @return void
 * @note Void function with no return.
-*/
-void lightsCyclic()
-{
+*/	
+void motorsCyclic()
+{	
 	
+	setOutputPin(EN_SODPWM_ENABLE_MOTOR1,70);
+	setOutputPin(EN_SODPWM_ENABLE_MOTOR2,70);
+	
+	if(GetInputPin (EN_SID_WIFI_CONTROL_UP))
+	{
+		static uint8_t flag=0;
+		flag=1-flag;
+		digitalWrite(6,flag);
+		
+		setOutputPin (EN_SOD_MOTOR12_0, 1);
+		setOutputPin (EN_SOD_MOTOR12_1, 0);
+		setOutputPin (EN_SOD_MOTOR12_2, 1);
+		setOutputPin (EN_SOD_MOTOR12_3, 0);
+		
+	}
+	else{
+		
+		setOutputPin (EN_SOD_MOTOR12_0, 0);
+		setOutputPin (EN_SOD_MOTOR12_1, 0);
+		setOutputPin (EN_SOD_MOTOR12_2, 0);
+		setOutputPin (EN_SOD_MOTOR12_3, 0);
+	}
 	
 }
-
-

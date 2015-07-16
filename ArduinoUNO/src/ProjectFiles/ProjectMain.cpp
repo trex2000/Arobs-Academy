@@ -42,7 +42,7 @@
 /*Include H Files*/
 #include "IO_extern.h"
 #include "lights_extern.h"
-
+#include "motors_extern.h"
 /*
 * Main code called on reset is in  Arduino.h
 */
@@ -92,13 +92,17 @@ static TaskType_stType *taskPtr;
 void setup()
 {
 	taskTimeCounterFlag_u8 = 0;
-	taskTimeCounter_u8 = 0;
-	initIO(); /*Functia de initializare IO*/
-	timer0_init();
-	setupADC();
-	timer1_init();		
+	taskTimeCounter_u8 = 0;	
 	stui_TaskIndex = 0;				
-	taskPtr = taskGetConfigPtr();	
+	taskPtr = taskGetConfigPtr();		
+	initIO(); /*Functia de initializare IO*/
+	setupADC();
+	timer0_init();	
+	timer1_init();	
+	//Application inits:
+	lightsInit();
+	motorsInit();
+	
 }
 
 
@@ -147,8 +151,8 @@ void task20ms(void) {
 * @note Void function with no return.
 */
 void task40ms(void) {
-	test_lights();
-	
+	lightsCyclic();
+	motorsCyclic();
 	//digitalWrite(2,flag);
 	
 	
