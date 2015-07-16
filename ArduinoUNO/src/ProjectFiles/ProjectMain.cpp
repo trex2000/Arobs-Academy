@@ -153,7 +153,6 @@ void task20ms(void) {
 void task40ms(void) {
 	lightsCyclic();
 	motorsCyclic();
-	//digitalWrite(2,flag);
 	
 	
 };

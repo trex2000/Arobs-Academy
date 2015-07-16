@@ -58,4 +58,36 @@ void motorsInit();
 void motorsCyclic();
 
 
+/**
+* @brief Implementation of function that handles the motor control
+*
+* Implementation of function that handles the motor control
+* @return void
+* @note Void function with no return.
+*/
+
+void motorsInputsAQ();
+
+/**
+* @brief Implementation of function that handles the motor control
+*
+* Implementation of function that handles the motor control
+* @return void
+* @note Void function with no return.
+*/
+
+void motorsSM();
+
+/**
+* @brief Implementation of motor actuator
+*
+* Implementation of function that handles the motor actuator
+* @return void
+* @note Void function with no return.
+*/
+void motorsActuator();
+
+
+
+
 #endif /* MOTORS_H_ */
