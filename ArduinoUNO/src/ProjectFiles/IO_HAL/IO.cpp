@@ -73,8 +73,8 @@ PORT_TYPES_ST const matchingTableOutputPins_acst[EN_NUMBER_OF_ELEMENTS_OUTPUTS] 
 	{PORTD3, EN_PORT_D, EN_PORT_DO},	 /**<SOD_Motor12_1 */
 	{PORTB6, EN_PORT_B, EN_PORT_DO},     /**<SOD_Motor12_2 */
 	{PORTB7, EN_PORT_B, EN_PORT_DO},     /**<SOD_Motor12_3 */
-	{PORTD1, EN_PORT_D, EN_PORT_DOPWM},  /**<SODPWM_EnableMotor1 */
-	{PORTD5, EN_PORT_D, EN_PORT_DOPWM},  /**<ODPWM_EnableMotor2 */
+	{PORTD3, EN_PORT_D, EN_PORT_DOPWM},  /**<SODPWM_EnableMotor1 */
+	{PORTB3, EN_PORT_B, EN_PORT_DOPWM},  /**<ODPWM_EnableMotor2 */
 	{PORTC2, EN_PORT_C, EN_PORT_DO},     /**<SOD_LeftFlasher */
 	{PORTC1, EN_PORT_C, EN_PORT_DO},     /**<SOD_RightFlasher */
 	{PORTD4, EN_PORT_D, EN_PORT_DO}      /**<SOD_LowBeam */
@@ -148,9 +148,11 @@ uint8_t GetInputPin (EN_INPUT_PINS pinId_en)
  */
 void setOutputPin (EN_OUTPUT_PINS pinId_en, uint8_t value_u8) 
 {
+
+	
 	if (pinId_en>=EN_NUMBER_OF_ELEMENTS_OUTPUTS) /**< tests if the pin is out of range */
 	{
-		return ;
+		// do nothing
 	}
 	else if (matchingTableOutputPins_acst[pinId_en].portType_en==EN_PORT_DOPWM)   /**<verificam daca portul e de tip PWM  */
 		{
@@ -161,6 +163,9 @@ void setOutputPin (EN_OUTPUT_PINS pinId_en, uint8_t value_u8)
 				
 			}
 			outputBuffer_u8[pinId_en]=value_u8;
+			
+				
+					
 		}
 		else
 		{
@@ -274,13 +279,13 @@ void initIO()
 			switch (matchingTableOutputPins_acst[Index_len].portName_en)
 			{
 				case EN_PORT_C:
-					 DDRC |= (1 << matchingTableOutputPins_acst[Index_len].portName_en);
+					 DDRC |= (1 << matchingTableOutputPins_acst[Index_len].portVal_u8);
 				break;
 				case EN_PORT_B:
-					 DDRB |= (1 << matchingTableOutputPins_acst[Index_len].portName_en);
+					 DDRB |= (1 << matchingTableOutputPins_acst[Index_len].portVal_u8);
 				break;
 				case EN_PORT_D:
-					 DDRD |= (1 << matchingTableOutputPins_acst[Index_len].portName_en);
+					 DDRD |= (1 << matchingTableOutputPins_acst[Index_len].portVal_u8);
 				break;
 				
 				default:
@@ -288,9 +293,7 @@ void initIO()
 				
 			}
 		}
-	
-	
-	
+		
 	/* SETAM TIMERUL 2 PENTRU Modul PHASE CORRECTED PWM*/
 	//setam Timer Counter Control Register A pe None-inverting mode si PWM Phase Corrected Mode
 	TCCR2A |= (1 << COM2A1) | (0 << COM2A0) | (1 << COM2B1)| (0 << COM2B0);
@@ -349,6 +352,7 @@ void processDigitalOutput(EN_OUTPUT_PINS bufferIndex_len) {
  * @return void
  */
 void processDigitalOutputPWM(EN_OUTPUT_PINS bufferIndex_len) {
+	
 	uint8_t tempValue_lu8;
 	tempValue_lu8 = (outputBuffer_u8[bufferIndex_len] *MAX_PWM_VALUE_REG)/ MAX_PWM_VALUE;
 			switch(bufferIndex_len) {

@@ -109,6 +109,8 @@ void setup()
 
 void loop()
 {	
+	
+	
 	// if 20ms have passed
 	if(taskTimeCounterFlag_u8==1) {
 		for(stui_TaskIndex=0; stui_TaskIndex < cui_numberOfTasks; stui_TaskIndex++) {
@@ -137,7 +139,6 @@ void task20ms(void) {
 	processADCconversion();
 	processInputBuffer();
 	processOutputBuffer();
-	//processDigitalOutputPWM();
 	
 };
 
@@ -242,35 +243,4 @@ ISR(TIMER1_OVF_vect) {
 	TCNT1 = T_TIMER_START;
 	taskTimeCounterFlag_u8 = 1;
 	taskTimeCounter_u8++;
-}
-
-
-/**
- * @brief Implementation of the function that handle timer0 overflow ISR
- * 
- * Implementation of the function that handle timer0 overflow ISR
- * @return void
- *  
- */
-
-
-
-void PWM_Init() {
-	//PWM setup
-	DDRD |= (1 << DDD5) | (1 << DDD6 );
-	// PD6 is now an output
-
-	//OCR2A = PWM_DC_Max/(100/PWM_DC);
-	//OCR2B = PWM_DC_Max/(100/PWM_DC);
-	//functie apelata ciclic cu request-ul respectiv
-	// set PWM for 50% duty cycle
-
-	TCCR2A |= (1 << COM2A1);
-	// set none-inverting mode
-
-	TCCR2A |= (1 << WGM21) | (1 << WGM20);
-	// set fast PWM Mode
-
-	TCCR2B |= (1 << CS20) | (1 << CS21) | (1 << CS22); //????
-	// set prescaler to ??? and starts PWM*/
 }

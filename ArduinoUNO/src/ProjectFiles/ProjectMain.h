@@ -101,6 +101,4 @@ void timer0_init();
 void timer1_init();
 
 
-void timer0_init();
-
 #endif /* PROJECTMAIN_H_ */

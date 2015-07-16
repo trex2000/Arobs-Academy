@@ -12,8 +12,5 @@
 #define PWM_DC 50
 #define PWM_DC_Max 256
 
-void PWM_Init();
-
-
 
 #endif /* PWM_H_ */
