@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['rad_5fto_5fdeg',['RAD_TO_DEG',['../_arduino_8h.html#a89e47af0449640d4f15191aba5ca24c6',1,'Arduino.h']]],
+  ['radians',['radians',['../_arduino_8h.html#a7571dba2995b9cb57259345fe49d2f97',1,'Arduino.h']]],
+  ['request_5fclass',['REQUEST_CLASS',['../_u_s_b_core_8h.html#afd24e03239e2df9e6d9c6cbcd53c1337',1,'USBCore.h']]],
+  ['request_5fdevice',['REQUEST_DEVICE',['../_u_s_b_core_8h.html#aa9d346dd935cf10fd2918cfb68254be7',1,'USBCore.h']]],
+  ['request_5fdevicetohost',['REQUEST_DEVICETOHOST',['../_u_s_b_core_8h.html#a4c6ea3bc81f190df4b672b610a5be157',1,'USBCore.h']]],
+  ['request_5fdevicetohost_5fclass_5finterface',['REQUEST_DEVICETOHOST_CLASS_INTERFACE',['../_u_s_b_core_8h.html#abbe36a6ce3458c738f0c783527e26cdc',1,'USBCore.h']]],
+  ['request_5fdirection',['REQUEST_DIRECTION',['../_u_s_b_core_8h.html#a843ac11b6071e30f9c60e2f194c4d3d9',1,'USBCore.h']]],
+  ['request_5fendpoint',['REQUEST_ENDPOINT',['../_u_s_b_core_8h.html#a45062eac8a589bbbd732dd1810bee872',1,'USBCore.h']]],
+  ['request_5fhosttodevice',['REQUEST_HOSTTODEVICE',['../_u_s_b_core_8h.html#a726c73bc862ffdb626ae23f7c9d3fb1e',1,'USBCore.h']]],
+  ['request_5fhosttodevice_5fclass_5finterface',['REQUEST_HOSTTODEVICE_CLASS_INTERFACE',['../_u_s_b_core_8h.html#ab0e7948070353c754edb94260c759518',1,'USBCore.h']]],
+  ['request_5finterface',['REQUEST_INTERFACE',['../_u_s_b_core_8h.html#acc603a2523c52f6d06d4cb25dabe26ed',1,'USBCore.h']]],
+  ['request_5fother',['REQUEST_OTHER',['../_u_s_b_core_8h.html#ac83167ac664e91891ac561d29ed53e99',1,'USBCore.h']]],
+  ['request_5frecipient',['REQUEST_RECIPIENT',['../_u_s_b_core_8h.html#aad5c36b4f5d06a0bc898bddb5f46e790',1,'USBCore.h']]],
+  ['request_5fstandard',['REQUEST_STANDARD',['../_u_s_b_core_8h.html#a1dd6ef57678e7af95d835049d5b355b9',1,'USBCore.h']]],
+  ['request_5ftype',['REQUEST_TYPE',['../_u_s_b_core_8h.html#a77263d461d2c46ff6fbd2a5b7080e2a8',1,'USBCore.h']]],
+  ['request_5fvendor',['REQUEST_VENDOR',['../_u_s_b_core_8h.html#a40131e4daec200a7d931c2b26e43d27f',1,'USBCore.h']]],
+  ['rising',['RISING',['../_arduino_8h.html#aeea2b49478f3b13faedba764985c6e96',1,'Arduino.h']]],
+  ['round',['round',['../_arduino_8h.html#a461449032f6289abfef1f3a141fd8b02',1,'Arduino.h']]]
+];

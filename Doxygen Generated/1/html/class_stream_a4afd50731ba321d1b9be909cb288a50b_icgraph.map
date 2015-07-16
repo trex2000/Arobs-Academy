@@ -1,0 +1,12 @@
+<map id="read" name="read">
+<area shape="rect" id="node2" href="$class_stream.html#a7cc09dd787a79c17281039b4456dc6aa" title="timedRead" alt="" coords="109,132,193,159"/>
+<area shape="rect" id="node9" href="$class_stream.html#a6a68a089460a8e332fad1002d36374a5" title="peekNextDigit" alt="" coords="100,259,203,285"/>
+<area shape="rect" id="node10" href="$class_stream.html#aa5269d83a12f784ac9d54e19104d39fe" title="parseInt" alt="" coords="270,259,338,285"/>
+<area shape="rect" id="node11" href="$class_stream.html#aa66300bfdb6b2eda158d84dbaf5adcb5" title="parseFloat" alt="" coords="263,309,345,336"/>
+<area shape="rect" id="node3" href="$class_stream.html#ada0b9486ea1fe7b8d4aab8f04f5607ee" title="readBytes" alt="" coords="263,5,345,32"/>
+<area shape="rect" id="node4" href="$class_stream.html#a9aa68dc2abab64ceafe8d8745b728af2" title="readBytesUntil" alt="" coords="251,56,357,83"/>
+<area shape="rect" id="node5" href="$class_stream.html#ab1b0d4ef00718d18fe34d35dd1e26c66" title="readString" alt="" coords="263,107,345,133"/>
+<area shape="rect" id="node6" href="$class_stream.html#ac1f2b6e32ae2e321ad98c16482edf96a" title="readStringUntil" alt="" coords="251,157,357,184"/>
+<area shape="rect" id="node7" href="$class_stream.html#a34d087eec23d221a8ed4c5279cf9cf4c" title="findMulti" alt="" coords="269,208,339,235"/>
+<area shape="rect" id="node8" href="$class_stream.html#a99d1b6ad00abb9264b5ebb7506585993" title="findUntil" alt="" coords="405,208,473,235"/>
+</map>

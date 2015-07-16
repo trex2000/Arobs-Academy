@@ -1,0 +1,8 @@
+<map id="timedRead" name="timedRead">
+<area shape="rect" id="node2" href="$class_stream.html#ada0b9486ea1fe7b8d4aab8f04f5607ee" title="readBytes" alt="" coords="150,5,231,32"/>
+<area shape="rect" id="node3" href="$class_stream.html#a9aa68dc2abab64ceafe8d8745b728af2" title="readBytesUntil" alt="" coords="137,56,244,83"/>
+<area shape="rect" id="node4" href="$class_stream.html#ab1b0d4ef00718d18fe34d35dd1e26c66" title="readString" alt="" coords="150,107,231,133"/>
+<area shape="rect" id="node5" href="$class_stream.html#ac1f2b6e32ae2e321ad98c16482edf96a" title="readStringUntil" alt="" coords="137,157,244,184"/>
+<area shape="rect" id="node6" href="$class_stream.html#a34d087eec23d221a8ed4c5279cf9cf4c" title="findMulti" alt="" coords="155,208,226,235"/>
+<area shape="rect" id="node7" href="$class_stream.html#a99d1b6ad00abb9264b5ebb7506585993" title="findUntil" alt="" coords="292,208,360,235"/>
+</map>

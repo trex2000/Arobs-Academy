@@ -1,0 +1,733 @@
+\hypertarget{_i_o_8h}{}\section{Arduino\+U\+N\+O/src/\+Project\+Files/\+I\+O\+\_\+\+H\+A\+L/\+I\+O.h File Reference}
+\label{_i_o_8h}\index{Arduino\+U\+N\+O/src/\+Project\+Files/\+I\+O\+\_\+\+H\+A\+L/\+I\+O.\+h@{Arduino\+U\+N\+O/src/\+Project\+Files/\+I\+O\+\_\+\+H\+A\+L/\+I\+O.\+h}}
+
+
+File containing functions for I\+O External.  
+
+
+{\ttfamily \#include \char`\"{}Arduino.\+h\char`\"{}}\\*
+Include dependency graph for I\+O.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i_o_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i_o_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structport__types__struct}{port\+\_\+types\+\_\+struct}
+\begin{DoxyCompactList}\small\item\em New datatype used in table which connects Logical Input Definitions to Physical Input Def. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_i_o_8h_a0dcff306aa9245a83907b9b7cf5fe41e}{\+\_\+\+I\+O\+\_\+\+H\+\_\+}
+\item 
+\#define \hyperlink{_i_o_8h_a8d842ab28d8f573d16da7b28b36e2460}{C\+H\+E\+C\+K\+\_\+\+B\+I\+T}(var,  pos)~((var) \& (1$<$$<$(pos)))
+\begin{DoxyCompactList}\small\item\em Macro for testing if a bit is set. \end{DoxyCompactList}\item 
+\#define \hyperlink{_i_o_8h_a3803e290efe5d26c36c2eea0c1e4657c}{M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E\+\_\+\+R\+E\+G}~256
+\begin{DoxyCompactList}\small\item\em Macro for max P\+W\+M value. \end{DoxyCompactList}\item 
+\#define \hyperlink{_i_o_8h_a08daee1483e4da843c7116aaf2542529}{M\+A\+X\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S}~6u
+\begin{DoxyCompactList}\small\item\em Defines maximum number of analog channels. \end{DoxyCompactList}\item 
+\#define \hyperlink{_i_o_8h_a1492abcc488a76e3c92db0373c49c28d}{S\+T\+A\+R\+T\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N}()~A\+D\+C\+S\+R\+A$\vert$=(1$<$$<$A\+D\+S\+C)
+\begin{DoxyCompactList}\small\item\em Macro implementation for starting the A\+D\+C conversion. \end{DoxyCompactList}\item 
+\#define \hyperlink{_i_o_8h_acf0d1c6971c6d3a4c646a76638efc55d}{M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E}~100u
+\begin{DoxyCompactList}\small\item\em maximum value for P\+W\+M \end{DoxyCompactList}\item 
+\#define \hyperlink{_i_o_8h_a00c22bcaf1bc8f44b2cba427c469075d}{M\+A\+X\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+V\+A\+L\+U\+E}~1u
+\begin{DoxyCompactList}\small\item\em maximum value for digital out \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \hyperlink{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717}{en\+\_\+input\+\_\+pins} \hyperlink{_i_o_8h_a89ad3a4b06c05102a65a5eab2f26bb9b}{E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S}
+\begin{DoxyCompactList}\small\item\em Enumeration of logical inputs. \end{DoxyCompactList}\item 
+typedef enum \hyperlink{_i_o_8h_afc40988743806d63eac78433527f1bef}{en\+\_\+output\+\_\+pins} \hyperlink{_i_o_8h_a556553477e134258665f63e3296697a1}{E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S}
+\begin{DoxyCompactList}\small\item\em Enumeration of logical outputs. \end{DoxyCompactList}\item 
+typedef enum \hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838c}{en\+\_\+port\+\_\+enums} \hyperlink{_i_o_8h_a1a7bdb51679c629be889488f453ac268}{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+E\+N\+U\+M\+S}
+\begin{DoxyCompactList}\small\item\em Enumeration of Ports. \end{DoxyCompactList}\item 
+typedef enum \hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167d}{port\+\_\+type\+\_\+enum} \hyperlink{_i_o_8h_aef5326c2f51b2d56b88ee83510957620}{P\+O\+R\+T\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+E\+N}
+\begin{DoxyCompactList}\small\item\em Defines type of physical port. \end{DoxyCompactList}\item 
+typedef enum \hyperlink{_i_o_8h_a635c09f1035656493b2ee72d02175453}{en\+\_\+conversion\+\_\+state} \hyperlink{_i_o_8h_a2c8e53cda7608af06ed46068f92143f1}{E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+A\+T\+E}
+\begin{DoxyCompactList}\small\item\em Defines the states for A\+D\+C conversion. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{structport__types__struct}{port\+\_\+types\+\_\+struct} \hyperlink{_i_o_8h_abcc00397ac4ddbe16561385a7805311d}{P\+O\+R\+T\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+S\+T}
+\begin{DoxyCompactList}\small\item\em New datatype used in table which connects Logical Input Definitions to Physical Input Def. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717}{en\+\_\+input\+\_\+pins} \{ \\*
+\hyperlink{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717af25160a540dd6cba048ffa7ffe74541f}{E\+N\+\_\+\+S\+I\+A\+\_\+\+L\+I\+G\+H\+T\+S\+E\+N\+S\+O\+R}, 
+\hyperlink{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717aa134b7da33be21f08629ce7ea077f408}{E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+U\+P}, 
+\hyperlink{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717a49695328f98656a240dfcd2d888e537e}{E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+D\+O\+W\+N}, 
+\hyperlink{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717af127a2c1e11e98d1cdaa2d434de3c5f7}{E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+I\+G\+H\+T}, 
+\\*
+\hyperlink{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717ae82ab223526c281420702f76db92c699}{E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+L\+E\+F\+T}, 
+\hyperlink{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717a3065d8b9499cba8734b73bf1ee483840}{E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+I\+N\+P\+U\+T}
+ \}\begin{DoxyCompactList}\small\item\em Enumeration of logical inputs. \end{DoxyCompactList}
+\item 
+enum \hyperlink{_i_o_8h_afc40988743806d63eac78433527f1bef}{en\+\_\+output\+\_\+pins} \{ \\*
+\hyperlink{_i_o_8h_afc40988743806d63eac78433527f1befad4af811e31d74ba69e756c7806d19bab}{E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+0}, 
+\hyperlink{_i_o_8h_afc40988743806d63eac78433527f1befabaecd83ad8bcdeac251dcebda5923406}{E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+1}, 
+\hyperlink{_i_o_8h_afc40988743806d63eac78433527f1befacea5fd54f400fee76d9419c4dafcea5c}{E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+2}, 
+\hyperlink{_i_o_8h_afc40988743806d63eac78433527f1befa51b0aa2eebee51d5d987bd7907686212}{E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+3}, 
+\\*
+\hyperlink{_i_o_8h_afc40988743806d63eac78433527f1befa2b333e03907f71db652243f23dec65bb}{E\+N\+\_\+\+S\+O\+D\+P\+W\+M\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+M\+O\+T\+O\+R1}, 
+\hyperlink{_i_o_8h_afc40988743806d63eac78433527f1befa971fb2fc5365dfc64b09fdf03a0b48ff}{E\+N\+\_\+\+S\+O\+D\+P\+W\+M\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+M\+O\+T\+O\+R2}, 
+\hyperlink{_i_o_8h_afc40988743806d63eac78433527f1befac0cc717b6e5b453723aa55837049ebec}{E\+N\+\_\+\+S\+O\+D\+\_\+\+L\+E\+F\+T\+\_\+\+F\+L\+A\+S\+H\+E\+R}, 
+\hyperlink{_i_o_8h_afc40988743806d63eac78433527f1befabf8574f4f990f542ebd3bdeb69164dc2}{E\+N\+\_\+\+S\+O\+D\+\_\+\+R\+I\+G\+H\+T\+\_\+\+F\+L\+A\+S\+H\+E\+R}, 
+\\*
+\hyperlink{_i_o_8h_afc40988743806d63eac78433527f1befa10f379d638f7f88d454c3d41d192ac1d}{E\+N\+\_\+\+S\+O\+D\+\_\+\+L\+O\+W\+\_\+\+B\+E\+A\+M}, 
+\hyperlink{_i_o_8h_afc40988743806d63eac78433527f1befa2a542528e6b5a1a800f9b990795cd712}{E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+O\+U\+T\+P\+U\+T\+S}
+ \}\begin{DoxyCompactList}\small\item\em Enumeration of logical outputs. \end{DoxyCompactList}
+\item 
+enum \hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838c}{en\+\_\+port\+\_\+enums} \{ \hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838ca48d4f8978f9cebb1ab82334a6fa851c3}{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+B}, 
+\hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838caf04cbf536846e2d97698f042129a9e48}{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+C}, 
+\hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838ca70ee99dde80450ea71a6b733cd8707da}{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D}
+ \}\begin{DoxyCompactList}\small\item\em Enumeration of Ports. \end{DoxyCompactList}
+\item 
+enum \hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167d}{port\+\_\+type\+\_\+enum} \{ \\*
+\hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167daa6b099fd8fdd20a73546e35bcc380b21}{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+I}, 
+\hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167da0773f203fb67f0932d4d5838c204642b}{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+O}, 
+\hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167da7a92585586bb4e65ac9c6bac84225972}{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+A\+I}, 
+\hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167dad3e663026178cb18a72e986ba5a19ce6}{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+O\+P\+W\+M}, 
+\\*
+\hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167da6fcfae7fe1481c5847c43d5fb9dc4f41}{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+L\+A\+S\+T\+\_\+\+E\+L\+E\+M\+E\+N\+T}
+ \}\begin{DoxyCompactList}\small\item\em Defines type of physical port. \end{DoxyCompactList}
+\item 
+enum \hyperlink{_i_o_8h_a635c09f1035656493b2ee72d02175453}{en\+\_\+conversion\+\_\+state} \{ \hyperlink{_i_o_8h_a635c09f1035656493b2ee72d02175453aca41520029f0f165649e3f2b9e8ea78f}{E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S}, 
+\hyperlink{_i_o_8h_a635c09f1035656493b2ee72d02175453a6394f601d06248bf7b138d3cba4e1219}{E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+I\+D\+L\+E}
+ \}\begin{DoxyCompactList}\small\item\em Defines the states for A\+D\+C conversion. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_i_o_8h_af4f070174f72d729b4db63a88686e3b8}{process\+Input\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Function definition for processing input buffer. \end{DoxyCompactList}\item 
+void \hyperlink{_i_o_8h_ab41d098a1660bb84879eec75acf04ba4}{process\+Analog\+Input} (\hyperlink{_i_o_8h_a89ad3a4b06c05102a65a5eab2f26bb9b}{E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S} buffer\+Index\+\_\+len)
+\item 
+void \hyperlink{_i_o_8h_a4731166063789af1c8cee641d3ad653e}{process\+Digital\+Input} (\hyperlink{_i_o_8h_a89ad3a4b06c05102a65a5eab2f26bb9b}{E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S} buffer\+Index\+\_\+len)
+\item 
+void \hyperlink{_i_o_8h_a9e64e598ce482388e7a16a092bfcd6d7}{process\+Output\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Function definition for processing output buffer. \end{DoxyCompactList}\item 
+int \hyperlink{_i_o_8h_ab40163bc77289c9ceff07df6933ca903}{get\+Value} (uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Function definition for get value. \end{DoxyCompactList}\item 
+void \hyperlink{_i_o_8h_a07f8df9b9660a9173ba2a916ab7a16b4}{process\+Digital\+Output} (\hyperlink{_i_o_8h_a556553477e134258665f63e3296697a1}{E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S} buffer\+Index\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Function definition for processing Digital output. \end{DoxyCompactList}\item 
+void \hyperlink{_i_o_8h_a9f7185c67e2c73badb693def46b85158}{process\+Digital\+Output\+P\+W\+M} (\hyperlink{_i_o_8h_a556553477e134258665f63e3296697a1}{E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S} buffer\+Index\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Function definition for process\+Digital\+Output\+P\+W\+M. \end{DoxyCompactList}\item 
+void \hyperlink{_i_o_8h_a823993b1d47cd88ec002226cbb45ff29}{setup\+A\+D\+C} ()
+\begin{DoxyCompactList}\small\item\em Function implementation for analog input from lightsensor. \end{DoxyCompactList}\item 
+void \hyperlink{_i_o_8h_a988a37531fcd4f8ec5dfc19ba7ec50da}{process\+A\+D\+Cconversion} ()
+\begin{DoxyCompactList}\small\item\em Function processes A\+D\+C conversion. \end{DoxyCompactList}\item 
+void \hyperlink{_i_o_8h_a1778435697ce5e88277225a1ea85c2d9}{init\+I\+O} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_i_o_8h_abcc00397ac4ddbe16561385a7805311d}{P\+O\+R\+T\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+S\+T} const \hyperlink{_i_o_8h_a994e18dd565932d73b2a9cfe0a786440}{matching\+Table\+Output\+Pins\+\_\+acst} \mbox{[}\hyperlink{_i_o_8h_afc40988743806d63eac78433527f1befa2a542528e6b5a1a800f9b990795cd712}{E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+O\+U\+T\+P\+U\+T\+S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em New datatype used in table which connects Logical Outputs Definitions to Physical Outputs Def. \end{DoxyCompactList}\item 
+\hyperlink{_i_o_8h_abcc00397ac4ddbe16561385a7805311d}{P\+O\+R\+T\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+S\+T} const \hyperlink{_i_o_8h_a5bbdbd4d661f20b14b30b86df7aec824}{matching\+Table\+Input\+Pins\+\_\+acst} \mbox{[}\hyperlink{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717a3065d8b9499cba8734b73bf1ee483840}{E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+I\+N\+P\+U\+T}\mbox{]}
+\begin{DoxyCompactList}\small\item\em New datatype used in table which connects Logical Input Definitions to Physical Input Def. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File containing functions for I\+O External. 
+
+\begin{DoxyAuthor}{Author}
+Adrian 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+10 Jul 2015 Here typically goes a more extensive explanation of what the header defines. Doxygens tags are words preceeded by either a backslash \textbackslash{} or by an at symbol @. 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See also}
+\href{http://www.stack.nl/~dimitri/doxygen/docblocks.html}{\tt http\+://www.\+stack.\+nl/$\sim$dimitri/doxygen/docblocks.\+html} 
+
+\href{http://www.stack.nl/~dimitri/doxygen/commands.html}{\tt http\+://www.\+stack.\+nl/$\sim$dimitri/doxygen/commands.\+html} 
+\end{DoxySeeAlso}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_i_o_8h_a0dcff306aa9245a83907b9b7cf5fe41e}{}\index{I\+O.\+h@{I\+O.\+h}!\+\_\+\+I\+O\+\_\+\+H\+\_\+@{\+\_\+\+I\+O\+\_\+\+H\+\_\+}}
+\index{\+\_\+\+I\+O\+\_\+\+H\+\_\+@{\+\_\+\+I\+O\+\_\+\+H\+\_\+}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{\+\_\+\+I\+O\+\_\+\+H\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+I\+O\+\_\+\+H\+\_\+}\label{_i_o_8h_a0dcff306aa9245a83907b9b7cf5fe41e}
+
+
+Definition at line 35 of file I\+O.\+h.
+
+\hypertarget{_i_o_8h_a8d842ab28d8f573d16da7b28b36e2460}{}\index{I\+O.\+h@{I\+O.\+h}!C\+H\+E\+C\+K\+\_\+\+B\+I\+T@{C\+H\+E\+C\+K\+\_\+\+B\+I\+T}}
+\index{C\+H\+E\+C\+K\+\_\+\+B\+I\+T@{C\+H\+E\+C\+K\+\_\+\+B\+I\+T}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{C\+H\+E\+C\+K\+\_\+\+B\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+H\+E\+C\+K\+\_\+\+B\+I\+T(
+\begin{DoxyParamCaption}
+\item[{}]{var, }
+\item[{}]{pos}
+\end{DoxyParamCaption}
+)~((var) \& (1$<$$<$(pos)))}\label{_i_o_8h_a8d842ab28d8f573d16da7b28b36e2460}
+
+
+Macro for testing if a bit is set. 
+
+Macro for testing if a bit is set 
+
+Definition at line 44 of file I\+O.\+h.
+
+\hypertarget{_i_o_8h_a08daee1483e4da843c7116aaf2542529}{}\index{I\+O.\+h@{I\+O.\+h}!M\+A\+X\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S@{M\+A\+X\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S}}
+\index{M\+A\+X\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S@{M\+A\+X\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S~6u}\label{_i_o_8h_a08daee1483e4da843c7116aaf2542529}
+
+
+Defines maximum number of analog channels. 
+
+Defines maximum number of analog channels 
+
+Definition at line 57 of file I\+O.\+h.
+
+\hypertarget{_i_o_8h_a00c22bcaf1bc8f44b2cba427c469075d}{}\index{I\+O.\+h@{I\+O.\+h}!M\+A\+X\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+V\+A\+L\+U\+E@{M\+A\+X\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+V\+A\+L\+U\+E}}
+\index{M\+A\+X\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+V\+A\+L\+U\+E@{M\+A\+X\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+V\+A\+L\+U\+E}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+V\+A\+L\+U\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+V\+A\+L\+U\+E~1u}\label{_i_o_8h_a00c22bcaf1bc8f44b2cba427c469075d}
+
+
+maximum value for digital out 
+
+maximum value for digital out 
+
+Definition at line 81 of file I\+O.\+h.
+
+\hypertarget{_i_o_8h_acf0d1c6971c6d3a4c646a76638efc55d}{}\index{I\+O.\+h@{I\+O.\+h}!M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E@{M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E}}
+\index{M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E@{M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E~100u}\label{_i_o_8h_acf0d1c6971c6d3a4c646a76638efc55d}
+
+
+maximum value for P\+W\+M 
+
+maximum value for P\+W\+M 
+
+Definition at line 74 of file I\+O.\+h.
+
+\hypertarget{_i_o_8h_a3803e290efe5d26c36c2eea0c1e4657c}{}\index{I\+O.\+h@{I\+O.\+h}!M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E\+\_\+\+R\+E\+G@{M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E\+\_\+\+R\+E\+G}}
+\index{M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E\+\_\+\+R\+E\+G@{M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E\+\_\+\+R\+E\+G}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E\+\_\+\+R\+E\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E\+\_\+\+R\+E\+G~256}\label{_i_o_8h_a3803e290efe5d26c36c2eea0c1e4657c}
+
+
+Macro for max P\+W\+M value. 
+
+Macro for max P\+W\+M value 
+
+Definition at line 51 of file I\+O.\+h.
+
+\hypertarget{_i_o_8h_a1492abcc488a76e3c92db0373c49c28d}{}\index{I\+O.\+h@{I\+O.\+h}!S\+T\+A\+R\+T\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N@{S\+T\+A\+R\+T\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N}}
+\index{S\+T\+A\+R\+T\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N@{S\+T\+A\+R\+T\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{S\+T\+A\+R\+T\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+A\+R\+T\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~A\+D\+C\+S\+R\+A$\vert$=(1$<$$<$A\+D\+S\+C)}\label{_i_o_8h_a1492abcc488a76e3c92db0373c49c28d}
+
+
+Macro implementation for starting the A\+D\+C conversion. 
+
+Macro implementation for starting the A\+D\+C conversion \begin{DoxyReturn}{Returns}
+voidsets the bit to start the conversion 
+\end{DoxyReturn}
+
+
+Definition at line 65 of file I\+O.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{_i_o_8h_a2c8e53cda7608af06ed46068f92143f1}{}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+A\+T\+E@{E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+A\+T\+E}}
+\index{E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+A\+T\+E@{E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+A\+T\+E}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+A\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf en\+\_\+conversion\+\_\+state}  {\bf E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+A\+T\+E}}\label{_i_o_8h_a2c8e53cda7608af06ed46068f92143f1}
+
+
+Defines the states for A\+D\+C conversion. 
+
+Defines the states for A\+D\+C conversion \hypertarget{_i_o_8h_a89ad3a4b06c05102a65a5eab2f26bb9b}{}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S@{E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S}}
+\index{E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S@{E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf en\+\_\+input\+\_\+pins}  {\bf E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S}}\label{_i_o_8h_a89ad3a4b06c05102a65a5eab2f26bb9b}
+
+
+Enumeration of logical inputs. 
+
+Enumeration of logical inputs. \hypertarget{_i_o_8h_a556553477e134258665f63e3296697a1}{}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S@{E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S}}
+\index{E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S@{E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf en\+\_\+output\+\_\+pins} {\bf E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S}}\label{_i_o_8h_a556553477e134258665f63e3296697a1}
+
+
+Enumeration of logical outputs. 
+
+Enumeration of logical outputs. \hypertarget{_i_o_8h_a1a7bdb51679c629be889488f453ac268}{}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+E\+N\+U\+M\+S@{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+E\+N\+U\+M\+S}}
+\index{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+E\+N\+U\+M\+S@{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+E\+N\+U\+M\+S}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+E\+N\+U\+M\+S}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf en\+\_\+port\+\_\+enums} {\bf E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+E\+N\+U\+M\+S}}\label{_i_o_8h_a1a7bdb51679c629be889488f453ac268}
+
+
+Enumeration of Ports. 
+
+Enumeration of Ports \hypertarget{_i_o_8h_aef5326c2f51b2d56b88ee83510957620}{}\index{I\+O.\+h@{I\+O.\+h}!P\+O\+R\+T\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+E\+N@{P\+O\+R\+T\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+E\+N}}
+\index{P\+O\+R\+T\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+E\+N@{P\+O\+R\+T\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+E\+N}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{P\+O\+R\+T\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf port\+\_\+type\+\_\+enum}  {\bf P\+O\+R\+T\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+E\+N}}\label{_i_o_8h_aef5326c2f51b2d56b88ee83510957620}
+
+
+Defines type of physical port. 
+
+Defines type of physical port \hypertarget{_i_o_8h_abcc00397ac4ddbe16561385a7805311d}{}\index{I\+O.\+h@{I\+O.\+h}!P\+O\+R\+T\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+S\+T@{P\+O\+R\+T\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+S\+T}}
+\index{P\+O\+R\+T\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+S\+T@{P\+O\+R\+T\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+S\+T}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{P\+O\+R\+T\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf port\+\_\+types\+\_\+struct}  {\bf P\+O\+R\+T\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+S\+T}}\label{_i_o_8h_abcc00397ac4ddbe16561385a7805311d}
+
+
+New datatype used in table which connects Logical Input Definitions to Physical Input Def. 
+
+New datatype used in table which connects Logical Input Definitions to Physical Input Def 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_i_o_8h_a635c09f1035656493b2ee72d02175453}{}\index{I\+O.\+h@{I\+O.\+h}!en\+\_\+conversion\+\_\+state@{en\+\_\+conversion\+\_\+state}}
+\index{en\+\_\+conversion\+\_\+state@{en\+\_\+conversion\+\_\+state}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{en\+\_\+conversion\+\_\+state}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf en\+\_\+conversion\+\_\+state}}\label{_i_o_8h_a635c09f1035656493b2ee72d02175453}
+
+
+Defines the states for A\+D\+C conversion. 
+
+Defines the states for A\+D\+C conversion \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S@{E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S@{E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S}}\item[{\em 
+\hypertarget{_i_o_8h_a635c09f1035656493b2ee72d02175453aca41520029f0f165649e3f2b9e8ea78f}{}E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S\label{_i_o_8h_a635c09f1035656493b2ee72d02175453aca41520029f0f165649e3f2b9e8ea78f}
+}]Current conversion in progress \index{E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+I\+D\+L\+E@{E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+I\+D\+L\+E}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+I\+D\+L\+E@{E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+I\+D\+L\+E}}\item[{\em 
+\hypertarget{_i_o_8h_a635c09f1035656493b2ee72d02175453a6394f601d06248bf7b138d3cba4e1219}{}E\+N\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+I\+D\+L\+E\label{_i_o_8h_a635c09f1035656493b2ee72d02175453a6394f601d06248bf7b138d3cba4e1219}
+}]No conversion in progress \end{description}
+\end{Desc}
+
+
+Definition at line 147 of file I\+O.\+h.
+
+\hypertarget{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717}{}\index{I\+O.\+h@{I\+O.\+h}!en\+\_\+input\+\_\+pins@{en\+\_\+input\+\_\+pins}}
+\index{en\+\_\+input\+\_\+pins@{en\+\_\+input\+\_\+pins}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{en\+\_\+input\+\_\+pins}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf en\+\_\+input\+\_\+pins}}\label{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717}
+
+
+Enumeration of logical inputs. 
+
+Enumeration of logical inputs. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{E\+N\+\_\+\+S\+I\+A\+\_\+\+L\+I\+G\+H\+T\+S\+E\+N\+S\+O\+R@{E\+N\+\_\+\+S\+I\+A\+\_\+\+L\+I\+G\+H\+T\+S\+E\+N\+S\+O\+R}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+S\+I\+A\+\_\+\+L\+I\+G\+H\+T\+S\+E\+N\+S\+O\+R@{E\+N\+\_\+\+S\+I\+A\+\_\+\+L\+I\+G\+H\+T\+S\+E\+N\+S\+O\+R}}\item[{\em 
+\hypertarget{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717af25160a540dd6cba048ffa7ffe74541f}{}E\+N\+\_\+\+S\+I\+A\+\_\+\+L\+I\+G\+H\+T\+S\+E\+N\+S\+O\+R\label{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717af25160a540dd6cba048ffa7ffe74541f}
+}]Lightsensor analogic input \index{E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+U\+P@{E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+U\+P}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+U\+P@{E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+U\+P}}\item[{\em 
+\hypertarget{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717aa134b7da33be21f08629ce7ea077f408}{}E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+U\+P\label{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717aa134b7da33be21f08629ce7ea077f408}
+}]Wifi\+Control Up. \index{E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+D\+O\+W\+N@{E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+D\+O\+W\+N}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+D\+O\+W\+N@{E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+D\+O\+W\+N}}\item[{\em 
+\hypertarget{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717a49695328f98656a240dfcd2d888e537e}{}E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+D\+O\+W\+N\label{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717a49695328f98656a240dfcd2d888e537e}
+}]Wifi\+Control Down \index{E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+I\+G\+H\+T@{E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+I\+G\+H\+T}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+I\+G\+H\+T@{E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+I\+G\+H\+T}}\item[{\em 
+\hypertarget{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717af127a2c1e11e98d1cdaa2d434de3c5f7}{}E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+I\+G\+H\+T\label{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717af127a2c1e11e98d1cdaa2d434de3c5f7}
+}]Wifi\+Control Right \index{E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+L\+E\+F\+T@{E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+L\+E\+F\+T}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+L\+E\+F\+T@{E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+L\+E\+F\+T}}\item[{\em 
+\hypertarget{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717ae82ab223526c281420702f76db92c699}{}E\+N\+\_\+\+S\+I\+D\+\_\+\+W\+I\+F\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+L\+E\+F\+T\label{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717ae82ab223526c281420702f76db92c699}
+}]Wifi\+Control Left \index{E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+I\+N\+P\+U\+T@{E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+I\+N\+P\+U\+T}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+I\+N\+P\+U\+T@{E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+I\+N\+P\+U\+T}}\item[{\em 
+\hypertarget{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717a3065d8b9499cba8734b73bf1ee483840}{}E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+I\+N\+P\+U\+T\label{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717a3065d8b9499cba8734b73bf1ee483840}
+}]Number of input pins \end{description}
+\end{Desc}
+
+
+Definition at line 88 of file I\+O.\+h.
+
+\hypertarget{_i_o_8h_afc40988743806d63eac78433527f1bef}{}\index{I\+O.\+h@{I\+O.\+h}!en\+\_\+output\+\_\+pins@{en\+\_\+output\+\_\+pins}}
+\index{en\+\_\+output\+\_\+pins@{en\+\_\+output\+\_\+pins}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{en\+\_\+output\+\_\+pins}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf en\+\_\+output\+\_\+pins}}\label{_i_o_8h_afc40988743806d63eac78433527f1bef}
+
+
+Enumeration of logical outputs. 
+
+Enumeration of logical outputs. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+0@{E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+0}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+0@{E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+0}}\item[{\em 
+\hypertarget{_i_o_8h_afc40988743806d63eac78433527f1befad4af811e31d74ba69e756c7806d19bab}{}E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+0\label{_i_o_8h_afc40988743806d63eac78433527f1befad4af811e31d74ba69e756c7806d19bab}
+}]Motor 12 digital output 1 \index{E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+1@{E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+1}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+1@{E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+1}}\item[{\em 
+\hypertarget{_i_o_8h_afc40988743806d63eac78433527f1befabaecd83ad8bcdeac251dcebda5923406}{}E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+1\label{_i_o_8h_afc40988743806d63eac78433527f1befabaecd83ad8bcdeac251dcebda5923406}
+}]Motor 12 digital output 2 \index{E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+2@{E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+2}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+2@{E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+2}}\item[{\em 
+\hypertarget{_i_o_8h_afc40988743806d63eac78433527f1befacea5fd54f400fee76d9419c4dafcea5c}{}E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+2\label{_i_o_8h_afc40988743806d63eac78433527f1befacea5fd54f400fee76d9419c4dafcea5c}
+}]Motor 12 digital output 3 \index{E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+3@{E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+3}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+3@{E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+3}}\item[{\em 
+\hypertarget{_i_o_8h_afc40988743806d63eac78433527f1befa51b0aa2eebee51d5d987bd7907686212}{}E\+N\+\_\+\+S\+O\+D\+\_\+\+M\+O\+T\+O\+R12\+\_\+3\label{_i_o_8h_afc40988743806d63eac78433527f1befa51b0aa2eebee51d5d987bd7907686212}
+}]Motor 12 digital output 4 \index{E\+N\+\_\+\+S\+O\+D\+P\+W\+M\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+M\+O\+T\+O\+R1@{E\+N\+\_\+\+S\+O\+D\+P\+W\+M\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+M\+O\+T\+O\+R1}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+S\+O\+D\+P\+W\+M\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+M\+O\+T\+O\+R1@{E\+N\+\_\+\+S\+O\+D\+P\+W\+M\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+M\+O\+T\+O\+R1}}\item[{\em 
+\hypertarget{_i_o_8h_afc40988743806d63eac78433527f1befa2b333e03907f71db652243f23dec65bb}{}E\+N\+\_\+\+S\+O\+D\+P\+W\+M\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+M\+O\+T\+O\+R1\label{_i_o_8h_afc40988743806d63eac78433527f1befa2b333e03907f71db652243f23dec65bb}
+}]Digital out P\+W\+M on Motor1 \index{E\+N\+\_\+\+S\+O\+D\+P\+W\+M\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+M\+O\+T\+O\+R2@{E\+N\+\_\+\+S\+O\+D\+P\+W\+M\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+M\+O\+T\+O\+R2}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+S\+O\+D\+P\+W\+M\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+M\+O\+T\+O\+R2@{E\+N\+\_\+\+S\+O\+D\+P\+W\+M\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+M\+O\+T\+O\+R2}}\item[{\em 
+\hypertarget{_i_o_8h_afc40988743806d63eac78433527f1befa971fb2fc5365dfc64b09fdf03a0b48ff}{}E\+N\+\_\+\+S\+O\+D\+P\+W\+M\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+M\+O\+T\+O\+R2\label{_i_o_8h_afc40988743806d63eac78433527f1befa971fb2fc5365dfc64b09fdf03a0b48ff}
+}]Digital out P\+W\+M on Motor2 \index{E\+N\+\_\+\+S\+O\+D\+\_\+\+L\+E\+F\+T\+\_\+\+F\+L\+A\+S\+H\+E\+R@{E\+N\+\_\+\+S\+O\+D\+\_\+\+L\+E\+F\+T\+\_\+\+F\+L\+A\+S\+H\+E\+R}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+S\+O\+D\+\_\+\+L\+E\+F\+T\+\_\+\+F\+L\+A\+S\+H\+E\+R@{E\+N\+\_\+\+S\+O\+D\+\_\+\+L\+E\+F\+T\+\_\+\+F\+L\+A\+S\+H\+E\+R}}\item[{\em 
+\hypertarget{_i_o_8h_afc40988743806d63eac78433527f1befac0cc717b6e5b453723aa55837049ebec}{}E\+N\+\_\+\+S\+O\+D\+\_\+\+L\+E\+F\+T\+\_\+\+F\+L\+A\+S\+H\+E\+R\label{_i_o_8h_afc40988743806d63eac78433527f1befac0cc717b6e5b453723aa55837049ebec}
+}]Digital out for Left Flasher \index{E\+N\+\_\+\+S\+O\+D\+\_\+\+R\+I\+G\+H\+T\+\_\+\+F\+L\+A\+S\+H\+E\+R@{E\+N\+\_\+\+S\+O\+D\+\_\+\+R\+I\+G\+H\+T\+\_\+\+F\+L\+A\+S\+H\+E\+R}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+S\+O\+D\+\_\+\+R\+I\+G\+H\+T\+\_\+\+F\+L\+A\+S\+H\+E\+R@{E\+N\+\_\+\+S\+O\+D\+\_\+\+R\+I\+G\+H\+T\+\_\+\+F\+L\+A\+S\+H\+E\+R}}\item[{\em 
+\hypertarget{_i_o_8h_afc40988743806d63eac78433527f1befabf8574f4f990f542ebd3bdeb69164dc2}{}E\+N\+\_\+\+S\+O\+D\+\_\+\+R\+I\+G\+H\+T\+\_\+\+F\+L\+A\+S\+H\+E\+R\label{_i_o_8h_afc40988743806d63eac78433527f1befabf8574f4f990f542ebd3bdeb69164dc2}
+}]Digital out for Right Flasher \index{E\+N\+\_\+\+S\+O\+D\+\_\+\+L\+O\+W\+\_\+\+B\+E\+A\+M@{E\+N\+\_\+\+S\+O\+D\+\_\+\+L\+O\+W\+\_\+\+B\+E\+A\+M}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+S\+O\+D\+\_\+\+L\+O\+W\+\_\+\+B\+E\+A\+M@{E\+N\+\_\+\+S\+O\+D\+\_\+\+L\+O\+W\+\_\+\+B\+E\+A\+M}}\item[{\em 
+\hypertarget{_i_o_8h_afc40988743806d63eac78433527f1befa10f379d638f7f88d454c3d41d192ac1d}{}E\+N\+\_\+\+S\+O\+D\+\_\+\+L\+O\+W\+\_\+\+B\+E\+A\+M\label{_i_o_8h_afc40988743806d63eac78433527f1befa10f379d638f7f88d454c3d41d192ac1d}
+}]Digital out for Low Beam \index{E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+O\+U\+T\+P\+U\+T\+S@{E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+O\+U\+T\+P\+U\+T\+S}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+O\+U\+T\+P\+U\+T\+S@{E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+O\+U\+T\+P\+U\+T\+S}}\item[{\em 
+\hypertarget{_i_o_8h_afc40988743806d63eac78433527f1befa2a542528e6b5a1a800f9b990795cd712}{}E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+O\+U\+T\+P\+U\+T\+S\label{_i_o_8h_afc40988743806d63eac78433527f1befa2a542528e6b5a1a800f9b990795cd712}
+}]Number of output pins \end{description}
+\end{Desc}
+
+
+Definition at line 102 of file I\+O.\+h.
+
+\hypertarget{_i_o_8h_a866f939cb8aeed6225ec8789f70d838c}{}\index{I\+O.\+h@{I\+O.\+h}!en\+\_\+port\+\_\+enums@{en\+\_\+port\+\_\+enums}}
+\index{en\+\_\+port\+\_\+enums@{en\+\_\+port\+\_\+enums}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{en\+\_\+port\+\_\+enums}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf en\+\_\+port\+\_\+enums}}\label{_i_o_8h_a866f939cb8aeed6225ec8789f70d838c}
+
+
+Enumeration of Ports. 
+
+Enumeration of Ports \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+B@{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+B}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+B@{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+B}}\item[{\em 
+\hypertarget{_i_o_8h_a866f939cb8aeed6225ec8789f70d838ca48d4f8978f9cebb1ab82334a6fa851c3}{}E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+B\label{_i_o_8h_a866f939cb8aeed6225ec8789f70d838ca48d4f8978f9cebb1ab82334a6fa851c3}
+}]Port B \index{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+C@{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+C}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+C@{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+C}}\item[{\em 
+\hypertarget{_i_o_8h_a866f939cb8aeed6225ec8789f70d838caf04cbf536846e2d97698f042129a9e48}{}E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+C\label{_i_o_8h_a866f939cb8aeed6225ec8789f70d838caf04cbf536846e2d97698f042129a9e48}
+}]Port C \index{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D@{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D@{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D}}\item[{\em 
+\hypertarget{_i_o_8h_a866f939cb8aeed6225ec8789f70d838ca70ee99dde80450ea71a6b733cd8707da}{}E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\label{_i_o_8h_a866f939cb8aeed6225ec8789f70d838ca70ee99dde80450ea71a6b733cd8707da}
+}]Port D \end{description}
+\end{Desc}
+
+
+Definition at line 120 of file I\+O.\+h.
+
+\hypertarget{_i_o_8h_a3830efbff0c52e4814903ab32d19167d}{}\index{I\+O.\+h@{I\+O.\+h}!port\+\_\+type\+\_\+enum@{port\+\_\+type\+\_\+enum}}
+\index{port\+\_\+type\+\_\+enum@{port\+\_\+type\+\_\+enum}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{port\+\_\+type\+\_\+enum}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf port\+\_\+type\+\_\+enum}}\label{_i_o_8h_a3830efbff0c52e4814903ab32d19167d}
+
+
+Defines type of physical port. 
+
+Defines type of physical port \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+I@{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+I}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+I@{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+I}}\item[{\em 
+\hypertarget{_i_o_8h_a3830efbff0c52e4814903ab32d19167daa6b099fd8fdd20a73546e35bcc380b21}{}E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+I\label{_i_o_8h_a3830efbff0c52e4814903ab32d19167daa6b099fd8fdd20a73546e35bcc380b21}
+}]Digital Input port \index{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+O@{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+O}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+O@{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+O}}\item[{\em 
+\hypertarget{_i_o_8h_a3830efbff0c52e4814903ab32d19167da0773f203fb67f0932d4d5838c204642b}{}E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+O\label{_i_o_8h_a3830efbff0c52e4814903ab32d19167da0773f203fb67f0932d4d5838c204642b}
+}]Digital Output port \index{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+A\+I@{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+A\+I}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+A\+I@{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+A\+I}}\item[{\em 
+\hypertarget{_i_o_8h_a3830efbff0c52e4814903ab32d19167da7a92585586bb4e65ac9c6bac84225972}{}E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+A\+I\label{_i_o_8h_a3830efbff0c52e4814903ab32d19167da7a92585586bb4e65ac9c6bac84225972}
+}]Analog Input port \index{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+O\+P\+W\+M@{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+O\+P\+W\+M}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+O\+P\+W\+M@{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+O\+P\+W\+M}}\item[{\em 
+\hypertarget{_i_o_8h_a3830efbff0c52e4814903ab32d19167dad3e663026178cb18a72e986ba5a19ce6}{}E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+O\+P\+W\+M\label{_i_o_8h_a3830efbff0c52e4814903ab32d19167dad3e663026178cb18a72e986ba5a19ce6}
+}]Digital P\+W\+M Output port \index{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+L\+A\+S\+T\+\_\+\+E\+L\+E\+M\+E\+N\+T@{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+L\+A\+S\+T\+\_\+\+E\+L\+E\+M\+E\+N\+T}!I\+O.\+h@{I\+O.\+h}}\index{I\+O.\+h@{I\+O.\+h}!E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+L\+A\+S\+T\+\_\+\+E\+L\+E\+M\+E\+N\+T@{E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+L\+A\+S\+T\+\_\+\+E\+L\+E\+M\+E\+N\+T}}\item[{\em 
+\hypertarget{_i_o_8h_a3830efbff0c52e4814903ab32d19167da6fcfae7fe1481c5847c43d5fb9dc4f41}{}E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+L\+A\+S\+T\+\_\+\+E\+L\+E\+M\+E\+N\+T\label{_i_o_8h_a3830efbff0c52e4814903ab32d19167da6fcfae7fe1481c5847c43d5fb9dc4f41}
+}]Number of port types \end{description}
+\end{Desc}
+
+
+Definition at line 133 of file I\+O.\+h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_i_o_8h_ab40163bc77289c9ceff07df6933ca903}{}\index{I\+O.\+h@{I\+O.\+h}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{get\+Value(uint8\+\_\+t pin)}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Value (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{pin}
+\end{DoxyParamCaption}
+)}\label{_i_o_8h_ab40163bc77289c9ceff07df6933ca903}
+
+
+Function definition for get value. 
+
+Function definition for set output pin For functions, automatic links are generated when the parenthesis () follow the name of the function, like Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name(). Alternatively, you can use \#\+Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+$<$ variabila in care stocam valoarea registrului din care citim
+
+$<$ cautam registrul aferent piniului selectat, P\+I\+Nx de unde citim starea pinului
+
+$<$ Registrii P\+I\+Nx sunt Read Only
+
+$<$ pin= pin-\/7; resetam pinul astfel incat sa putem citi din registrul pin\+B daca acesta nu e setat in memorie in continuare la P\+I\+N\+D
+
+$<$ pin= pin-\/13;
+
+$<$ cautam pinul din registrul aferent,de aici putem afla starea pinilor daca sunt Input (1), sau Output (0); 
+
+Definition at line 183 of file I\+O.\+c.
+
+\hypertarget{_i_o_8h_a1778435697ce5e88277225a1ea85c2d9}{}\index{I\+O.\+h@{I\+O.\+h}!init\+I\+O@{init\+I\+O}}
+\index{init\+I\+O@{init\+I\+O}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{init\+I\+O()}]{\setlength{\rightskip}{0pt plus 5cm}void init\+I\+O (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_i_o_8h_a1778435697ce5e88277225a1ea85c2d9}
+
+
+Definition at line 234 of file I\+O.\+c.
+
+\hypertarget{_i_o_8h_a988a37531fcd4f8ec5dfc19ba7ec50da}{}\index{I\+O.\+h@{I\+O.\+h}!process\+A\+D\+Cconversion@{process\+A\+D\+Cconversion}}
+\index{process\+A\+D\+Cconversion@{process\+A\+D\+Cconversion}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{process\+A\+D\+Cconversion()}]{\setlength{\rightskip}{0pt plus 5cm}void process\+A\+D\+Cconversion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_i_o_8h_a988a37531fcd4f8ec5dfc19ba7ec50da}
+
+
+Function processes A\+D\+C conversion. 
+
+Function processes A\+D\+C conversion \begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Function verifies enabled A\+D\+C channels and stores the A\+D\+C conversion values in an arrayf results On each enabled A\+D\+C channel, the A\+D\+M\+U\+X register is updated \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+$<$ index for result A\+D\+C conversion array
+
+$<$ current channel is enabled
+
+$<$ array of result gets A\+D\+C value for the specified channel
+
+$<$passes to the next A\+D\+C channel
+
+$<$ updates A\+D\+M\+U\+X register
+
+$<$ resets the initial value
+
+$<$ A\+D\+S\+C bit is not set -\/ meaning the A\+D\+C conversion is not in progress
+
+$<$ current channel is N\+O\+T enabled
+
+$<$passes to the next A\+D\+C channel
+
+$<$ updates A\+D\+M\+U\+X register
+
+$<$ resets the initial value 
+
+Definition at line 451 of file I\+O.\+c.
+
+\hypertarget{_i_o_8h_ab41d098a1660bb84879eec75acf04ba4}{}\index{I\+O.\+h@{I\+O.\+h}!process\+Analog\+Input@{process\+Analog\+Input}}
+\index{process\+Analog\+Input@{process\+Analog\+Input}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{process\+Analog\+Input(\+E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S buffer\+Index\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+Analog\+Input (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S}}]{buffer\+Index\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{_i_o_8h_ab41d098a1660bb84879eec75acf04ba4}
+$<$do nothing 
+
+Definition at line 369 of file I\+O.\+c.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i_o_8h_ab41d098a1660bb84879eec75acf04ba4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_i_o_8h_a4731166063789af1c8cee641d3ad653e}{}\index{I\+O.\+h@{I\+O.\+h}!process\+Digital\+Input@{process\+Digital\+Input}}
+\index{process\+Digital\+Input@{process\+Digital\+Input}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{process\+Digital\+Input(\+E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S buffer\+Index\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+Digital\+Input (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S}}]{buffer\+Index\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{_i_o_8h_a4731166063789af1c8cee641d3ad653e}
+
+
+Definition at line 382 of file I\+O.\+c.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i_o_8h_a4731166063789af1c8cee641d3ad653e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_i_o_8h_a07f8df9b9660a9173ba2a916ab7a16b4}{}\index{I\+O.\+h@{I\+O.\+h}!process\+Digital\+Output@{process\+Digital\+Output}}
+\index{process\+Digital\+Output@{process\+Digital\+Output}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{process\+Digital\+Output(\+E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S buffer\+Index\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+Digital\+Output (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S}}]{buffer\+Index\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{_i_o_8h_a07f8df9b9660a9173ba2a916ab7a16b4}
+
+
+Function definition for processing Digital output. 
+
+Function definition for set output pin For functions, automatic links are generated when the parenthesis () follow the name of the function, like Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name(). Alternatively, you can use \#\+Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name. \begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Function definition for processing Digital output.
+
+Function implementation for processing output buffer \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 285 of file I\+O.\+c.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i_o_8h_a07f8df9b9660a9173ba2a916ab7a16b4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_i_o_8h_a9f7185c67e2c73badb693def46b85158}{}\index{I\+O.\+h@{I\+O.\+h}!process\+Digital\+Output\+P\+W\+M@{process\+Digital\+Output\+P\+W\+M}}
+\index{process\+Digital\+Output\+P\+W\+M@{process\+Digital\+Output\+P\+W\+M}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{process\+Digital\+Output\+P\+W\+M(\+E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S buffer\+Index\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+Digital\+Output\+P\+W\+M (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S}}]{buffer\+Index\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{_i_o_8h_a9f7185c67e2c73badb693def46b85158}
+
+
+Function definition for process\+Digital\+Output\+P\+W\+M. 
+
+Function definition for set output pin For functions, automatic links are generated when the parenthesis () follow the name of the function, like Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name(). Alternatively, you can use \#\+Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name. \begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Function definition for process\+Digital\+Output\+P\+W\+M.
+
+Function implementation for processing output buffer \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 321 of file I\+O.\+c.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i_o_8h_a9f7185c67e2c73badb693def46b85158_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_i_o_8h_af4f070174f72d729b4db63a88686e3b8}{}\index{I\+O.\+h@{I\+O.\+h}!process\+Input\+Buffer@{process\+Input\+Buffer}}
+\index{process\+Input\+Buffer@{process\+Input\+Buffer}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{process\+Input\+Buffer()}]{\setlength{\rightskip}{0pt plus 5cm}void process\+Input\+Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_i_o_8h_af4f070174f72d729b4db63a88686e3b8}
+
+
+Function definition for processing input buffer. 
+
+Function implementation for processing input buffer. For functions, automatic links are generated when the parenthesis () follow the name of the function, like Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name(). Alternatively, you can use \#\+Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name. \begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Function definition for processing input buffer.
+
+Function implementation for processing output buffer \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+$<$end case E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+A\+I 
+
+Definition at line 347 of file I\+O.\+c.
+
+\hypertarget{_i_o_8h_a9e64e598ce482388e7a16a092bfcd6d7}{}\index{I\+O.\+h@{I\+O.\+h}!process\+Output\+Buffer@{process\+Output\+Buffer}}
+\index{process\+Output\+Buffer@{process\+Output\+Buffer}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{process\+Output\+Buffer()}]{\setlength{\rightskip}{0pt plus 5cm}void process\+Output\+Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_i_o_8h_a9e64e598ce482388e7a16a092bfcd6d7}
+
+
+Function definition for processing output buffer. 
+
+Function implementation for processing output buffer. For functions, automatic links are generated when the parenthesis () follow the name of the function, like Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name(). Alternatively, you can use \#\+Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name. \begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Function definition for processing output buffer.
+
+Function implementation for processing output buffer \begin{DoxyReturn}{Returns}
+voidfunctia pentru citirea unui pin 
+\end{DoxyReturn}
+$<$end case E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+O 
+
+Definition at line 163 of file I\+O.\+c.
+
+\hypertarget{_i_o_8h_a823993b1d47cd88ec002226cbb45ff29}{}\index{I\+O.\+h@{I\+O.\+h}!setup\+A\+D\+C@{setup\+A\+D\+C}}
+\index{setup\+A\+D\+C@{setup\+A\+D\+C}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{setup\+A\+D\+C()}]{\setlength{\rightskip}{0pt plus 5cm}void setup\+A\+D\+C (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_i_o_8h_a823993b1d47cd88ec002226cbb45ff29}
+
+
+Function implementation for analog input from lightsensor. 
+
+Function implementation for analog input from lightsensor \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+$<$it is set the A\+D\+C enable bit
+
+$<$it is set the A\+D\+C prescaler for 128 cycles
+
+$<$ enables analog input channels
+
+$<$do nothing 
+
+Definition at line 421 of file I\+O.\+c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_i_o_8h_a5bbdbd4d661f20b14b30b86df7aec824}{}\index{I\+O.\+h@{I\+O.\+h}!matching\+Table\+Input\+Pins\+\_\+acst@{matching\+Table\+Input\+Pins\+\_\+acst}}
+\index{matching\+Table\+Input\+Pins\+\_\+acst@{matching\+Table\+Input\+Pins\+\_\+acst}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{matching\+Table\+Input\+Pins\+\_\+acst}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+O\+R\+T\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+S\+T} const matching\+Table\+Input\+Pins\+\_\+acst\mbox{[}{\bf E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+I\+N\+P\+U\+T}\mbox{]}}\label{_i_o_8h_a5bbdbd4d661f20b14b30b86df7aec824}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    \{ADC0D, \hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838caf04cbf536846e2d97698f042129a9e48}{EN\_PORT\_C}, \hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167da7a92585586bb4e65ac9c6bac84225972}{EN\_PORT\_AI}\},     
+    \{PORTD7, \hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838ca70ee99dde80450ea71a6b733cd8707da}{EN\_PORT\_D}, \hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167daa6b099fd8fdd20a73546e35bcc380b21}{EN\_PORT\_DI}\},      
+    \{PORTB0, \hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838ca48d4f8978f9cebb1ab82334a6fa851c3}{EN\_PORT\_B}, \hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167daa6b099fd8fdd20a73546e35bcc380b21}{EN\_PORT\_DI}\},  
+    \{PORTB5, \hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838ca48d4f8978f9cebb1ab82334a6fa851c3}{EN\_PORT\_B}, \hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167daa6b099fd8fdd20a73546e35bcc380b21}{EN\_PORT\_DI}\},  
+    \{PORTB4, \hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838ca48d4f8978f9cebb1ab82334a6fa851c3}{EN\_PORT\_B}, \hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167daa6b099fd8fdd20a73546e35bcc380b21}{EN\_PORT\_DI}\}       
+\}
+\end{DoxyCode}
+
+
+New datatype used in table which connects Logical Input Definitions to Physical Input Def. 
+
+New datatype used in table which connects Logical Input Definitions to Physical Input Def 
+
+Definition at line 186 of file I\+O.\+h.
+
+\hypertarget{_i_o_8h_a994e18dd565932d73b2a9cfe0a786440}{}\index{I\+O.\+h@{I\+O.\+h}!matching\+Table\+Output\+Pins\+\_\+acst@{matching\+Table\+Output\+Pins\+\_\+acst}}
+\index{matching\+Table\+Output\+Pins\+\_\+acst@{matching\+Table\+Output\+Pins\+\_\+acst}!I\+O.\+h@{I\+O.\+h}}
+\subsubsection[{matching\+Table\+Output\+Pins\+\_\+acst}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+O\+R\+T\+\_\+\+T\+Y\+P\+E\+S\+\_\+\+S\+T} const matching\+Table\+Output\+Pins\+\_\+acst\mbox{[}{\bf E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+O\+U\+T\+P\+U\+T\+S}\mbox{]}}\label{_i_o_8h_a994e18dd565932d73b2a9cfe0a786440}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    \{PORTD2, \hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838ca70ee99dde80450ea71a6b733cd8707da}{EN\_PORT\_D}, \hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167da0773f203fb67f0932d4d5838c204642b}{EN\_PORT\_DO}\},     
+    \{PORTD3, \hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838ca70ee99dde80450ea71a6b733cd8707da}{EN\_PORT\_D}, \hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167da0773f203fb67f0932d4d5838c204642b}{EN\_PORT\_DO}\},  
+    \{PORTB6, \hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838ca48d4f8978f9cebb1ab82334a6fa851c3}{EN\_PORT\_B}, \hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167da0773f203fb67f0932d4d5838c204642b}{EN\_PORT\_DO}\},     
+    \{PORTB7, \hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838ca48d4f8978f9cebb1ab82334a6fa851c3}{EN\_PORT\_B}, \hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167da0773f203fb67f0932d4d5838c204642b}{EN\_PORT\_DO}\},     
+    \{PORTD1, \hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838ca70ee99dde80450ea71a6b733cd8707da}{EN\_PORT\_D}, \hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167dad3e663026178cb18a72e986ba5a19ce6}{EN\_PORT\_DOPWM}\},  
+    \{PORTD5, \hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838ca70ee99dde80450ea71a6b733cd8707da}{EN\_PORT\_D}, \hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167dad3e663026178cb18a72e986ba5a19ce6}{EN\_PORT\_DOPWM}\},  
+    \{PORTC2, \hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838caf04cbf536846e2d97698f042129a9e48}{EN\_PORT\_C}, \hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167da0773f203fb67f0932d4d5838c204642b}{EN\_PORT\_DO}\},     
+    \{PORTC1, \hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838caf04cbf536846e2d97698f042129a9e48}{EN\_PORT\_C}, \hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167da0773f203fb67f0932d4d5838c204642b}{EN\_PORT\_DO}\},     
+    \{PORTD4, \hyperlink{_i_o_8h_a866f939cb8aeed6225ec8789f70d838ca70ee99dde80450ea71a6b733cd8707da}{EN\_PORT\_D}, \hyperlink{_i_o_8h_a3830efbff0c52e4814903ab32d19167da0773f203fb67f0932d4d5838c204642b}{EN\_PORT\_DO}\}      
+\}
+\end{DoxyCode}
+
+
+New datatype used in table which connects Logical Outputs Definitions to Physical Outputs Def. 
+
+New datatype used in table which connects Logical Outputs Definitions to Physical Outputs Def 
+
+Definition at line 170 of file I\+O.\+h.
+

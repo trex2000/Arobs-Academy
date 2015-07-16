@@ -1,0 +1,5 @@
+<map id="test_lights" name="test_lights">
+<area shape="rect" id="node2" href="$_i_o_8c.html#a0b898fbc36b3bc499f5fec9c4953daf1" title="Returns status of logical Output Pin. " alt="" coords="136,5,235,32"/>
+<area shape="rect" id="node3" href="$_i_o_8c.html#a5066ecac2ab4297f9050f69fbb1fc07e" title="Returns status of logical Input Pin. " alt="" coords="140,56,231,83"/>
+<area shape="rect" id="node4" href="$_arduino_8h.html#a9d505fa07341c65c11e2c236550b748f" title="digitalWrite" alt="" coords="142,107,229,133"/>
+</map>

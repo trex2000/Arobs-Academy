@@ -1,0 +1,4 @@
+<map id="processDigitalOutputPWM" name="processDigitalOutputPWM">
+<area shape="rect" id="node2" href="$_i_o__extern_8h.html#a9e64e598ce482388e7a16a092bfcd6d7" title="Function definition for processing output buffer. " alt="" coords="229,5,369,32"/>
+<area shape="rect" id="node3" href="$_project_main_8h.html#aa0a2444ea9e75ec2a583b7e8a38560a6" title="Function declaration for tasks which are executed every 20ms Function declaration for tasks which are..." alt="" coords="417,5,496,32"/>
+</map>

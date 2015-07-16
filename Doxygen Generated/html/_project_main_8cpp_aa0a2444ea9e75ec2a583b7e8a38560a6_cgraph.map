@@ -1,0 +1,9 @@
+<map id="task20ms" name="task20ms">
+<area shape="rect" id="node2" href="$_i_o_8c.html#a988a37531fcd4f8ec5dfc19ba7ec50da" title="Function processes ADC conversion. " alt="" coords="132,5,288,32"/>
+<area shape="rect" id="node3" href="$_i_o_8c.html#af4f070174f72d729b4db63a88686e3b8" title="Function implementation for processing output buffer. " alt="" coords="145,56,275,83"/>
+<area shape="rect" id="node6" href="$_i_o_8c.html#a9e64e598ce482388e7a16a092bfcd6d7" title="Function implementation for processing output buffer. " alt="" coords="140,107,280,133"/>
+<area shape="rect" id="node4" href="$_i_o_8c.html#ab41d098a1660bb84879eec75acf04ba4" title="processAnalogInput" alt="" coords="356,5,492,32"/>
+<area shape="rect" id="node5" href="$_i_o_8c.html#a4731166063789af1c8cee641d3ad653e" title="processDigitalInput" alt="" coords="358,56,490,83"/>
+<area shape="rect" id="node7" href="$_i_o_8c.html#a07f8df9b9660a9173ba2a916ab7a16b4" title="Function implementation for processing output buffer. " alt="" coords="353,107,495,133"/>
+<area shape="rect" id="node8" href="$_i_o_8c.html#a9f7185c67e2c73badb693def46b85158" title="Function implementation for processing output buffer. " alt="" coords="336,157,512,184"/>
+</map>

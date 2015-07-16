@@ -1,0 +1,5 @@
+<map id="HIDDescriptor" name="HIDDescriptor">
+<area shape="rect" id="node2" href="$struct_endpoint_descriptor.html" title="EndpointDescriptor" alt="" coords="5,5,137,32"/>
+<area shape="rect" id="node3" href="$struct_interface_descriptor.html" title="InterfaceDescriptor" alt="" coords="162,5,293,32"/>
+<area shape="rect" id="node4" href="$struct_h_i_d_desc_descriptor.html" title="HIDDescDescriptor" alt="" coords="317,5,449,32"/>
+</map>

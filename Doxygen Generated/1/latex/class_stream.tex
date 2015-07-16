@@ -1,0 +1,845 @@
+\hypertarget{class_stream}{}\section{Stream Class Reference}
+\label{class_stream}\index{Stream@{Stream}}
+
+
+{\ttfamily \#include $<$Stream.\+h$>$}
+
+
+
+Inheritance diagram for Stream\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{class_stream__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Stream\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=128pt]{class_stream__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_stream_1_1_multi_target}{Multi\+Target}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \hyperlink{class_stream_aebd60457902debb30b07971a16f24ebd}{available} ()=0
+\item 
+virtual int \hyperlink{class_stream_a4afd50731ba321d1b9be909cb288a50b}{read} ()=0
+\item 
+virtual int \hyperlink{class_stream_a9ae768d427519818aa552adf467bf65a}{peek} ()=0
+\item 
+virtual void \hyperlink{class_stream_a50ab71f4bc571f6e246b20db4b3dd131}{flush} ()=0
+\item 
+\hyperlink{class_stream_a7411b49ed5fda5181dd182d64984906e}{Stream} ()
+\item 
+void \hyperlink{class_stream_a76c7d6530b9cb17f6663a64aea84b61e}{set\+Timeout} (unsigned long timeout)
+\item 
+bool \hyperlink{class_stream_a13fd59f691f095fc014b4c012cbd79f7}{find} (char $\ast$target)
+\item 
+bool \hyperlink{class_stream_a4b392ebdbb1b1eb5fb0b23cb3798ce04}{find} (uint8\+\_\+t $\ast$target)
+\item 
+bool \hyperlink{class_stream_a064fe7239eb0cc6ba4a41d064d90a51f}{find} (char $\ast$target, size\+\_\+t length)
+\item 
+bool \hyperlink{class_stream_acf54fbb26d6831374a6667b5a3201f22}{find} (uint8\+\_\+t $\ast$target, size\+\_\+t length)
+\item 
+bool \hyperlink{class_stream_ae9bf806705b80571316623814e5cb2ca}{find\+Until} (char $\ast$target, char $\ast$terminator)
+\item 
+bool \hyperlink{class_stream_a2cb0079bcfbffff6273404c8afaa4660}{find\+Until} (uint8\+\_\+t $\ast$target, char $\ast$terminator)
+\item 
+bool \hyperlink{class_stream_a99d1b6ad00abb9264b5ebb7506585993}{find\+Until} (char $\ast$target, size\+\_\+t target\+Len, char $\ast$terminate, size\+\_\+t term\+Len)
+\item 
+bool \hyperlink{class_stream_a5a3dbacf38766d57c845d6530f9aa109}{find\+Until} (uint8\+\_\+t $\ast$target, size\+\_\+t target\+Len, char $\ast$terminate, size\+\_\+t term\+Len)
+\item 
+long \hyperlink{class_stream_a4d54d18e24a5aff0faa15f40be995edf}{parse\+Int} ()
+\item 
+float \hyperlink{class_stream_a327a9ae2bfcaf84ddd69477839507ca7}{parse\+Float} ()
+\item 
+size\+\_\+t \hyperlink{class_stream_ada0b9486ea1fe7b8d4aab8f04f5607ee}{read\+Bytes} (char $\ast$buffer, size\+\_\+t length)
+\item 
+size\+\_\+t \hyperlink{class_stream_a4ef72b9bae2f35c08ddc4292e5ac1df4}{read\+Bytes} (uint8\+\_\+t $\ast$buffer, size\+\_\+t length)
+\item 
+size\+\_\+t \hyperlink{class_stream_a9aa68dc2abab64ceafe8d8745b728af2}{read\+Bytes\+Until} (char terminator, char $\ast$buffer, size\+\_\+t length)
+\item 
+size\+\_\+t \hyperlink{class_stream_a9fcaea3bb67432821ddbde8a13331429}{read\+Bytes\+Until} (char terminator, uint8\+\_\+t $\ast$buffer, size\+\_\+t length)
+\item 
+String \hyperlink{class_stream_ab1b0d4ef00718d18fe34d35dd1e26c66}{read\+String} ()
+\item 
+String \hyperlink{class_stream_ac1f2b6e32ae2e321ad98c16482edf96a}{read\+String\+Until} (char terminator)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_stream_a7cc09dd787a79c17281039b4456dc6aa}{timed\+Read} ()
+\item 
+int \hyperlink{class_stream_a157762e7d29562248c38ecbe6daa2fae}{timed\+Peek} ()
+\item 
+int \hyperlink{class_stream_a6a68a089460a8e332fad1002d36374a5}{peek\+Next\+Digit} ()
+\item 
+long \hyperlink{class_stream_aa5269d83a12f784ac9d54e19104d39fe}{parse\+Int} (char skip\+Char)
+\item 
+float \hyperlink{class_stream_aa66300bfdb6b2eda158d84dbaf5adcb5}{parse\+Float} (char skip\+Char)
+\item 
+int \hyperlink{class_stream_a34d087eec23d221a8ed4c5279cf9cf4c}{find\+Multi} (struct \hyperlink{struct_stream_1_1_multi_target}{Multi\+Target} $\ast$targets, int t\+Count)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long \hyperlink{class_stream_a24c7e4b09282e8150935ce8da759e176}{\+\_\+timeout}
+\item 
+unsigned long \hyperlink{class_stream_a30515d765ff208be483b71592aa9da72}{\+\_\+start\+Millis}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 38 of file Stream.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_stream_a7411b49ed5fda5181dd182d64984906e}{}\index{Stream@{Stream}!Stream@{Stream}}
+\index{Stream@{Stream}!Stream@{Stream}}
+\subsubsection[{Stream()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Stream} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_stream_a7411b49ed5fda5181dd182d64984906e}
+
+
+Definition at line 53 of file Stream.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_stream_aebd60457902debb30b07971a16f24ebd}{}\index{Stream@{Stream}!available@{available}}
+\index{available@{available}!Stream@{Stream}}
+\subsubsection[{available()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual int available (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_stream_aebd60457902debb30b07971a16f24ebd}
+
+
+Implemented in \hyperlink{class_hardware_serial_aeec8f4dbef97221a6041d6cdc6e9b716}{Hardware\+Serial}, \hyperlink{class_u_d_p_aebd60457902debb30b07971a16f24ebd}{U\+D\+P}, and \hyperlink{class_client_aebd60457902debb30b07971a16f24ebd}{Client}.
+
+\hypertarget{class_stream_a13fd59f691f095fc014b4c012cbd79f7}{}\index{Stream@{Stream}!find@{find}}
+\index{find@{find}!Stream@{Stream}}
+\subsubsection[{find(char $\ast$target)}]{\setlength{\rightskip}{0pt plus 5cm}bool find (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{target}
+\end{DoxyParamCaption}
+)}\label{class_stream_a13fd59f691f095fc014b4c012cbd79f7}
+
+
+Definition at line 78 of file Stream.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{class_stream_a13fd59f691f095fc014b4c012cbd79f7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_a4b392ebdbb1b1eb5fb0b23cb3798ce04}{}\index{Stream@{Stream}!find@{find}}
+\index{find@{find}!Stream@{Stream}}
+\subsubsection[{find(uint8\+\_\+t $\ast$target)}]{\setlength{\rightskip}{0pt plus 5cm}bool find (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{target}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_stream_a4b392ebdbb1b1eb5fb0b23cb3798ce04}
+
+
+Definition at line 60 of file Stream.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=112pt]{class_stream_a4b392ebdbb1b1eb5fb0b23cb3798ce04_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=112pt]{class_stream_a4b392ebdbb1b1eb5fb0b23cb3798ce04_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_a064fe7239eb0cc6ba4a41d064d90a51f}{}\index{Stream@{Stream}!find@{find}}
+\index{find@{find}!Stream@{Stream}}
+\subsubsection[{find(char $\ast$target, size\+\_\+t length)}]{\setlength{\rightskip}{0pt plus 5cm}bool find (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{target, }
+\item[{size\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}\label{class_stream_a064fe7239eb0cc6ba4a41d064d90a51f}
+
+
+Definition at line 85 of file Stream.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{class_stream_a064fe7239eb0cc6ba4a41d064d90a51f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_acf54fbb26d6831374a6667b5a3201f22}{}\index{Stream@{Stream}!find@{find}}
+\index{find@{find}!Stream@{Stream}}
+\subsubsection[{find(uint8\+\_\+t $\ast$target, size\+\_\+t length)}]{\setlength{\rightskip}{0pt plus 5cm}bool find (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{target, }
+\item[{size\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_stream_acf54fbb26d6831374a6667b5a3201f22}
+
+
+Definition at line 64 of file Stream.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=112pt]{class_stream_acf54fbb26d6831374a6667b5a3201f22_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=112pt]{class_stream_acf54fbb26d6831374a6667b5a3201f22_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_a34d087eec23d221a8ed4c5279cf9cf4c}{}\index{Stream@{Stream}!find\+Multi@{find\+Multi}}
+\index{find\+Multi@{find\+Multi}!Stream@{Stream}}
+\subsubsection[{find\+Multi(struct Multi\+Target $\ast$targets, int t\+Count)}]{\setlength{\rightskip}{0pt plus 5cm}int find\+Multi (
+\begin{DoxyParamCaption}
+\item[{struct {\bf Multi\+Target} $\ast$}]{targets, }
+\item[{int}]{t\+Count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_stream_a34d087eec23d221a8ed4c5279cf9cf4c}
+
+
+Definition at line 254 of file Stream.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{class_stream_a34d087eec23d221a8ed4c5279cf9cf4c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{class_stream_a34d087eec23d221a8ed4c5279cf9cf4c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_ae9bf806705b80571316623814e5cb2ca}{}\index{Stream@{Stream}!find\+Until@{find\+Until}}
+\index{find\+Until@{find\+Until}!Stream@{Stream}}
+\subsubsection[{find\+Until(char $\ast$target, char $\ast$terminator)}]{\setlength{\rightskip}{0pt plus 5cm}bool find\+Until (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{target, }
+\item[{char $\ast$}]{terminator}
+\end{DoxyParamCaption}
+)}\label{class_stream_ae9bf806705b80571316623814e5cb2ca}
+
+
+Definition at line 91 of file Stream.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{class_stream_ae9bf806705b80571316623814e5cb2ca_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_a2cb0079bcfbffff6273404c8afaa4660}{}\index{Stream@{Stream}!find\+Until@{find\+Until}}
+\index{find\+Until@{find\+Until}!Stream@{Stream}}
+\subsubsection[{find\+Until(uint8\+\_\+t $\ast$target, char $\ast$terminator)}]{\setlength{\rightskip}{0pt plus 5cm}bool find\+Until (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{target, }
+\item[{char $\ast$}]{terminator}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_stream_a2cb0079bcfbffff6273404c8afaa4660}
+
+
+Definition at line 68 of file Stream.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=131pt]{class_stream_a2cb0079bcfbffff6273404c8afaa4660_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=131pt]{class_stream_a2cb0079bcfbffff6273404c8afaa4660_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_a99d1b6ad00abb9264b5ebb7506585993}{}\index{Stream@{Stream}!find\+Until@{find\+Until}}
+\index{find\+Until@{find\+Until}!Stream@{Stream}}
+\subsubsection[{find\+Until(char $\ast$target, size\+\_\+t target\+Len, char $\ast$terminate, size\+\_\+t term\+Len)}]{\setlength{\rightskip}{0pt plus 5cm}bool find\+Until (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{target, }
+\item[{size\+\_\+t}]{target\+Len, }
+\item[{char $\ast$}]{terminate, }
+\item[{size\+\_\+t}]{term\+Len}
+\end{DoxyParamCaption}
+)}\label{class_stream_a99d1b6ad00abb9264b5ebb7506585993}
+
+
+Definition at line 99 of file Stream.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_stream_a99d1b6ad00abb9264b5ebb7506585993_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_a5a3dbacf38766d57c845d6530f9aa109}{}\index{Stream@{Stream}!find\+Until@{find\+Until}}
+\index{find\+Until@{find\+Until}!Stream@{Stream}}
+\subsubsection[{find\+Until(uint8\+\_\+t $\ast$target, size\+\_\+t target\+Len, char $\ast$terminate, size\+\_\+t term\+Len)}]{\setlength{\rightskip}{0pt plus 5cm}bool find\+Until (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{target, }
+\item[{size\+\_\+t}]{target\+Len, }
+\item[{char $\ast$}]{terminate, }
+\item[{size\+\_\+t}]{term\+Len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_stream_a5a3dbacf38766d57c845d6530f9aa109}
+
+
+Definition at line 71 of file Stream.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=131pt]{class_stream_a5a3dbacf38766d57c845d6530f9aa109_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=131pt]{class_stream_a5a3dbacf38766d57c845d6530f9aa109_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_a50ab71f4bc571f6e246b20db4b3dd131}{}\index{Stream@{Stream}!flush@{flush}}
+\index{flush@{flush}!Stream@{Stream}}
+\subsubsection[{flush()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual void flush (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_stream_a50ab71f4bc571f6e246b20db4b3dd131}
+
+
+Implemented in \hyperlink{class_hardware_serial_a0a4efd3d0f68d057f23eb5dfcd16c17c}{Hardware\+Serial}, \hyperlink{class_u_d_p_a50ab71f4bc571f6e246b20db4b3dd131}{U\+D\+P}, and \hyperlink{class_client_a50ab71f4bc571f6e246b20db4b3dd131}{Client}.
+
+\hypertarget{class_stream_a327a9ae2bfcaf84ddd69477839507ca7}{}\index{Stream@{Stream}!parse\+Float@{parse\+Float}}
+\index{parse\+Float@{parse\+Float}!Stream@{Stream}}
+\subsubsection[{parse\+Float()}]{\setlength{\rightskip}{0pt plus 5cm}float parse\+Float (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_stream_a327a9ae2bfcaf84ddd69477839507ca7}
+
+
+Definition at line 151 of file Stream.\+cpp.
+
+\hypertarget{class_stream_aa66300bfdb6b2eda158d84dbaf5adcb5}{}\index{Stream@{Stream}!parse\+Float@{parse\+Float}}
+\index{parse\+Float@{parse\+Float}!Stream@{Stream}}
+\subsubsection[{parse\+Float(char skip\+Char)}]{\setlength{\rightskip}{0pt plus 5cm}float parse\+Float (
+\begin{DoxyParamCaption}
+\item[{char}]{skip\+Char}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_stream_aa66300bfdb6b2eda158d84dbaf5adcb5}
+
+
+Definition at line 158 of file Stream.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_stream_aa66300bfdb6b2eda158d84dbaf5adcb5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_a4d54d18e24a5aff0faa15f40be995edf}{}\index{Stream@{Stream}!parse\+Int@{parse\+Int}}
+\index{parse\+Int@{parse\+Int}!Stream@{Stream}}
+\subsubsection[{parse\+Int()}]{\setlength{\rightskip}{0pt plus 5cm}long parse\+Int (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_stream_a4d54d18e24a5aff0faa15f40be995edf}
+
+
+Definition at line 114 of file Stream.\+cpp.
+
+\hypertarget{class_stream_aa5269d83a12f784ac9d54e19104d39fe}{}\index{Stream@{Stream}!parse\+Int@{parse\+Int}}
+\index{parse\+Int@{parse\+Int}!Stream@{Stream}}
+\subsubsection[{parse\+Int(char skip\+Char)}]{\setlength{\rightskip}{0pt plus 5cm}long parse\+Int (
+\begin{DoxyParamCaption}
+\item[{char}]{skip\+Char}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_stream_aa5269d83a12f784ac9d54e19104d39fe}
+
+
+Definition at line 121 of file Stream.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_stream_aa5269d83a12f784ac9d54e19104d39fe_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_a9ae768d427519818aa552adf467bf65a}{}\index{Stream@{Stream}!peek@{peek}}
+\index{peek@{peek}!Stream@{Stream}}
+\subsubsection[{peek()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual int peek (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_stream_a9ae768d427519818aa552adf467bf65a}
+
+
+Implemented in \hyperlink{class_hardware_serial_a65e3a688fcd31f2f486d3af02c400d8f}{Hardware\+Serial}, \hyperlink{class_u_d_p_a9ae768d427519818aa552adf467bf65a}{U\+D\+P}, and \hyperlink{class_client_a9ae768d427519818aa552adf467bf65a}{Client}.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_stream_a9ae768d427519818aa552adf467bf65a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_a6a68a089460a8e332fad1002d36374a5}{}\index{Stream@{Stream}!peek\+Next\+Digit@{peek\+Next\+Digit}}
+\index{peek\+Next\+Digit@{peek\+Next\+Digit}!Stream@{Stream}}
+\subsubsection[{peek\+Next\+Digit()}]{\setlength{\rightskip}{0pt plus 5cm}int peek\+Next\+Digit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_stream_a6a68a089460a8e332fad1002d36374a5}
+
+
+Definition at line 57 of file Stream.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_stream_a6a68a089460a8e332fad1002d36374a5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{class_stream_a6a68a089460a8e332fad1002d36374a5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_a4afd50731ba321d1b9be909cb288a50b}{}\index{Stream@{Stream}!read@{read}}
+\index{read@{read}!Stream@{Stream}}
+\subsubsection[{read()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual int read (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_stream_a4afd50731ba321d1b9be909cb288a50b}
+
+
+Implemented in \hyperlink{class_hardware_serial_aead319e2866cf90d56c10f2ed39a4396}{Hardware\+Serial}, \hyperlink{class_u_d_p_a4afd50731ba321d1b9be909cb288a50b}{U\+D\+P}, and \hyperlink{class_client_a4afd50731ba321d1b9be909cb288a50b}{Client}.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_stream_a4afd50731ba321d1b9be909cb288a50b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_ada0b9486ea1fe7b8d4aab8f04f5607ee}{}\index{Stream@{Stream}!read\+Bytes@{read\+Bytes}}
+\index{read\+Bytes@{read\+Bytes}!Stream@{Stream}}
+\subsubsection[{read\+Bytes(char $\ast$buffer, size\+\_\+t length)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t read\+Bytes (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}\label{class_stream_ada0b9486ea1fe7b8d4aab8f04f5607ee}
+
+
+Definition at line 200 of file Stream.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_stream_ada0b9486ea1fe7b8d4aab8f04f5607ee_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_a4ef72b9bae2f35c08ddc4292e5ac1df4}{}\index{Stream@{Stream}!read\+Bytes@{read\+Bytes}}
+\index{read\+Bytes@{read\+Bytes}!Stream@{Stream}}
+\subsubsection[{read\+Bytes(uint8\+\_\+t $\ast$buffer, size\+\_\+t length)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t read\+Bytes (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_stream_a4ef72b9bae2f35c08ddc4292e5ac1df4}
+
+
+Definition at line 81 of file Stream.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=141pt]{class_stream_a4ef72b9bae2f35c08ddc4292e5ac1df4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=141pt]{class_stream_a4ef72b9bae2f35c08ddc4292e5ac1df4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_a9aa68dc2abab64ceafe8d8745b728af2}{}\index{Stream@{Stream}!read\+Bytes\+Until@{read\+Bytes\+Until}}
+\index{read\+Bytes\+Until@{read\+Bytes\+Until}!Stream@{Stream}}
+\subsubsection[{read\+Bytes\+Until(char terminator, char $\ast$buffer, size\+\_\+t length)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t read\+Bytes\+Until (
+\begin{DoxyParamCaption}
+\item[{char}]{terminator, }
+\item[{char $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}\label{class_stream_a9aa68dc2abab64ceafe8d8745b728af2}
+
+
+Definition at line 217 of file Stream.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_stream_a9aa68dc2abab64ceafe8d8745b728af2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_a9fcaea3bb67432821ddbde8a13331429}{}\index{Stream@{Stream}!read\+Bytes\+Until@{read\+Bytes\+Until}}
+\index{read\+Bytes\+Until@{read\+Bytes\+Until}!Stream@{Stream}}
+\subsubsection[{read\+Bytes\+Until(char terminator, uint8\+\_\+t $\ast$buffer, size\+\_\+t length)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t read\+Bytes\+Until (
+\begin{DoxyParamCaption}
+\item[{char}]{terminator, }
+\item[{uint8\+\_\+t $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_stream_a9fcaea3bb67432821ddbde8a13331429}
+
+
+Definition at line 86 of file Stream.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_stream_a9fcaea3bb67432821ddbde8a13331429_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_stream_a9fcaea3bb67432821ddbde8a13331429_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_ab1b0d4ef00718d18fe34d35dd1e26c66}{}\index{Stream@{Stream}!read\+String@{read\+String}}
+\index{read\+String@{read\+String}!Stream@{Stream}}
+\subsubsection[{read\+String()}]{\setlength{\rightskip}{0pt plus 5cm}String read\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_stream_ab1b0d4ef00718d18fe34d35dd1e26c66}
+
+
+Definition at line 230 of file Stream.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_stream_ab1b0d4ef00718d18fe34d35dd1e26c66_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_ac1f2b6e32ae2e321ad98c16482edf96a}{}\index{Stream@{Stream}!read\+String\+Until@{read\+String\+Until}}
+\index{read\+String\+Until@{read\+String\+Until}!Stream@{Stream}}
+\subsubsection[{read\+String\+Until(char terminator)}]{\setlength{\rightskip}{0pt plus 5cm}String read\+String\+Until (
+\begin{DoxyParamCaption}
+\item[{char}]{terminator}
+\end{DoxyParamCaption}
+)}\label{class_stream_ac1f2b6e32ae2e321ad98c16482edf96a}
+
+
+Definition at line 242 of file Stream.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_stream_ac1f2b6e32ae2e321ad98c16482edf96a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_a76c7d6530b9cb17f6663a64aea84b61e}{}\index{Stream@{Stream}!set\+Timeout@{set\+Timeout}}
+\index{set\+Timeout@{set\+Timeout}!Stream@{Stream}}
+\subsubsection[{set\+Timeout(unsigned long timeout)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Timeout (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{timeout}
+\end{DoxyParamCaption}
+)}\label{class_stream_a76c7d6530b9cb17f6663a64aea84b61e}
+
+
+Definition at line 72 of file Stream.\+cpp.
+
+\hypertarget{class_stream_a157762e7d29562248c38ecbe6daa2fae}{}\index{Stream@{Stream}!timed\+Peek@{timed\+Peek}}
+\index{timed\+Peek@{timed\+Peek}!Stream@{Stream}}
+\subsubsection[{timed\+Peek()}]{\setlength{\rightskip}{0pt plus 5cm}int timed\+Peek (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_stream_a157762e7d29562248c38ecbe6daa2fae}
+
+
+Definition at line 44 of file Stream.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_stream_a157762e7d29562248c38ecbe6daa2fae_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_stream_a157762e7d29562248c38ecbe6daa2fae_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_stream_a7cc09dd787a79c17281039b4456dc6aa}{}\index{Stream@{Stream}!timed\+Read@{timed\+Read}}
+\index{timed\+Read@{timed\+Read}!Stream@{Stream}}
+\subsubsection[{timed\+Read()}]{\setlength{\rightskip}{0pt plus 5cm}int timed\+Read (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_stream_a7cc09dd787a79c17281039b4456dc6aa}
+
+
+Definition at line 32 of file Stream.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_stream_a7cc09dd787a79c17281039b4456dc6aa_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_stream_a7cc09dd787a79c17281039b4456dc6aa_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{class_stream_a30515d765ff208be483b71592aa9da72}{}\index{Stream@{Stream}!\+\_\+start\+Millis@{\+\_\+start\+Millis}}
+\index{\+\_\+start\+Millis@{\+\_\+start\+Millis}!Stream@{Stream}}
+\subsubsection[{\+\_\+start\+Millis}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long \+\_\+start\+Millis\hspace{0.3cm}{\ttfamily [protected]}}\label{class_stream_a30515d765ff208be483b71592aa9da72}
+
+
+Definition at line 42 of file Stream.\+h.
+
+\hypertarget{class_stream_a24c7e4b09282e8150935ce8da759e176}{}\index{Stream@{Stream}!\+\_\+timeout@{\+\_\+timeout}}
+\index{\+\_\+timeout@{\+\_\+timeout}!Stream@{Stream}}
+\subsubsection[{\+\_\+timeout}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long \+\_\+timeout\hspace{0.3cm}{\ttfamily [protected]}}\label{class_stream_a24c7e4b09282e8150935ce8da759e176}
+
+
+Definition at line 41 of file Stream.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Arduino\+U\+N\+O/src/arduino/cores/arduino/\hyperlink{_stream_8h}{Stream.\+h}\item 
+Arduino\+U\+N\+O/src/arduino/cores/arduino/\hyperlink{_stream_8cpp}{Stream.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,494 @@
+\hypertarget{class_hardware_serial}{}\section{Hardware\+Serial Class Reference}
+\label{class_hardware_serial}\index{Hardware\+Serial@{Hardware\+Serial}}
+
+
+{\ttfamily \#include $<$Hardware\+Serial.\+h$>$}
+
+
+
+Inheritance diagram for Hardware\+Serial\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{class_hardware_serial__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Hardware\+Serial\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{class_hardware_serial__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_hardware_serial_ab181fe0181fb1fc198b33af34ee13cb4}{Hardware\+Serial} (volatile uint8\+\_\+t $\ast$ubrrh, volatile uint8\+\_\+t $\ast$ubrrl, volatile uint8\+\_\+t $\ast$ucsra, volatile uint8\+\_\+t $\ast$ucsrb, volatile uint8\+\_\+t $\ast$ucsrc, volatile uint8\+\_\+t $\ast$udr)
+\item 
+void \hyperlink{class_hardware_serial_a384e10dd459783bcba27090520119f3c}{begin} (unsigned long baud)
+\item 
+void \hyperlink{class_hardware_serial_a6d7cd41eca940345e2ffad77cf08c3bc}{begin} (unsigned long, uint8\+\_\+t)
+\item 
+void \hyperlink{class_hardware_serial_aaf81d3fdaf258088d7692fa70cece087}{end} ()
+\item 
+virtual int \hyperlink{class_hardware_serial_aeec8f4dbef97221a6041d6cdc6e9b716}{available} (void)
+\item 
+virtual int \hyperlink{class_hardware_serial_a65e3a688fcd31f2f486d3af02c400d8f}{peek} (void)
+\item 
+virtual int \hyperlink{class_hardware_serial_aead319e2866cf90d56c10f2ed39a4396}{read} (void)
+\item 
+int \hyperlink{class_hardware_serial_a4afe5933dbdb0ad962857d00e04c3bfc}{available\+For\+Write} (void)
+\item 
+virtual void \hyperlink{class_hardware_serial_a0a4efd3d0f68d057f23eb5dfcd16c17c}{flush} (void)
+\item 
+virtual size\+\_\+t \hyperlink{class_hardware_serial_a0c15a57daf1517586523b8d270d34c7d}{write} (uint8\+\_\+t)
+\item 
+size\+\_\+t \hyperlink{class_hardware_serial_a0ba52a995edf9b6c2cdf3d396be84ff1}{write} (unsigned long n)
+\item 
+size\+\_\+t \hyperlink{class_hardware_serial_a3cfec102ee6f58a2f7e617999ce9f5bb}{write} (long n)
+\item 
+size\+\_\+t \hyperlink{class_hardware_serial_a2d9bc6ac05e45a7023be3cd1ca224407}{write} (unsigned int n)
+\item 
+size\+\_\+t \hyperlink{class_hardware_serial_a22e7ab55e0aa268cff5b48e763429ec3}{write} (int n)
+\item 
+\hyperlink{class_hardware_serial_a9b3baad8c612d81b96e46f84d7e97580}{operator bool} ()
+\item 
+void \hyperlink{class_hardware_serial_a1e53ef70365848217cf98758e9391ca1}{\+\_\+rx\+\_\+complete\+\_\+irq} (void)
+\item 
+void \hyperlink{class_hardware_serial_aa3d3b6e82dac8974a0a70c3abf301e70}{\+\_\+tx\+\_\+udr\+\_\+empty\+\_\+irq} (void)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+volatile uint8\+\_\+t $\ast$const \hyperlink{class_hardware_serial_ac2dd0caa2b74a2992e1b9b0d63dec696}{\+\_\+ubrrh}
+\item 
+volatile uint8\+\_\+t $\ast$const \hyperlink{class_hardware_serial_ad61fd40f665d597de97ec3995e251e93}{\+\_\+ubrrl}
+\item 
+volatile uint8\+\_\+t $\ast$const \hyperlink{class_hardware_serial_a691bd409418c1acc6fc583692b54764f}{\+\_\+ucsra}
+\item 
+volatile uint8\+\_\+t $\ast$const \hyperlink{class_hardware_serial_a06c3d929aa3eb0e48227139d1750a3a7}{\+\_\+ucsrb}
+\item 
+volatile uint8\+\_\+t $\ast$const \hyperlink{class_hardware_serial_a3599c284453c515776147539d753d1bf}{\+\_\+ucsrc}
+\item 
+volatile uint8\+\_\+t $\ast$const \hyperlink{class_hardware_serial_a9123daf6c7d2bc8c3997d73f7b30bece}{\+\_\+udr}
+\item 
+bool \hyperlink{class_hardware_serial_a491255f295202ef6556a978224fdc71e}{\+\_\+written}
+\item 
+volatile \hyperlink{_hardware_serial_8h_a335e37d0726278844b068d565a4e66b7}{rx\+\_\+buffer\+\_\+index\+\_\+t} \hyperlink{class_hardware_serial_a797ebcc80bc2806b3ebbfc509e7aeabe}{\+\_\+rx\+\_\+buffer\+\_\+head}
+\item 
+volatile \hyperlink{_hardware_serial_8h_a335e37d0726278844b068d565a4e66b7}{rx\+\_\+buffer\+\_\+index\+\_\+t} \hyperlink{class_hardware_serial_a0343d5d99eb23a56dd3ad5b48928a94a}{\+\_\+rx\+\_\+buffer\+\_\+tail}
+\item 
+volatile \hyperlink{_hardware_serial_8h_a20cdd352151af0ecef9f3f68c8b20256}{tx\+\_\+buffer\+\_\+index\+\_\+t} \hyperlink{class_hardware_serial_abc7b62797e816bc704bfe3ec80f68607}{\+\_\+tx\+\_\+buffer\+\_\+head}
+\item 
+volatile \hyperlink{_hardware_serial_8h_a20cdd352151af0ecef9f3f68c8b20256}{tx\+\_\+buffer\+\_\+index\+\_\+t} \hyperlink{class_hardware_serial_a3aad9ccd1bebab9d9226e0c38ee54465}{\+\_\+tx\+\_\+buffer\+\_\+tail}
+\item 
+unsigned char \hyperlink{class_hardware_serial_ae33d584001d6c3fbbc6a8097b0ab19c7}{\+\_\+rx\+\_\+buffer} \mbox{[}\hyperlink{_hardware_serial_8h_aba0ceec384cf3acb51e0d6f45f31379c}{S\+E\+R\+I\+A\+L\+\_\+\+R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}\mbox{]}
+\item 
+unsigned char \hyperlink{class_hardware_serial_ae29711a762cbc9a7f622b4f4ff64d374}{\+\_\+tx\+\_\+buffer} \mbox{[}\hyperlink{_hardware_serial_8h_af0d9a9a9aac810bf58f698086f76e516}{S\+E\+R\+I\+A\+L\+\_\+\+T\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 83 of file Hardware\+Serial.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_hardware_serial_ab181fe0181fb1fc198b33af34ee13cb4}{}\index{Hardware\+Serial@{Hardware\+Serial}!Hardware\+Serial@{Hardware\+Serial}}
+\index{Hardware\+Serial@{Hardware\+Serial}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{Hardware\+Serial(volatile uint8\+\_\+t $\ast$ubrrh, volatile uint8\+\_\+t $\ast$ubrrl, volatile uint8\+\_\+t $\ast$ucsra, volatile uint8\+\_\+t $\ast$ucsrb, volatile uint8\+\_\+t $\ast$ucsrc, volatile uint8\+\_\+t $\ast$udr)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hardware\+Serial} (
+\begin{DoxyParamCaption}
+\item[{volatile uint8\+\_\+t $\ast$}]{ubrrh, }
+\item[{volatile uint8\+\_\+t $\ast$}]{ubrrl, }
+\item[{volatile uint8\+\_\+t $\ast$}]{ucsra, }
+\item[{volatile uint8\+\_\+t $\ast$}]{ucsrb, }
+\item[{volatile uint8\+\_\+t $\ast$}]{ucsrc, }
+\item[{volatile uint8\+\_\+t $\ast$}]{udr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_hardware_serial_ab181fe0181fb1fc198b33af34ee13cb4}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_hardware_serial_a1e53ef70365848217cf98758e9391ca1}{}\index{Hardware\+Serial@{Hardware\+Serial}!\+\_\+rx\+\_\+complete\+\_\+irq@{\+\_\+rx\+\_\+complete\+\_\+irq}}
+\index{\+\_\+rx\+\_\+complete\+\_\+irq@{\+\_\+rx\+\_\+complete\+\_\+irq}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{\+\_\+rx\+\_\+complete\+\_\+irq(void)}]{\setlength{\rightskip}{0pt plus 5cm}void \+\_\+rx\+\_\+complete\+\_\+irq (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_hardware_serial_a1e53ef70365848217cf98758e9391ca1}
+\hypertarget{class_hardware_serial_aa3d3b6e82dac8974a0a70c3abf301e70}{}\index{Hardware\+Serial@{Hardware\+Serial}!\+\_\+tx\+\_\+udr\+\_\+empty\+\_\+irq@{\+\_\+tx\+\_\+udr\+\_\+empty\+\_\+irq}}
+\index{\+\_\+tx\+\_\+udr\+\_\+empty\+\_\+irq@{\+\_\+tx\+\_\+udr\+\_\+empty\+\_\+irq}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{\+\_\+tx\+\_\+udr\+\_\+empty\+\_\+irq(void)}]{\setlength{\rightskip}{0pt plus 5cm}void \+\_\+tx\+\_\+udr\+\_\+empty\+\_\+irq (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{class_hardware_serial_aa3d3b6e82dac8974a0a70c3abf301e70}
+\hypertarget{class_hardware_serial_aeec8f4dbef97221a6041d6cdc6e9b716}{}\index{Hardware\+Serial@{Hardware\+Serial}!available@{available}}
+\index{available@{available}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{available(void)}]{\setlength{\rightskip}{0pt plus 5cm}virtual int available (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_hardware_serial_aeec8f4dbef97221a6041d6cdc6e9b716}
+
+
+Implements \hyperlink{class_stream_aebd60457902debb30b07971a16f24ebd}{Stream}.
+
+\hypertarget{class_hardware_serial_a4afe5933dbdb0ad962857d00e04c3bfc}{}\index{Hardware\+Serial@{Hardware\+Serial}!available\+For\+Write@{available\+For\+Write}}
+\index{available\+For\+Write@{available\+For\+Write}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{available\+For\+Write(void)}]{\setlength{\rightskip}{0pt plus 5cm}int available\+For\+Write (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{class_hardware_serial_a4afe5933dbdb0ad962857d00e04c3bfc}
+\hypertarget{class_hardware_serial_a384e10dd459783bcba27090520119f3c}{}\index{Hardware\+Serial@{Hardware\+Serial}!begin@{begin}}
+\index{begin@{begin}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{begin(unsigned long baud)}]{\setlength{\rightskip}{0pt plus 5cm}void begin (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{baud}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_hardware_serial_a384e10dd459783bcba27090520119f3c}
+
+
+Definition at line 111 of file Hardware\+Serial.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=120pt]{class_hardware_serial_a384e10dd459783bcba27090520119f3c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=120pt]{class_hardware_serial_a384e10dd459783bcba27090520119f3c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_hardware_serial_a6d7cd41eca940345e2ffad77cf08c3bc}{}\index{Hardware\+Serial@{Hardware\+Serial}!begin@{begin}}
+\index{begin@{begin}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{begin(unsigned long, uint8\+\_\+t)}]{\setlength{\rightskip}{0pt plus 5cm}void begin (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{long, }
+\item[{uint8\+\_\+t}]{}
+\end{DoxyParamCaption}
+)}\label{class_hardware_serial_a6d7cd41eca940345e2ffad77cf08c3bc}
+\hypertarget{class_hardware_serial_aaf81d3fdaf258088d7692fa70cece087}{}\index{Hardware\+Serial@{Hardware\+Serial}!end@{end}}
+\index{end@{end}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{end()}]{\setlength{\rightskip}{0pt plus 5cm}void end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_hardware_serial_aaf81d3fdaf258088d7692fa70cece087}
+\hypertarget{class_hardware_serial_a0a4efd3d0f68d057f23eb5dfcd16c17c}{}\index{Hardware\+Serial@{Hardware\+Serial}!flush@{flush}}
+\index{flush@{flush}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{flush(void)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void flush (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_hardware_serial_a0a4efd3d0f68d057f23eb5dfcd16c17c}
+
+
+Implements \hyperlink{class_stream_a50ab71f4bc571f6e246b20db4b3dd131}{Stream}.
+
+\hypertarget{class_hardware_serial_a9b3baad8c612d81b96e46f84d7e97580}{}\index{Hardware\+Serial@{Hardware\+Serial}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{operator bool()}]{\setlength{\rightskip}{0pt plus 5cm}operator bool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_hardware_serial_a9b3baad8c612d81b96e46f84d7e97580}
+
+
+Definition at line 125 of file Hardware\+Serial.\+h.
+
+\hypertarget{class_hardware_serial_a65e3a688fcd31f2f486d3af02c400d8f}{}\index{Hardware\+Serial@{Hardware\+Serial}!peek@{peek}}
+\index{peek@{peek}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{peek(void)}]{\setlength{\rightskip}{0pt plus 5cm}virtual int peek (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_hardware_serial_a65e3a688fcd31f2f486d3af02c400d8f}
+
+
+Implements \hyperlink{class_stream_a9ae768d427519818aa552adf467bf65a}{Stream}.
+
+\hypertarget{class_hardware_serial_aead319e2866cf90d56c10f2ed39a4396}{}\index{Hardware\+Serial@{Hardware\+Serial}!read@{read}}
+\index{read@{read}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{read(void)}]{\setlength{\rightskip}{0pt plus 5cm}virtual int read (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_hardware_serial_aead319e2866cf90d56c10f2ed39a4396}
+
+
+Implements \hyperlink{class_stream_a4afd50731ba321d1b9be909cb288a50b}{Stream}.
+
+\hypertarget{class_hardware_serial_a0c15a57daf1517586523b8d270d34c7d}{}\index{Hardware\+Serial@{Hardware\+Serial}!write@{write}}
+\index{write@{write}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{write(uint8\+\_\+t)}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\+\_\+t write (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_hardware_serial_a0c15a57daf1517586523b8d270d34c7d}
+
+
+Implements \hyperlink{class_print_acde4db2f92186810af3493fd2c7535f0}{Print}.
+
+\hypertarget{class_hardware_serial_a0ba52a995edf9b6c2cdf3d396be84ff1}{}\index{Hardware\+Serial@{Hardware\+Serial}!write@{write}}
+\index{write@{write}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{write(unsigned long n)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t write (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_hardware_serial_a0ba52a995edf9b6c2cdf3d396be84ff1}
+
+
+Definition at line 120 of file Hardware\+Serial.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=117pt]{class_hardware_serial_a0ba52a995edf9b6c2cdf3d396be84ff1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=117pt]{class_hardware_serial_a0ba52a995edf9b6c2cdf3d396be84ff1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_hardware_serial_a3cfec102ee6f58a2f7e617999ce9f5bb}{}\index{Hardware\+Serial@{Hardware\+Serial}!write@{write}}
+\index{write@{write}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{write(long n)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t write (
+\begin{DoxyParamCaption}
+\item[{long}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_hardware_serial_a3cfec102ee6f58a2f7e617999ce9f5bb}
+
+
+Definition at line 121 of file Hardware\+Serial.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=117pt]{class_hardware_serial_a3cfec102ee6f58a2f7e617999ce9f5bb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=117pt]{class_hardware_serial_a3cfec102ee6f58a2f7e617999ce9f5bb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_hardware_serial_a2d9bc6ac05e45a7023be3cd1ca224407}{}\index{Hardware\+Serial@{Hardware\+Serial}!write@{write}}
+\index{write@{write}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{write(unsigned int n)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t write (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_hardware_serial_a2d9bc6ac05e45a7023be3cd1ca224407}
+
+
+Definition at line 122 of file Hardware\+Serial.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=117pt]{class_hardware_serial_a2d9bc6ac05e45a7023be3cd1ca224407_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=117pt]{class_hardware_serial_a2d9bc6ac05e45a7023be3cd1ca224407_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_hardware_serial_a22e7ab55e0aa268cff5b48e763429ec3}{}\index{Hardware\+Serial@{Hardware\+Serial}!write@{write}}
+\index{write@{write}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{write(int n)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t write (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_hardware_serial_a22e7ab55e0aa268cff5b48e763429ec3}
+
+
+Definition at line 123 of file Hardware\+Serial.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=117pt]{class_hardware_serial_a22e7ab55e0aa268cff5b48e763429ec3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=117pt]{class_hardware_serial_a22e7ab55e0aa268cff5b48e763429ec3_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{class_hardware_serial_ae33d584001d6c3fbbc6a8097b0ab19c7}{}\index{Hardware\+Serial@{Hardware\+Serial}!\+\_\+rx\+\_\+buffer@{\+\_\+rx\+\_\+buffer}}
+\index{\+\_\+rx\+\_\+buffer@{\+\_\+rx\+\_\+buffer}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{\+\_\+rx\+\_\+buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char \+\_\+rx\+\_\+buffer\mbox{[}{\bf S\+E\+R\+I\+A\+L\+\_\+\+R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_hardware_serial_ae33d584001d6c3fbbc6a8097b0ab19c7}
+
+
+Definition at line 103 of file Hardware\+Serial.\+h.
+
+\hypertarget{class_hardware_serial_a797ebcc80bc2806b3ebbfc509e7aeabe}{}\index{Hardware\+Serial@{Hardware\+Serial}!\+\_\+rx\+\_\+buffer\+\_\+head@{\+\_\+rx\+\_\+buffer\+\_\+head}}
+\index{\+\_\+rx\+\_\+buffer\+\_\+head@{\+\_\+rx\+\_\+buffer\+\_\+head}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{\+\_\+rx\+\_\+buffer\+\_\+head}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf rx\+\_\+buffer\+\_\+index\+\_\+t} \+\_\+rx\+\_\+buffer\+\_\+head\hspace{0.3cm}{\ttfamily [protected]}}\label{class_hardware_serial_a797ebcc80bc2806b3ebbfc509e7aeabe}
+
+
+Definition at line 95 of file Hardware\+Serial.\+h.
+
+\hypertarget{class_hardware_serial_a0343d5d99eb23a56dd3ad5b48928a94a}{}\index{Hardware\+Serial@{Hardware\+Serial}!\+\_\+rx\+\_\+buffer\+\_\+tail@{\+\_\+rx\+\_\+buffer\+\_\+tail}}
+\index{\+\_\+rx\+\_\+buffer\+\_\+tail@{\+\_\+rx\+\_\+buffer\+\_\+tail}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{\+\_\+rx\+\_\+buffer\+\_\+tail}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf rx\+\_\+buffer\+\_\+index\+\_\+t} \+\_\+rx\+\_\+buffer\+\_\+tail\hspace{0.3cm}{\ttfamily [protected]}}\label{class_hardware_serial_a0343d5d99eb23a56dd3ad5b48928a94a}
+
+
+Definition at line 96 of file Hardware\+Serial.\+h.
+
+\hypertarget{class_hardware_serial_ae29711a762cbc9a7f622b4f4ff64d374}{}\index{Hardware\+Serial@{Hardware\+Serial}!\+\_\+tx\+\_\+buffer@{\+\_\+tx\+\_\+buffer}}
+\index{\+\_\+tx\+\_\+buffer@{\+\_\+tx\+\_\+buffer}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{\+\_\+tx\+\_\+buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char \+\_\+tx\+\_\+buffer\mbox{[}{\bf S\+E\+R\+I\+A\+L\+\_\+\+T\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_hardware_serial_ae29711a762cbc9a7f622b4f4ff64d374}
+
+
+Definition at line 104 of file Hardware\+Serial.\+h.
+
+\hypertarget{class_hardware_serial_abc7b62797e816bc704bfe3ec80f68607}{}\index{Hardware\+Serial@{Hardware\+Serial}!\+\_\+tx\+\_\+buffer\+\_\+head@{\+\_\+tx\+\_\+buffer\+\_\+head}}
+\index{\+\_\+tx\+\_\+buffer\+\_\+head@{\+\_\+tx\+\_\+buffer\+\_\+head}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{\+\_\+tx\+\_\+buffer\+\_\+head}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf tx\+\_\+buffer\+\_\+index\+\_\+t} \+\_\+tx\+\_\+buffer\+\_\+head\hspace{0.3cm}{\ttfamily [protected]}}\label{class_hardware_serial_abc7b62797e816bc704bfe3ec80f68607}
+
+
+Definition at line 97 of file Hardware\+Serial.\+h.
+
+\hypertarget{class_hardware_serial_a3aad9ccd1bebab9d9226e0c38ee54465}{}\index{Hardware\+Serial@{Hardware\+Serial}!\+\_\+tx\+\_\+buffer\+\_\+tail@{\+\_\+tx\+\_\+buffer\+\_\+tail}}
+\index{\+\_\+tx\+\_\+buffer\+\_\+tail@{\+\_\+tx\+\_\+buffer\+\_\+tail}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{\+\_\+tx\+\_\+buffer\+\_\+tail}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf tx\+\_\+buffer\+\_\+index\+\_\+t} \+\_\+tx\+\_\+buffer\+\_\+tail\hspace{0.3cm}{\ttfamily [protected]}}\label{class_hardware_serial_a3aad9ccd1bebab9d9226e0c38ee54465}
+
+
+Definition at line 98 of file Hardware\+Serial.\+h.
+
+\hypertarget{class_hardware_serial_ac2dd0caa2b74a2992e1b9b0d63dec696}{}\index{Hardware\+Serial@{Hardware\+Serial}!\+\_\+ubrrh@{\+\_\+ubrrh}}
+\index{\+\_\+ubrrh@{\+\_\+ubrrh}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{\+\_\+ubrrh}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\+\_\+t$\ast$ const \+\_\+ubrrh\hspace{0.3cm}{\ttfamily [protected]}}\label{class_hardware_serial_ac2dd0caa2b74a2992e1b9b0d63dec696}
+
+
+Definition at line 86 of file Hardware\+Serial.\+h.
+
+\hypertarget{class_hardware_serial_ad61fd40f665d597de97ec3995e251e93}{}\index{Hardware\+Serial@{Hardware\+Serial}!\+\_\+ubrrl@{\+\_\+ubrrl}}
+\index{\+\_\+ubrrl@{\+\_\+ubrrl}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{\+\_\+ubrrl}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\+\_\+t$\ast$ const \+\_\+ubrrl\hspace{0.3cm}{\ttfamily [protected]}}\label{class_hardware_serial_ad61fd40f665d597de97ec3995e251e93}
+
+
+Definition at line 87 of file Hardware\+Serial.\+h.
+
+\hypertarget{class_hardware_serial_a691bd409418c1acc6fc583692b54764f}{}\index{Hardware\+Serial@{Hardware\+Serial}!\+\_\+ucsra@{\+\_\+ucsra}}
+\index{\+\_\+ucsra@{\+\_\+ucsra}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{\+\_\+ucsra}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\+\_\+t$\ast$ const \+\_\+ucsra\hspace{0.3cm}{\ttfamily [protected]}}\label{class_hardware_serial_a691bd409418c1acc6fc583692b54764f}
+
+
+Definition at line 88 of file Hardware\+Serial.\+h.
+
+\hypertarget{class_hardware_serial_a06c3d929aa3eb0e48227139d1750a3a7}{}\index{Hardware\+Serial@{Hardware\+Serial}!\+\_\+ucsrb@{\+\_\+ucsrb}}
+\index{\+\_\+ucsrb@{\+\_\+ucsrb}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{\+\_\+ucsrb}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\+\_\+t$\ast$ const \+\_\+ucsrb\hspace{0.3cm}{\ttfamily [protected]}}\label{class_hardware_serial_a06c3d929aa3eb0e48227139d1750a3a7}
+
+
+Definition at line 89 of file Hardware\+Serial.\+h.
+
+\hypertarget{class_hardware_serial_a3599c284453c515776147539d753d1bf}{}\index{Hardware\+Serial@{Hardware\+Serial}!\+\_\+ucsrc@{\+\_\+ucsrc}}
+\index{\+\_\+ucsrc@{\+\_\+ucsrc}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{\+\_\+ucsrc}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\+\_\+t$\ast$ const \+\_\+ucsrc\hspace{0.3cm}{\ttfamily [protected]}}\label{class_hardware_serial_a3599c284453c515776147539d753d1bf}
+
+
+Definition at line 90 of file Hardware\+Serial.\+h.
+
+\hypertarget{class_hardware_serial_a9123daf6c7d2bc8c3997d73f7b30bece}{}\index{Hardware\+Serial@{Hardware\+Serial}!\+\_\+udr@{\+\_\+udr}}
+\index{\+\_\+udr@{\+\_\+udr}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{\+\_\+udr}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\+\_\+t$\ast$ const \+\_\+udr\hspace{0.3cm}{\ttfamily [protected]}}\label{class_hardware_serial_a9123daf6c7d2bc8c3997d73f7b30bece}
+
+
+Definition at line 91 of file Hardware\+Serial.\+h.
+
+\hypertarget{class_hardware_serial_a491255f295202ef6556a978224fdc71e}{}\index{Hardware\+Serial@{Hardware\+Serial}!\+\_\+written@{\+\_\+written}}
+\index{\+\_\+written@{\+\_\+written}!Hardware\+Serial@{Hardware\+Serial}}
+\subsubsection[{\+\_\+written}]{\setlength{\rightskip}{0pt plus 5cm}bool \+\_\+written\hspace{0.3cm}{\ttfamily [protected]}}\label{class_hardware_serial_a491255f295202ef6556a978224fdc71e}
+
+
+Definition at line 93 of file Hardware\+Serial.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Arduino\+U\+N\+O/src/arduino/cores/arduino/\hyperlink{_hardware_serial_8h}{Hardware\+Serial.\+h}\end{DoxyCompactItemize}

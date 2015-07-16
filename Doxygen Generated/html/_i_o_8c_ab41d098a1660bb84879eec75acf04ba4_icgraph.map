@@ -1,0 +1,4 @@
+<map id="processAnalogInput" name="processAnalogInput">
+<area shape="rect" id="node2" href="$_i_o__extern_8h.html#af4f070174f72d729b4db63a88686e3b8" title="Function definition for processing input buffer. " alt="" coords="189,5,319,32"/>
+<area shape="rect" id="node3" href="$_project_main_8h.html#aa0a2444ea9e75ec2a583b7e8a38560a6" title="Function declaration for tasks which are executed every 20ms Function declaration for tasks which are..." alt="" coords="367,5,445,32"/>
+</map>

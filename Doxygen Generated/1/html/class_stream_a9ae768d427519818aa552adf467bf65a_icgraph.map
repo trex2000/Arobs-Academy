@@ -1,0 +1,6 @@
+<map id="peek" name="peek">
+<area shape="rect" id="node2" href="$class_stream.html#a157762e7d29562248c38ecbe6daa2fae" title="timedPeek" alt="" coords="104,31,188,57"/>
+<area shape="rect" id="node3" href="$class_stream.html#a6a68a089460a8e332fad1002d36374a5" title="peekNextDigit" alt="" coords="236,31,339,57"/>
+<area shape="rect" id="node4" href="$class_stream.html#aa5269d83a12f784ac9d54e19104d39fe" title="parseInt" alt="" coords="394,5,462,32"/>
+<area shape="rect" id="node5" href="$class_stream.html#aa66300bfdb6b2eda158d84dbaf5adcb5" title="parseFloat" alt="" coords="387,68,469,95"/>
+</map>

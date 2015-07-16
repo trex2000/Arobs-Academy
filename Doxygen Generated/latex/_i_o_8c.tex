@@ -1,0 +1,560 @@
+\hypertarget{_i_o_8c}{}\section{Arduino\+U\+N\+O/src/\+Project\+Files/\+I\+O\+\_\+\+H\+A\+L/\+I\+O.c File Reference}
+\label{_i_o_8c}\index{Arduino\+U\+N\+O/src/\+Project\+Files/\+I\+O\+\_\+\+H\+A\+L/\+I\+O.\+c@{Arduino\+U\+N\+O/src/\+Project\+Files/\+I\+O\+\_\+\+H\+A\+L/\+I\+O.\+c}}
+
+
+File containing functions for I\+O.  
+
+
+{\ttfamily \#include $<$avr/io.\+h$>$}\\*
+{\ttfamily \#include $<$Arduino.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}I\+O.\+h\char`\"{}}\\*
+Include dependency graph for I\+O.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i_o_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_i_o_8c_a8d842ab28d8f573d16da7b28b36e2460}{C\+H\+E\+C\+K\+\_\+\+B\+I\+T}(var,  pos)~((var) \& (1$<$$<$(pos)))
+\item 
+\#define \hyperlink{_i_o_8c_a3803e290efe5d26c36c2eea0c1e4657c}{M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E\+\_\+\+R\+E\+G}~256
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{_i_o_8c_a5066ecac2ab4297f9050f69fbb1fc07e}{Get\+Input\+Pin} (\hyperlink{_i_o_8h_a89ad3a4b06c05102a65a5eab2f26bb9b}{E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S} pin\+Id\+\_\+en)
+\begin{DoxyCompactList}\small\item\em Returns status of logical Input Pin. \end{DoxyCompactList}\item 
+void \hyperlink{_i_o_8c_a0b898fbc36b3bc499f5fec9c4953daf1}{set\+Output\+Pin} (\hyperlink{_i_o_8h_a556553477e134258665f63e3296697a1}{E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S} pin\+Id\+\_\+en, uint8\+\_\+t value\+\_\+u8)
+\begin{DoxyCompactList}\small\item\em Returns status of logical Output Pin. \end{DoxyCompactList}\item 
+void \hyperlink{_i_o_8c_a9e64e598ce482388e7a16a092bfcd6d7}{process\+Output\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Function implementation for processing output buffer. \end{DoxyCompactList}\item 
+int \hyperlink{_i_o_8c_ab40163bc77289c9ceff07df6933ca903}{get\+Value} (uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Function definition for get value. \end{DoxyCompactList}\item 
+int \hyperlink{_i_o_8c_adf06218c318317d35c8340c59974c18a}{D\+O\+P\+W\+M\+\_\+set\+Value} (char pin, int duty)
+\item 
+void \hyperlink{_i_o_8c_a1778435697ce5e88277225a1ea85c2d9}{init\+I\+O} ()
+\item 
+void \hyperlink{_i_o_8c_a07f8df9b9660a9173ba2a916ab7a16b4}{process\+Digital\+Output} (\hyperlink{_i_o_8h_a556553477e134258665f63e3296697a1}{E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S} buffer\+Index\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Function implementation for processing output buffer. \end{DoxyCompactList}\item 
+void \hyperlink{_i_o_8c_a9f7185c67e2c73badb693def46b85158}{process\+Digital\+Output\+P\+W\+M} (\hyperlink{_i_o_8h_a556553477e134258665f63e3296697a1}{E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S} buffer\+Index\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Function implementation for processing output buffer. \end{DoxyCompactList}\item 
+void \hyperlink{_i_o_8c_af4f070174f72d729b4db63a88686e3b8}{process\+Input\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Function implementation for processing output buffer. \end{DoxyCompactList}\item 
+void \hyperlink{_i_o_8c_ab41d098a1660bb84879eec75acf04ba4}{process\+Analog\+Input} (\hyperlink{_i_o_8h_a89ad3a4b06c05102a65a5eab2f26bb9b}{E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S} buffer\+Index\+\_\+len)
+\item 
+void \hyperlink{_i_o_8c_a4731166063789af1c8cee641d3ad653e}{process\+Digital\+Input} (\hyperlink{_i_o_8h_a89ad3a4b06c05102a65a5eab2f26bb9b}{E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S} buffer\+Index\+\_\+len)
+\item 
+void \hyperlink{_i_o_8c_a823993b1d47cd88ec002226cbb45ff29}{setup\+A\+D\+C} ()
+\begin{DoxyCompactList}\small\item\em Function implementation for analog input from lightsensor. \end{DoxyCompactList}\item 
+void \hyperlink{_i_o_8c_a988a37531fcd4f8ec5dfc19ba7ec50da}{process\+A\+D\+Cconversion} ()
+\begin{DoxyCompactList}\small\item\em Function processes A\+D\+C conversion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{_i_o_8c_a647d84744997f75e87aaa10b86316aff}{input\+Buffer\+\_\+u16} \mbox{[}\hyperlink{_i_o_8h_a3b9aada966a6a576a139f8527fcdc717a3065d8b9499cba8734b73bf1ee483840}{E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+I\+N\+P\+U\+T}\mbox{]}
+\begin{DoxyCompactList}\small\item\em buffer holds the value of the inputs. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{_i_o_8c_a2fcbc64d50ea45e3cc33eb468da9f9a2}{adc\+\_\+\+Result\+\_\+u16} \mbox{[}\hyperlink{_i_o_8h_a08daee1483e4da843c7116aaf2542529}{M\+A\+X\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em array holds the results of A\+D\+C conversion \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{_i_o_8c_afa44a558052638a5fb3a3f7aa5a43780}{output\+Buffer\+\_\+u8} \mbox{[}\hyperlink{_i_o_8h_afc40988743806d63eac78433527f1befa2a542528e6b5a1a800f9b990795cd712}{E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+O\+U\+T\+P\+U\+T\+S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em buffer holds the value of the outputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File containing functions for I\+O. 
+
+\begin{DoxyAuthor}{Author}
+Alex 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+10 Jul 2015 Here typically goes a more extensive explanation of what the header defines. Doxygens tags are words preceeded by either a backslash \textbackslash{} or by an at symbol @. 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See also}
+\href{http://www.stack.nl/~dimitri/doxygen/docblocks.html}{\tt http\+://www.\+stack.\+nl/$\sim$dimitri/doxygen/docblocks.\+html} 
+
+\href{http://www.stack.nl/~dimitri/doxygen/commands.html}{\tt http\+://www.\+stack.\+nl/$\sim$dimitri/doxygen/commands.\+html} 
+\end{DoxySeeAlso}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_i_o_8c_a8d842ab28d8f573d16da7b28b36e2460}{}\index{I\+O.\+c@{I\+O.\+c}!C\+H\+E\+C\+K\+\_\+\+B\+I\+T@{C\+H\+E\+C\+K\+\_\+\+B\+I\+T}}
+\index{C\+H\+E\+C\+K\+\_\+\+B\+I\+T@{C\+H\+E\+C\+K\+\_\+\+B\+I\+T}!I\+O.\+c@{I\+O.\+c}}
+\subsubsection[{C\+H\+E\+C\+K\+\_\+\+B\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+H\+E\+C\+K\+\_\+\+B\+I\+T(
+\begin{DoxyParamCaption}
+\item[{}]{var, }
+\item[{}]{pos}
+\end{DoxyParamCaption}
+)~((var) \& (1$<$$<$(pos)))}\label{_i_o_8c_a8d842ab28d8f573d16da7b28b36e2460}
+
+
+Definition at line 38 of file I\+O.\+c.
+
+\hypertarget{_i_o_8c_a3803e290efe5d26c36c2eea0c1e4657c}{}\index{I\+O.\+c@{I\+O.\+c}!M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E\+\_\+\+R\+E\+G@{M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E\+\_\+\+R\+E\+G}}
+\index{M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E\+\_\+\+R\+E\+G@{M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E\+\_\+\+R\+E\+G}!I\+O.\+c@{I\+O.\+c}}
+\subsubsection[{M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E\+\_\+\+R\+E\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+P\+W\+M\+\_\+\+V\+A\+L\+U\+E\+\_\+\+R\+E\+G~256}\label{_i_o_8c_a3803e290efe5d26c36c2eea0c1e4657c}
+
+
+Definition at line 39 of file I\+O.\+c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_i_o_8c_adf06218c318317d35c8340c59974c18a}{}\index{I\+O.\+c@{I\+O.\+c}!D\+O\+P\+W\+M\+\_\+set\+Value@{D\+O\+P\+W\+M\+\_\+set\+Value}}
+\index{D\+O\+P\+W\+M\+\_\+set\+Value@{D\+O\+P\+W\+M\+\_\+set\+Value}!I\+O.\+c@{I\+O.\+c}}
+\subsubsection[{D\+O\+P\+W\+M\+\_\+set\+Value(char pin, int duty)}]{\setlength{\rightskip}{0pt plus 5cm}int D\+O\+P\+W\+M\+\_\+set\+Value (
+\begin{DoxyParamCaption}
+\item[{char}]{pin, }
+\item[{int}]{duty}
+\end{DoxyParamCaption}
+)}\label{_i_o_8c_adf06218c318317d35c8340c59974c18a}
+
+
+Definition at line 215 of file I\+O.\+c.
+
+\hypertarget{_i_o_8c_a5066ecac2ab4297f9050f69fbb1fc07e}{}\index{I\+O.\+c@{I\+O.\+c}!Get\+Input\+Pin@{Get\+Input\+Pin}}
+\index{Get\+Input\+Pin@{Get\+Input\+Pin}!I\+O.\+c@{I\+O.\+c}}
+\subsubsection[{Get\+Input\+Pin(\+E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S pin\+Id\+\_\+en)}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Get\+Input\+Pin (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S}}]{pin\+Id\+\_\+en}
+\end{DoxyParamCaption}
+)}\label{_i_o_8c_a5066ecac2ab4297f9050f69fbb1fc07e}
+
+
+Returns status of logical Input Pin. 
+
+Section for h files inclusion.
+
+Links are generated automatically for webpages (like \href{http://www.google.co.uk}{\tt http\+://www.\+google.\+co.\+uk}) and for structures, like Box\+Struct\+\_\+struct. For typedef-\/ed types use \#\+Box\+Struct. For functions, automatic links are generated when the parenthesis () follow the name of the function, like Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name(). Alternatively, you can use \#\+Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name. 
+\begin{DoxyParams}{Parameters}
+{\em pin\+Id\+\_\+en} & logical input pin name. range\+: E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily state} of the pin. 
+\end{DoxyReturn}
+
+
+Definition at line 81 of file I\+O.\+c.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{_i_o_8c_a5066ecac2ab4297f9050f69fbb1fc07e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_i_o_8c_ab40163bc77289c9ceff07df6933ca903}{}\index{I\+O.\+c@{I\+O.\+c}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!I\+O.\+c@{I\+O.\+c}}
+\subsubsection[{get\+Value(uint8\+\_\+t pin)}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Value (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{pin}
+\end{DoxyParamCaption}
+)}\label{_i_o_8c_ab40163bc77289c9ceff07df6933ca903}
+
+
+Function definition for get value. 
+
+Function definition for set output pin For functions, automatic links are generated when the parenthesis () follow the name of the function, like Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name(). Alternatively, you can use \#\+Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+$<$ variabila in care stocam valoarea registrului din care citim
+
+$<$ cautam registrul aferent piniului selectat, P\+I\+Nx de unde citim starea pinului
+
+$<$ Registrii P\+I\+Nx sunt Read Only
+
+$<$ pin= pin-\/7; resetam pinul astfel incat sa putem citi din registrul pin\+B daca acesta nu e setat in memorie in continuare la P\+I\+N\+D
+
+$<$ pin= pin-\/13;
+
+$<$ cautam pinul din registrul aferent,de aici putem afla starea pinilor daca sunt Input (1), sau Output (0); 
+
+Definition at line 183 of file I\+O.\+c.
+
+\hypertarget{_i_o_8c_a1778435697ce5e88277225a1ea85c2d9}{}\index{I\+O.\+c@{I\+O.\+c}!init\+I\+O@{init\+I\+O}}
+\index{init\+I\+O@{init\+I\+O}!I\+O.\+c@{I\+O.\+c}}
+\subsubsection[{init\+I\+O()}]{\setlength{\rightskip}{0pt plus 5cm}void init\+I\+O (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_i_o_8c_a1778435697ce5e88277225a1ea85c2d9}
+
+
+Definition at line 234 of file I\+O.\+c.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{_i_o_8c_a1778435697ce5e88277225a1ea85c2d9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_i_o_8c_a988a37531fcd4f8ec5dfc19ba7ec50da}{}\index{I\+O.\+c@{I\+O.\+c}!process\+A\+D\+Cconversion@{process\+A\+D\+Cconversion}}
+\index{process\+A\+D\+Cconversion@{process\+A\+D\+Cconversion}!I\+O.\+c@{I\+O.\+c}}
+\subsubsection[{process\+A\+D\+Cconversion()}]{\setlength{\rightskip}{0pt plus 5cm}void process\+A\+D\+Cconversion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_i_o_8c_a988a37531fcd4f8ec5dfc19ba7ec50da}
+
+
+Function processes A\+D\+C conversion. 
+
+Function verifies enabled A\+D\+C channels and stores the A\+D\+C conversion values in an arrayf results On each enabled A\+D\+C channel, the A\+D\+M\+U\+X register is updated \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+$<$ index for result A\+D\+C conversion array
+
+$<$ current channel is enabled
+
+$<$ array of result gets A\+D\+C value for the specified channel
+
+$<$passes to the next A\+D\+C channel
+
+$<$ updates A\+D\+M\+U\+X register
+
+$<$ resets the initial value
+
+$<$ A\+D\+S\+C bit is not set -\/ meaning the A\+D\+C conversion is not in progress
+
+$<$ current channel is N\+O\+T enabled
+
+$<$passes to the next A\+D\+C channel
+
+$<$ updates A\+D\+M\+U\+X register
+
+$<$ resets the initial value 
+
+Definition at line 451 of file I\+O.\+c.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{_i_o_8c_a988a37531fcd4f8ec5dfc19ba7ec50da_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_i_o_8c_ab41d098a1660bb84879eec75acf04ba4}{}\index{I\+O.\+c@{I\+O.\+c}!process\+Analog\+Input@{process\+Analog\+Input}}
+\index{process\+Analog\+Input@{process\+Analog\+Input}!I\+O.\+c@{I\+O.\+c}}
+\subsubsection[{process\+Analog\+Input(\+E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S buffer\+Index\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+Analog\+Input (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S}}]{buffer\+Index\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{_i_o_8c_ab41d098a1660bb84879eec75acf04ba4}
+$<$do nothing 
+
+Definition at line 369 of file I\+O.\+c.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i_o_8c_ab41d098a1660bb84879eec75acf04ba4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_i_o_8c_a4731166063789af1c8cee641d3ad653e}{}\index{I\+O.\+c@{I\+O.\+c}!process\+Digital\+Input@{process\+Digital\+Input}}
+\index{process\+Digital\+Input@{process\+Digital\+Input}!I\+O.\+c@{I\+O.\+c}}
+\subsubsection[{process\+Digital\+Input(\+E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S buffer\+Index\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+Digital\+Input (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+P\+I\+N\+S}}]{buffer\+Index\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{_i_o_8c_a4731166063789af1c8cee641d3ad653e}
+
+
+Definition at line 382 of file I\+O.\+c.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i_o_8c_a4731166063789af1c8cee641d3ad653e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_i_o_8c_a07f8df9b9660a9173ba2a916ab7a16b4}{}\index{I\+O.\+c@{I\+O.\+c}!process\+Digital\+Output@{process\+Digital\+Output}}
+\index{process\+Digital\+Output@{process\+Digital\+Output}!I\+O.\+c@{I\+O.\+c}}
+\subsubsection[{process\+Digital\+Output(\+E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S buffer\+Index\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+Digital\+Output (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S}}]{buffer\+Index\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{_i_o_8c_a07f8df9b9660a9173ba2a916ab7a16b4}
+
+
+Function implementation for processing output buffer. 
+
+Function definition for processing Digital output.
+
+Function implementation for processing output buffer \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 285 of file I\+O.\+c.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i_o_8c_a07f8df9b9660a9173ba2a916ab7a16b4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_i_o_8c_a9f7185c67e2c73badb693def46b85158}{}\index{I\+O.\+c@{I\+O.\+c}!process\+Digital\+Output\+P\+W\+M@{process\+Digital\+Output\+P\+W\+M}}
+\index{process\+Digital\+Output\+P\+W\+M@{process\+Digital\+Output\+P\+W\+M}!I\+O.\+c@{I\+O.\+c}}
+\subsubsection[{process\+Digital\+Output\+P\+W\+M(\+E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S buffer\+Index\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}void process\+Digital\+Output\+P\+W\+M (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S}}]{buffer\+Index\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{_i_o_8c_a9f7185c67e2c73badb693def46b85158}
+
+
+Function implementation for processing output buffer. 
+
+Function definition for process\+Digital\+Output\+P\+W\+M.
+
+Function implementation for processing output buffer \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 321 of file I\+O.\+c.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i_o_8c_a9f7185c67e2c73badb693def46b85158_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_i_o_8c_af4f070174f72d729b4db63a88686e3b8}{}\index{I\+O.\+c@{I\+O.\+c}!process\+Input\+Buffer@{process\+Input\+Buffer}}
+\index{process\+Input\+Buffer@{process\+Input\+Buffer}!I\+O.\+c@{I\+O.\+c}}
+\subsubsection[{process\+Input\+Buffer()}]{\setlength{\rightskip}{0pt plus 5cm}void process\+Input\+Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_i_o_8c_af4f070174f72d729b4db63a88686e3b8}
+
+
+Function implementation for processing output buffer. 
+
+Function definition for processing input buffer.
+
+Function implementation for processing output buffer \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+$<$end case E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+A\+I 
+
+Definition at line 347 of file I\+O.\+c.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{_i_o_8c_af4f070174f72d729b4db63a88686e3b8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{_i_o_8c_af4f070174f72d729b4db63a88686e3b8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_i_o_8c_a9e64e598ce482388e7a16a092bfcd6d7}{}\index{I\+O.\+c@{I\+O.\+c}!process\+Output\+Buffer@{process\+Output\+Buffer}}
+\index{process\+Output\+Buffer@{process\+Output\+Buffer}!I\+O.\+c@{I\+O.\+c}}
+\subsubsection[{process\+Output\+Buffer()}]{\setlength{\rightskip}{0pt plus 5cm}void process\+Output\+Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_i_o_8c_a9e64e598ce482388e7a16a092bfcd6d7}
+
+
+Function implementation for processing output buffer. 
+
+Function definition for processing output buffer.
+
+Function implementation for processing output buffer \begin{DoxyReturn}{Returns}
+voidfunctia pentru citirea unui pin 
+\end{DoxyReturn}
+$<$end case E\+N\+\_\+\+P\+O\+R\+T\+\_\+\+D\+O 
+
+Definition at line 163 of file I\+O.\+c.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i_o_8c_a9e64e598ce482388e7a16a092bfcd6d7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{_i_o_8c_a9e64e598ce482388e7a16a092bfcd6d7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_i_o_8c_a0b898fbc36b3bc499f5fec9c4953daf1}{}\index{I\+O.\+c@{I\+O.\+c}!set\+Output\+Pin@{set\+Output\+Pin}}
+\index{set\+Output\+Pin@{set\+Output\+Pin}!I\+O.\+c@{I\+O.\+c}}
+\subsubsection[{set\+Output\+Pin(\+E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S pin\+Id\+\_\+en, uint8\+\_\+t value\+\_\+u8)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Output\+Pin (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+N\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+P\+I\+N\+S}}]{pin\+Id\+\_\+en, }
+\item[{uint8\+\_\+t}]{value\+\_\+u8}
+\end{DoxyParamCaption}
+)}\label{_i_o_8c_a0b898fbc36b3bc499f5fec9c4953daf1}
+
+
+Returns status of logical Output Pin. 
+
+Links are generated automatically for webpages (like \href{http://www.google.co.uk}{\tt http\+://www.\+google.\+co.\+uk}) and for structures, like Box\+Struct\+\_\+struct. For typedef-\/ed types use \#\+Box\+Struct. For functions, automatic links are generated when the parenthesis () follow the name of the function, like Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name(). Alternatively, you can use \#\+Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name. 
+\begin{DoxyParams}{Parameters}
+{\em pin\+Id\+\_\+en} & logical output pin name. range\+: E\+N\+\_\+\+O\+U\+P\+U\+T\+\_\+\+P\+I\+N\+S \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily state} of the pin. 
+\end{DoxyReturn}
+$<$ tests if the pin is out of range
+
+$<$verificam daca portul e de tip P\+W\+M
+
+$<$P\+W\+M port
+
+$<$ sets the value to be put in output buffer to the maximum P\+W\+M value
+
+$<$not a P\+W\+M port
+
+$<$implementat pentru robustete
+
+$<$ functia de Set pini digitali
+
+$<$do nothing 
+
+Definition at line 119 of file I\+O.\+c.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{_i_o_8c_a0b898fbc36b3bc499f5fec9c4953daf1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_i_o_8c_a823993b1d47cd88ec002226cbb45ff29}{}\index{I\+O.\+c@{I\+O.\+c}!setup\+A\+D\+C@{setup\+A\+D\+C}}
+\index{setup\+A\+D\+C@{setup\+A\+D\+C}!I\+O.\+c@{I\+O.\+c}}
+\subsubsection[{setup\+A\+D\+C()}]{\setlength{\rightskip}{0pt plus 5cm}void setup\+A\+D\+C (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_i_o_8c_a823993b1d47cd88ec002226cbb45ff29}
+
+
+Function implementation for analog input from lightsensor. 
+
+Function implementation for analog input from lightsensor \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+$<$it is set the A\+D\+C enable bit
+
+$<$it is set the A\+D\+C prescaler for 128 cycles
+
+$<$ enables analog input channels
+
+$<$do nothing 
+
+Definition at line 421 of file I\+O.\+c.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{_i_o_8c_a823993b1d47cd88ec002226cbb45ff29_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_i_o_8c_a2fcbc64d50ea45e3cc33eb468da9f9a2}{}\index{I\+O.\+c@{I\+O.\+c}!adc\+\_\+\+Result\+\_\+u16@{adc\+\_\+\+Result\+\_\+u16}}
+\index{adc\+\_\+\+Result\+\_\+u16@{adc\+\_\+\+Result\+\_\+u16}!I\+O.\+c@{I\+O.\+c}}
+\subsubsection[{adc\+\_\+\+Result\+\_\+u16}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t adc\+\_\+\+Result\+\_\+u16\mbox{[}{\bf M\+A\+X\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S}\mbox{]}}\label{_i_o_8c_a2fcbc64d50ea45e3cc33eb468da9f9a2}
+
+
+array holds the results of A\+D\+C conversion 
+
+array holds the results of A\+D\+C conversion 
+
+Definition at line 55 of file I\+O.\+c.
+
+\hypertarget{_i_o_8c_a647d84744997f75e87aaa10b86316aff}{}\index{I\+O.\+c@{I\+O.\+c}!input\+Buffer\+\_\+u16@{input\+Buffer\+\_\+u16}}
+\index{input\+Buffer\+\_\+u16@{input\+Buffer\+\_\+u16}!I\+O.\+c@{I\+O.\+c}}
+\subsubsection[{input\+Buffer\+\_\+u16}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t input\+Buffer\+\_\+u16\mbox{[}{\bf E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+I\+N\+P\+U\+T}\mbox{]}}\label{_i_o_8c_a647d84744997f75e87aaa10b86316aff}
+
+
+buffer holds the value of the inputs. 
+
+Detailed buffer holds the value of the inputs. 
+
+Definition at line 47 of file I\+O.\+c.
+
+\hypertarget{_i_o_8c_afa44a558052638a5fb3a3f7aa5a43780}{}\index{I\+O.\+c@{I\+O.\+c}!output\+Buffer\+\_\+u8@{output\+Buffer\+\_\+u8}}
+\index{output\+Buffer\+\_\+u8@{output\+Buffer\+\_\+u8}!I\+O.\+c@{I\+O.\+c}}
+\subsubsection[{output\+Buffer\+\_\+u8}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t output\+Buffer\+\_\+u8\mbox{[}{\bf E\+N\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S\+\_\+\+O\+U\+T\+P\+U\+T\+S}\mbox{]}}\label{_i_o_8c_afa44a558052638a5fb3a3f7aa5a43780}
+
+
+buffer holds the value of the outputs. 
+
+Detailed buffer holds the value of the outputs. 
+
+Definition at line 62 of file I\+O.\+c.
+

@@ -1,0 +1,316 @@
+\hypertarget{_hardware_serial_8h}{}\section{Arduino\+U\+N\+O/src/arduino/cores/arduino/\+Hardware\+Serial.h File Reference}
+\label{_hardware_serial_8h}\index{Arduino\+U\+N\+O/src/arduino/cores/arduino/\+Hardware\+Serial.\+h@{Arduino\+U\+N\+O/src/arduino/cores/arduino/\+Hardware\+Serial.\+h}}
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}Stream.\+h\char`\"{}}\\*
+Include dependency graph for Hardware\+Serial.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_hardware_serial_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_hardware_serial_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_hardware_serial}{Hardware\+Serial}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_hardware_serial_8h_af0d9a9a9aac810bf58f698086f76e516}{S\+E\+R\+I\+A\+L\+\_\+\+T\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}~16
+\item 
+\#define \hyperlink{_hardware_serial_8h_aba0ceec384cf3acb51e0d6f45f31379c}{S\+E\+R\+I\+A\+L\+\_\+\+R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}~16
+\item 
+\#define \hyperlink{_hardware_serial_8h_ad4f2710a1b673218d47b087048df36e4}{S\+E\+R\+I\+A\+L\+\_\+5\+N1}~0x00
+\item 
+\#define \hyperlink{_hardware_serial_8h_acc2c4fc8ebd00b4025ea682feafa918d}{S\+E\+R\+I\+A\+L\+\_\+6\+N1}~0x02
+\item 
+\#define \hyperlink{_hardware_serial_8h_aca9cc0079a4238c2a56408cc901c685f}{S\+E\+R\+I\+A\+L\+\_\+7\+N1}~0x04
+\item 
+\#define \hyperlink{_hardware_serial_8h_a0db78b4521d43c0d702b9577bd3acda2}{S\+E\+R\+I\+A\+L\+\_\+8\+N1}~0x06
+\item 
+\#define \hyperlink{_hardware_serial_8h_a1c84ae9720db3da34d1b41feda5d0ff8}{S\+E\+R\+I\+A\+L\+\_\+5\+N2}~0x08
+\item 
+\#define \hyperlink{_hardware_serial_8h_a5fc288ec7a223cab69e3e8fef9f57297}{S\+E\+R\+I\+A\+L\+\_\+6\+N2}~0x0\+A
+\item 
+\#define \hyperlink{_hardware_serial_8h_ae34cdbf61a5de6754ad91446c49a6f3a}{S\+E\+R\+I\+A\+L\+\_\+7\+N2}~0x0\+C
+\item 
+\#define \hyperlink{_hardware_serial_8h_ac289a2558f5e442e87ca18a43f293a27}{S\+E\+R\+I\+A\+L\+\_\+8\+N2}~0x0\+E
+\item 
+\#define \hyperlink{_hardware_serial_8h_abda4b80c55bc393154084064740920d9}{S\+E\+R\+I\+A\+L\+\_\+5\+E1}~0x20
+\item 
+\#define \hyperlink{_hardware_serial_8h_a3c850a2f00866c70650544b13c7520e6}{S\+E\+R\+I\+A\+L\+\_\+6\+E1}~0x22
+\item 
+\#define \hyperlink{_hardware_serial_8h_aa3f6fb24c1c391871963d91167810e36}{S\+E\+R\+I\+A\+L\+\_\+7\+E1}~0x24
+\item 
+\#define \hyperlink{_hardware_serial_8h_a5c423c7cb3c21df297cdbe4150c552b1}{S\+E\+R\+I\+A\+L\+\_\+8\+E1}~0x26
+\item 
+\#define \hyperlink{_hardware_serial_8h_a64290f61ee0ef350809da9a8f38f82fc}{S\+E\+R\+I\+A\+L\+\_\+5\+E2}~0x28
+\item 
+\#define \hyperlink{_hardware_serial_8h_a8d4709fe81b033884d7eb2f2f6198207}{S\+E\+R\+I\+A\+L\+\_\+6\+E2}~0x2\+A
+\item 
+\#define \hyperlink{_hardware_serial_8h_a6977c02dc5065be6c5a195ba7e5bd04e}{S\+E\+R\+I\+A\+L\+\_\+7\+E2}~0x2\+C
+\item 
+\#define \hyperlink{_hardware_serial_8h_a9aa5dcd1702a2cd381263ce385496a93}{S\+E\+R\+I\+A\+L\+\_\+8\+E2}~0x2\+E
+\item 
+\#define \hyperlink{_hardware_serial_8h_a86943415d1a48302f139c6f9d0b93b15}{S\+E\+R\+I\+A\+L\+\_\+5\+O1}~0x30
+\item 
+\#define \hyperlink{_hardware_serial_8h_a28c78ae44d98a1b8c811499eaa80036d}{S\+E\+R\+I\+A\+L\+\_\+6\+O1}~0x32
+\item 
+\#define \hyperlink{_hardware_serial_8h_a6d839c41ea33bcc71a425378ff2a3e65}{S\+E\+R\+I\+A\+L\+\_\+7\+O1}~0x34
+\item 
+\#define \hyperlink{_hardware_serial_8h_a90bd1d61f7dca9dc83601926fbf00761}{S\+E\+R\+I\+A\+L\+\_\+8\+O1}~0x36
+\item 
+\#define \hyperlink{_hardware_serial_8h_a4963a0a78042baed49c6db9f796466c2}{S\+E\+R\+I\+A\+L\+\_\+5\+O2}~0x38
+\item 
+\#define \hyperlink{_hardware_serial_8h_a29945a7028fed5ddacfbcd0af3d6afd0}{S\+E\+R\+I\+A\+L\+\_\+6\+O2}~0x3\+A
+\item 
+\#define \hyperlink{_hardware_serial_8h_ae39b2970f001b3b6326a52f29ae444c3}{S\+E\+R\+I\+A\+L\+\_\+7\+O2}~0x3\+C
+\item 
+\#define \hyperlink{_hardware_serial_8h_ac2c02757b23d33fc2efa5c889a8f26db}{S\+E\+R\+I\+A\+L\+\_\+8\+O2}~0x3\+E
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint8\+\_\+t \hyperlink{_hardware_serial_8h_a20cdd352151af0ecef9f3f68c8b20256}{tx\+\_\+buffer\+\_\+index\+\_\+t}
+\item 
+typedef uint8\+\_\+t \hyperlink{_hardware_serial_8h_a335e37d0726278844b068d565a4e66b7}{rx\+\_\+buffer\+\_\+index\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_hardware_serial_8h_ae662ebd375c753e6b4b8c756fb2a9442}{serial\+Event\+Run} (void) \+\_\+\+\_\+attribute\+\_\+\+\_\+((weak))
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_hardware_serial_8h_abda4b80c55bc393154084064740920d9}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+5\+E1@{S\+E\+R\+I\+A\+L\+\_\+5\+E1}}
+\index{S\+E\+R\+I\+A\+L\+\_\+5\+E1@{S\+E\+R\+I\+A\+L\+\_\+5\+E1}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+5\+E1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+5\+E1~0x20}\label{_hardware_serial_8h_abda4b80c55bc393154084064740920d9}
+
+
+Definition at line 66 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_a64290f61ee0ef350809da9a8f38f82fc}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+5\+E2@{S\+E\+R\+I\+A\+L\+\_\+5\+E2}}
+\index{S\+E\+R\+I\+A\+L\+\_\+5\+E2@{S\+E\+R\+I\+A\+L\+\_\+5\+E2}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+5\+E2}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+5\+E2~0x28}\label{_hardware_serial_8h_a64290f61ee0ef350809da9a8f38f82fc}
+
+
+Definition at line 70 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_ad4f2710a1b673218d47b087048df36e4}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+5\+N1@{S\+E\+R\+I\+A\+L\+\_\+5\+N1}}
+\index{S\+E\+R\+I\+A\+L\+\_\+5\+N1@{S\+E\+R\+I\+A\+L\+\_\+5\+N1}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+5\+N1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+5\+N1~0x00}\label{_hardware_serial_8h_ad4f2710a1b673218d47b087048df36e4}
+
+
+Definition at line 58 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_a1c84ae9720db3da34d1b41feda5d0ff8}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+5\+N2@{S\+E\+R\+I\+A\+L\+\_\+5\+N2}}
+\index{S\+E\+R\+I\+A\+L\+\_\+5\+N2@{S\+E\+R\+I\+A\+L\+\_\+5\+N2}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+5\+N2}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+5\+N2~0x08}\label{_hardware_serial_8h_a1c84ae9720db3da34d1b41feda5d0ff8}
+
+
+Definition at line 62 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_a86943415d1a48302f139c6f9d0b93b15}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+5\+O1@{S\+E\+R\+I\+A\+L\+\_\+5\+O1}}
+\index{S\+E\+R\+I\+A\+L\+\_\+5\+O1@{S\+E\+R\+I\+A\+L\+\_\+5\+O1}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+5\+O1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+5\+O1~0x30}\label{_hardware_serial_8h_a86943415d1a48302f139c6f9d0b93b15}
+
+
+Definition at line 74 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_a4963a0a78042baed49c6db9f796466c2}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+5\+O2@{S\+E\+R\+I\+A\+L\+\_\+5\+O2}}
+\index{S\+E\+R\+I\+A\+L\+\_\+5\+O2@{S\+E\+R\+I\+A\+L\+\_\+5\+O2}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+5\+O2}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+5\+O2~0x38}\label{_hardware_serial_8h_a4963a0a78042baed49c6db9f796466c2}
+
+
+Definition at line 78 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_a3c850a2f00866c70650544b13c7520e6}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+6\+E1@{S\+E\+R\+I\+A\+L\+\_\+6\+E1}}
+\index{S\+E\+R\+I\+A\+L\+\_\+6\+E1@{S\+E\+R\+I\+A\+L\+\_\+6\+E1}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+6\+E1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+6\+E1~0x22}\label{_hardware_serial_8h_a3c850a2f00866c70650544b13c7520e6}
+
+
+Definition at line 67 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_a8d4709fe81b033884d7eb2f2f6198207}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+6\+E2@{S\+E\+R\+I\+A\+L\+\_\+6\+E2}}
+\index{S\+E\+R\+I\+A\+L\+\_\+6\+E2@{S\+E\+R\+I\+A\+L\+\_\+6\+E2}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+6\+E2}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+6\+E2~0x2\+A}\label{_hardware_serial_8h_a8d4709fe81b033884d7eb2f2f6198207}
+
+
+Definition at line 71 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_acc2c4fc8ebd00b4025ea682feafa918d}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+6\+N1@{S\+E\+R\+I\+A\+L\+\_\+6\+N1}}
+\index{S\+E\+R\+I\+A\+L\+\_\+6\+N1@{S\+E\+R\+I\+A\+L\+\_\+6\+N1}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+6\+N1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+6\+N1~0x02}\label{_hardware_serial_8h_acc2c4fc8ebd00b4025ea682feafa918d}
+
+
+Definition at line 59 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_a5fc288ec7a223cab69e3e8fef9f57297}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+6\+N2@{S\+E\+R\+I\+A\+L\+\_\+6\+N2}}
+\index{S\+E\+R\+I\+A\+L\+\_\+6\+N2@{S\+E\+R\+I\+A\+L\+\_\+6\+N2}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+6\+N2}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+6\+N2~0x0\+A}\label{_hardware_serial_8h_a5fc288ec7a223cab69e3e8fef9f57297}
+
+
+Definition at line 63 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_a28c78ae44d98a1b8c811499eaa80036d}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+6\+O1@{S\+E\+R\+I\+A\+L\+\_\+6\+O1}}
+\index{S\+E\+R\+I\+A\+L\+\_\+6\+O1@{S\+E\+R\+I\+A\+L\+\_\+6\+O1}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+6\+O1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+6\+O1~0x32}\label{_hardware_serial_8h_a28c78ae44d98a1b8c811499eaa80036d}
+
+
+Definition at line 75 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_a29945a7028fed5ddacfbcd0af3d6afd0}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+6\+O2@{S\+E\+R\+I\+A\+L\+\_\+6\+O2}}
+\index{S\+E\+R\+I\+A\+L\+\_\+6\+O2@{S\+E\+R\+I\+A\+L\+\_\+6\+O2}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+6\+O2}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+6\+O2~0x3\+A}\label{_hardware_serial_8h_a29945a7028fed5ddacfbcd0af3d6afd0}
+
+
+Definition at line 79 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_aa3f6fb24c1c391871963d91167810e36}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+7\+E1@{S\+E\+R\+I\+A\+L\+\_\+7\+E1}}
+\index{S\+E\+R\+I\+A\+L\+\_\+7\+E1@{S\+E\+R\+I\+A\+L\+\_\+7\+E1}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+7\+E1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+7\+E1~0x24}\label{_hardware_serial_8h_aa3f6fb24c1c391871963d91167810e36}
+
+
+Definition at line 68 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_a6977c02dc5065be6c5a195ba7e5bd04e}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+7\+E2@{S\+E\+R\+I\+A\+L\+\_\+7\+E2}}
+\index{S\+E\+R\+I\+A\+L\+\_\+7\+E2@{S\+E\+R\+I\+A\+L\+\_\+7\+E2}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+7\+E2}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+7\+E2~0x2\+C}\label{_hardware_serial_8h_a6977c02dc5065be6c5a195ba7e5bd04e}
+
+
+Definition at line 72 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_aca9cc0079a4238c2a56408cc901c685f}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+7\+N1@{S\+E\+R\+I\+A\+L\+\_\+7\+N1}}
+\index{S\+E\+R\+I\+A\+L\+\_\+7\+N1@{S\+E\+R\+I\+A\+L\+\_\+7\+N1}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+7\+N1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+7\+N1~0x04}\label{_hardware_serial_8h_aca9cc0079a4238c2a56408cc901c685f}
+
+
+Definition at line 60 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_ae34cdbf61a5de6754ad91446c49a6f3a}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+7\+N2@{S\+E\+R\+I\+A\+L\+\_\+7\+N2}}
+\index{S\+E\+R\+I\+A\+L\+\_\+7\+N2@{S\+E\+R\+I\+A\+L\+\_\+7\+N2}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+7\+N2}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+7\+N2~0x0\+C}\label{_hardware_serial_8h_ae34cdbf61a5de6754ad91446c49a6f3a}
+
+
+Definition at line 64 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_a6d839c41ea33bcc71a425378ff2a3e65}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+7\+O1@{S\+E\+R\+I\+A\+L\+\_\+7\+O1}}
+\index{S\+E\+R\+I\+A\+L\+\_\+7\+O1@{S\+E\+R\+I\+A\+L\+\_\+7\+O1}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+7\+O1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+7\+O1~0x34}\label{_hardware_serial_8h_a6d839c41ea33bcc71a425378ff2a3e65}
+
+
+Definition at line 76 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_ae39b2970f001b3b6326a52f29ae444c3}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+7\+O2@{S\+E\+R\+I\+A\+L\+\_\+7\+O2}}
+\index{S\+E\+R\+I\+A\+L\+\_\+7\+O2@{S\+E\+R\+I\+A\+L\+\_\+7\+O2}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+7\+O2}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+7\+O2~0x3\+C}\label{_hardware_serial_8h_ae39b2970f001b3b6326a52f29ae444c3}
+
+
+Definition at line 80 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_a5c423c7cb3c21df297cdbe4150c552b1}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+8\+E1@{S\+E\+R\+I\+A\+L\+\_\+8\+E1}}
+\index{S\+E\+R\+I\+A\+L\+\_\+8\+E1@{S\+E\+R\+I\+A\+L\+\_\+8\+E1}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+8\+E1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+8\+E1~0x26}\label{_hardware_serial_8h_a5c423c7cb3c21df297cdbe4150c552b1}
+
+
+Definition at line 69 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_a9aa5dcd1702a2cd381263ce385496a93}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+8\+E2@{S\+E\+R\+I\+A\+L\+\_\+8\+E2}}
+\index{S\+E\+R\+I\+A\+L\+\_\+8\+E2@{S\+E\+R\+I\+A\+L\+\_\+8\+E2}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+8\+E2}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+8\+E2~0x2\+E}\label{_hardware_serial_8h_a9aa5dcd1702a2cd381263ce385496a93}
+
+
+Definition at line 73 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_a0db78b4521d43c0d702b9577bd3acda2}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+8\+N1@{S\+E\+R\+I\+A\+L\+\_\+8\+N1}}
+\index{S\+E\+R\+I\+A\+L\+\_\+8\+N1@{S\+E\+R\+I\+A\+L\+\_\+8\+N1}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+8\+N1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+8\+N1~0x06}\label{_hardware_serial_8h_a0db78b4521d43c0d702b9577bd3acda2}
+
+
+Definition at line 61 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_ac289a2558f5e442e87ca18a43f293a27}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+8\+N2@{S\+E\+R\+I\+A\+L\+\_\+8\+N2}}
+\index{S\+E\+R\+I\+A\+L\+\_\+8\+N2@{S\+E\+R\+I\+A\+L\+\_\+8\+N2}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+8\+N2}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+8\+N2~0x0\+E}\label{_hardware_serial_8h_ac289a2558f5e442e87ca18a43f293a27}
+
+
+Definition at line 65 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_a90bd1d61f7dca9dc83601926fbf00761}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+8\+O1@{S\+E\+R\+I\+A\+L\+\_\+8\+O1}}
+\index{S\+E\+R\+I\+A\+L\+\_\+8\+O1@{S\+E\+R\+I\+A\+L\+\_\+8\+O1}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+8\+O1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+8\+O1~0x36}\label{_hardware_serial_8h_a90bd1d61f7dca9dc83601926fbf00761}
+
+
+Definition at line 77 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_ac2c02757b23d33fc2efa5c889a8f26db}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+8\+O2@{S\+E\+R\+I\+A\+L\+\_\+8\+O2}}
+\index{S\+E\+R\+I\+A\+L\+\_\+8\+O2@{S\+E\+R\+I\+A\+L\+\_\+8\+O2}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+8\+O2}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+8\+O2~0x3\+E}\label{_hardware_serial_8h_ac2c02757b23d33fc2efa5c889a8f26db}
+
+
+Definition at line 81 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_aba0ceec384cf3acb51e0d6f45f31379c}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+\+R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E@{S\+E\+R\+I\+A\+L\+\_\+\+R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}}
+\index{S\+E\+R\+I\+A\+L\+\_\+\+R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E@{S\+E\+R\+I\+A\+L\+\_\+\+R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+\+R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+\+R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E~16}\label{_hardware_serial_8h_aba0ceec384cf3acb51e0d6f45f31379c}
+
+
+Definition at line 40 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_af0d9a9a9aac810bf58f698086f76e516}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!S\+E\+R\+I\+A\+L\+\_\+\+T\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E@{S\+E\+R\+I\+A\+L\+\_\+\+T\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}}
+\index{S\+E\+R\+I\+A\+L\+\_\+\+T\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E@{S\+E\+R\+I\+A\+L\+\_\+\+T\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{S\+E\+R\+I\+A\+L\+\_\+\+T\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+I\+A\+L\+\_\+\+T\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E~16}\label{_hardware_serial_8h_af0d9a9a9aac810bf58f698086f76e516}
+
+
+Definition at line 39 of file Hardware\+Serial.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{_hardware_serial_8h_a335e37d0726278844b068d565a4e66b7}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!rx\+\_\+buffer\+\_\+index\+\_\+t@{rx\+\_\+buffer\+\_\+index\+\_\+t}}
+\index{rx\+\_\+buffer\+\_\+index\+\_\+t@{rx\+\_\+buffer\+\_\+index\+\_\+t}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{rx\+\_\+buffer\+\_\+index\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\+\_\+t {\bf rx\+\_\+buffer\+\_\+index\+\_\+t}}\label{_hardware_serial_8h_a335e37d0726278844b068d565a4e66b7}
+
+
+Definition at line 54 of file Hardware\+Serial.\+h.
+
+\hypertarget{_hardware_serial_8h_a20cdd352151af0ecef9f3f68c8b20256}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!tx\+\_\+buffer\+\_\+index\+\_\+t@{tx\+\_\+buffer\+\_\+index\+\_\+t}}
+\index{tx\+\_\+buffer\+\_\+index\+\_\+t@{tx\+\_\+buffer\+\_\+index\+\_\+t}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{tx\+\_\+buffer\+\_\+index\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\+\_\+t {\bf tx\+\_\+buffer\+\_\+index\+\_\+t}}\label{_hardware_serial_8h_a20cdd352151af0ecef9f3f68c8b20256}
+
+
+Definition at line 49 of file Hardware\+Serial.\+h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_hardware_serial_8h_ae662ebd375c753e6b4b8c756fb2a9442}{}\index{Hardware\+Serial.\+h@{Hardware\+Serial.\+h}!serial\+Event\+Run@{serial\+Event\+Run}}
+\index{serial\+Event\+Run@{serial\+Event\+Run}!Hardware\+Serial.\+h@{Hardware\+Serial.\+h}}
+\subsubsection[{serial\+Event\+Run(void) \+\_\+\+\_\+attribute\+\_\+\+\_\+((weak))}]{\setlength{\rightskip}{0pt plus 5cm}void serial\+Event\+Run (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_hardware_serial_8h_ae662ebd375c753e6b4b8c756fb2a9442}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{_hardware_serial_8h_ae662ebd375c753e6b4b8c756fb2a9442_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,232 @@
+\hypertarget{class_u_d_p}{}\section{U\+D\+P Class Reference}
+\label{class_u_d_p}\index{U\+D\+P@{U\+D\+P}}
+
+
+{\ttfamily \#include $<$Udp.\+h$>$}
+
+
+
+Inheritance diagram for U\+D\+P\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=128pt]{class_u_d_p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for U\+D\+P\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=128pt]{class_u_d_p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual uint8\+\_\+t \hyperlink{class_u_d_p_aff8ceabeed84b50fd4eb7983c840b884}{begin} (uint16\+\_\+t)=0
+\item 
+virtual void \hyperlink{class_u_d_p_a0efff8623a2fb79dad94a96dcf16d966}{stop} ()=0
+\item 
+virtual int \hyperlink{class_u_d_p_aca9cf7ebfd153f44bfad5b912f44f5ca}{begin\+Packet} (\hyperlink{class_i_p_address}{I\+P\+Address} ip, uint16\+\_\+t port)=0
+\item 
+virtual int \hyperlink{class_u_d_p_a4a10e98e9ab6f30d132d5f42367bc780}{begin\+Packet} (const char $\ast$host, uint16\+\_\+t port)=0
+\item 
+virtual int \hyperlink{class_u_d_p_a25f2388b1c8e90cf5ada1141c9c13dfb}{end\+Packet} ()=0
+\item 
+virtual size\+\_\+t \hyperlink{class_u_d_p_acde4db2f92186810af3493fd2c7535f0}{write} (uint8\+\_\+t)=0
+\item 
+virtual size\+\_\+t \hyperlink{class_u_d_p_acd93fd9e345711179a5a2af3d46b8b81}{write} (const uint8\+\_\+t $\ast$buffer, size\+\_\+t size)=0
+\item 
+virtual int \hyperlink{class_u_d_p_a581c4bc112e7598a08a79c322e2c038f}{parse\+Packet} ()=0
+\item 
+virtual int \hyperlink{class_u_d_p_aebd60457902debb30b07971a16f24ebd}{available} ()=0
+\item 
+virtual int \hyperlink{class_u_d_p_a4afd50731ba321d1b9be909cb288a50b}{read} ()=0
+\item 
+virtual int \hyperlink{class_u_d_p_aedff3228c247ac7796279327ee01dc1d}{read} (unsigned char $\ast$buffer, size\+\_\+t len)=0
+\item 
+virtual int \hyperlink{class_u_d_p_aa421394ec911a19c0f8efc0d755ef1b5}{read} (char $\ast$buffer, size\+\_\+t len)=0
+\item 
+virtual int \hyperlink{class_u_d_p_a9ae768d427519818aa552adf467bf65a}{peek} ()=0
+\item 
+virtual void \hyperlink{class_u_d_p_a50ab71f4bc571f6e246b20db4b3dd131}{flush} ()=0
+\item 
+virtual \hyperlink{class_i_p_address}{I\+P\+Address} \hyperlink{class_u_d_p_a9d197907389705fb5e21591f00126782}{remote\+I\+P} ()=0
+\item 
+virtual uint16\+\_\+t \hyperlink{class_u_d_p_a37084594eca1dabcf5cfd41941aef423}{remote\+Port} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{class_u_d_p_a8a60fab7dbb23ddc33ffa5163daa52b5}{raw\+I\+P\+Address} (\hyperlink{class_i_p_address}{I\+P\+Address} \&addr)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 41 of file Udp.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_d_p_aebd60457902debb30b07971a16f24ebd}{}\index{U\+D\+P@{U\+D\+P}!available@{available}}
+\index{available@{available}!U\+D\+P@{U\+D\+P}}
+\subsubsection[{available()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual int available (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_u_d_p_aebd60457902debb30b07971a16f24ebd}
+
+
+Implements \hyperlink{class_stream_aebd60457902debb30b07971a16f24ebd}{Stream}.
+
+\hypertarget{class_u_d_p_aff8ceabeed84b50fd4eb7983c840b884}{}\index{U\+D\+P@{U\+D\+P}!begin@{begin}}
+\index{begin@{begin}!U\+D\+P@{U\+D\+P}}
+\subsubsection[{begin(uint16\+\_\+t)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual uint8\+\_\+t begin (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_u_d_p_aff8ceabeed84b50fd4eb7983c840b884}
+\hypertarget{class_u_d_p_aca9cf7ebfd153f44bfad5b912f44f5ca}{}\index{U\+D\+P@{U\+D\+P}!begin\+Packet@{begin\+Packet}}
+\index{begin\+Packet@{begin\+Packet}!U\+D\+P@{U\+D\+P}}
+\subsubsection[{begin\+Packet(\+I\+P\+Address ip, uint16\+\_\+t port)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual int begin\+Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+P\+Address}}]{ip, }
+\item[{uint16\+\_\+t}]{port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_u_d_p_aca9cf7ebfd153f44bfad5b912f44f5ca}
+\hypertarget{class_u_d_p_a4a10e98e9ab6f30d132d5f42367bc780}{}\index{U\+D\+P@{U\+D\+P}!begin\+Packet@{begin\+Packet}}
+\index{begin\+Packet@{begin\+Packet}!U\+D\+P@{U\+D\+P}}
+\subsubsection[{begin\+Packet(const char $\ast$host, uint16\+\_\+t port)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual int begin\+Packet (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{host, }
+\item[{uint16\+\_\+t}]{port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_u_d_p_a4a10e98e9ab6f30d132d5f42367bc780}
+\hypertarget{class_u_d_p_a25f2388b1c8e90cf5ada1141c9c13dfb}{}\index{U\+D\+P@{U\+D\+P}!end\+Packet@{end\+Packet}}
+\index{end\+Packet@{end\+Packet}!U\+D\+P@{U\+D\+P}}
+\subsubsection[{end\+Packet()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual int end\+Packet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_u_d_p_a25f2388b1c8e90cf5ada1141c9c13dfb}
+\hypertarget{class_u_d_p_a50ab71f4bc571f6e246b20db4b3dd131}{}\index{U\+D\+P@{U\+D\+P}!flush@{flush}}
+\index{flush@{flush}!U\+D\+P@{U\+D\+P}}
+\subsubsection[{flush()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual void flush (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_u_d_p_a50ab71f4bc571f6e246b20db4b3dd131}
+
+
+Implements \hyperlink{class_stream_a50ab71f4bc571f6e246b20db4b3dd131}{Stream}.
+
+\hypertarget{class_u_d_p_a581c4bc112e7598a08a79c322e2c038f}{}\index{U\+D\+P@{U\+D\+P}!parse\+Packet@{parse\+Packet}}
+\index{parse\+Packet@{parse\+Packet}!U\+D\+P@{U\+D\+P}}
+\subsubsection[{parse\+Packet()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual int parse\+Packet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_u_d_p_a581c4bc112e7598a08a79c322e2c038f}
+\hypertarget{class_u_d_p_a9ae768d427519818aa552adf467bf65a}{}\index{U\+D\+P@{U\+D\+P}!peek@{peek}}
+\index{peek@{peek}!U\+D\+P@{U\+D\+P}}
+\subsubsection[{peek()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual int peek (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_u_d_p_a9ae768d427519818aa552adf467bf65a}
+
+
+Implements \hyperlink{class_stream_a9ae768d427519818aa552adf467bf65a}{Stream}.
+
+\hypertarget{class_u_d_p_a8a60fab7dbb23ddc33ffa5163daa52b5}{}\index{U\+D\+P@{U\+D\+P}!raw\+I\+P\+Address@{raw\+I\+P\+Address}}
+\index{raw\+I\+P\+Address@{raw\+I\+P\+Address}!U\+D\+P@{U\+D\+P}}
+\subsubsection[{raw\+I\+P\+Address(\+I\+P\+Address \&addr)}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ raw\+I\+P\+Address (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+P\+Address} \&}]{addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{class_u_d_p_a8a60fab7dbb23ddc33ffa5163daa52b5}
+
+
+Definition at line 85 of file Udp.\+h.
+
+\hypertarget{class_u_d_p_a4afd50731ba321d1b9be909cb288a50b}{}\index{U\+D\+P@{U\+D\+P}!read@{read}}
+\index{read@{read}!U\+D\+P@{U\+D\+P}}
+\subsubsection[{read()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual int read (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_u_d_p_a4afd50731ba321d1b9be909cb288a50b}
+
+
+Implements \hyperlink{class_stream_a4afd50731ba321d1b9be909cb288a50b}{Stream}.
+
+\hypertarget{class_u_d_p_aedff3228c247ac7796279327ee01dc1d}{}\index{U\+D\+P@{U\+D\+P}!read@{read}}
+\index{read@{read}!U\+D\+P@{U\+D\+P}}
+\subsubsection[{read(unsigned char $\ast$buffer, size\+\_\+t len)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual int read (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_u_d_p_aedff3228c247ac7796279327ee01dc1d}
+\hypertarget{class_u_d_p_aa421394ec911a19c0f8efc0d755ef1b5}{}\index{U\+D\+P@{U\+D\+P}!read@{read}}
+\index{read@{read}!U\+D\+P@{U\+D\+P}}
+\subsubsection[{read(char $\ast$buffer, size\+\_\+t len)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual int read (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_u_d_p_aa421394ec911a19c0f8efc0d755ef1b5}
+\hypertarget{class_u_d_p_a9d197907389705fb5e21591f00126782}{}\index{U\+D\+P@{U\+D\+P}!remote\+I\+P@{remote\+I\+P}}
+\index{remote\+I\+P@{remote\+I\+P}!U\+D\+P@{U\+D\+P}}
+\subsubsection[{remote\+I\+P()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf I\+P\+Address} remote\+I\+P (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_u_d_p_a9d197907389705fb5e21591f00126782}
+\hypertarget{class_u_d_p_a37084594eca1dabcf5cfd41941aef423}{}\index{U\+D\+P@{U\+D\+P}!remote\+Port@{remote\+Port}}
+\index{remote\+Port@{remote\+Port}!U\+D\+P@{U\+D\+P}}
+\subsubsection[{remote\+Port()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual uint16\+\_\+t remote\+Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_u_d_p_a37084594eca1dabcf5cfd41941aef423}
+\hypertarget{class_u_d_p_a0efff8623a2fb79dad94a96dcf16d966}{}\index{U\+D\+P@{U\+D\+P}!stop@{stop}}
+\index{stop@{stop}!U\+D\+P@{U\+D\+P}}
+\subsubsection[{stop()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual void stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_u_d_p_a0efff8623a2fb79dad94a96dcf16d966}
+\hypertarget{class_u_d_p_acde4db2f92186810af3493fd2c7535f0}{}\index{U\+D\+P@{U\+D\+P}!write@{write}}
+\index{write@{write}!U\+D\+P@{U\+D\+P}}
+\subsubsection[{write(uint8\+\_\+t)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\+\_\+t write (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_u_d_p_acde4db2f92186810af3493fd2c7535f0}
+
+
+Implements \hyperlink{class_print_acde4db2f92186810af3493fd2c7535f0}{Print}.
+
+\hypertarget{class_u_d_p_acd93fd9e345711179a5a2af3d46b8b81}{}\index{U\+D\+P@{U\+D\+P}!write@{write}}
+\index{write@{write}!U\+D\+P@{U\+D\+P}}
+\subsubsection[{write(const uint8\+\_\+t $\ast$buffer, size\+\_\+t size)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\+\_\+t write (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_u_d_p_acd93fd9e345711179a5a2af3d46b8b81}
+
+
+Reimplemented from \hyperlink{class_print_a7c66fc8d559f4956d4ccea196299bca7}{Print}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Arduino\+U\+N\+O/src/arduino/cores/arduino/\hyperlink{_udp_8h}{Udp.\+h}\end{DoxyCompactItemize}

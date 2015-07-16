@@ -1,0 +1,822 @@
+\hypertarget{class_print}{}\section{Print Class Reference}
+\label{class_print}\index{Print@{Print}}
+
+
+{\ttfamily \#include $<$Print.\+h$>$}
+
+
+
+Inheritance diagram for Print\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{class_print__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_print_aacaf064c16179a713ca892501f767628}{Print} ()
+\item 
+int \hyperlink{class_print_a207358e5283fd1720a123ed58ec79196}{get\+Write\+Error} ()
+\item 
+void \hyperlink{class_print_af50f0c1e1c726ef3dee08a84456090b9}{clear\+Write\+Error} ()
+\item 
+virtual size\+\_\+t \hyperlink{class_print_acde4db2f92186810af3493fd2c7535f0}{write} (uint8\+\_\+t)=0
+\item 
+size\+\_\+t \hyperlink{class_print_add50e5436017b9c2f1e0d11c9476bf1b}{write} (const char $\ast$str)
+\item 
+virtual size\+\_\+t \hyperlink{class_print_a7c66fc8d559f4956d4ccea196299bca7}{write} (const uint8\+\_\+t $\ast$buffer, size\+\_\+t size)
+\item 
+size\+\_\+t \hyperlink{class_print_ab81a6ce741d7baea3821248649bdeaca}{write} (const char $\ast$buffer, size\+\_\+t size)
+\item 
+size\+\_\+t \hyperlink{class_print_a443a13ae44e1a8930db53fc5161554f9}{print} (const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$)
+\item 
+size\+\_\+t \hyperlink{class_print_a2e9a01ff871af146cfbf2f321e60853f}{print} (const String \&)
+\item 
+size\+\_\+t \hyperlink{class_print_aae81a9f0e10656d079c8ee3d871f95dd}{print} (const char\mbox{[}$\,$\mbox{]})
+\item 
+size\+\_\+t \hyperlink{class_print_abd72fb37c98f21760aa7882cb34bf86b}{print} (char)
+\item 
+size\+\_\+t \hyperlink{class_print_a24bf7a9a27ae741994b38fbf45927a38}{print} (unsigned char, int=\hyperlink{_print_8h_afe38ec6126e35e40049e27fdf4586ba5}{D\+E\+C})
+\item 
+size\+\_\+t \hyperlink{class_print_ad485be2c2a9bd124789a58e41533bec3}{print} (int, int=\hyperlink{_print_8h_afe38ec6126e35e40049e27fdf4586ba5}{D\+E\+C})
+\item 
+size\+\_\+t \hyperlink{class_print_a5162c987fb51e1f223b92af3ed436d9c}{print} (unsigned int, int=\hyperlink{_print_8h_afe38ec6126e35e40049e27fdf4586ba5}{D\+E\+C})
+\item 
+size\+\_\+t \hyperlink{class_print_a447df1d390c7dc8af70f7e684963b212}{print} (long, int=\hyperlink{_print_8h_afe38ec6126e35e40049e27fdf4586ba5}{D\+E\+C})
+\item 
+size\+\_\+t \hyperlink{class_print_ae3b005981b3f34d0f352632204a52edf}{print} (unsigned long, int=\hyperlink{_print_8h_afe38ec6126e35e40049e27fdf4586ba5}{D\+E\+C})
+\item 
+size\+\_\+t \hyperlink{class_print_aa538defb056f77e8664a6ef29d281a8c}{print} (double, int=2)
+\item 
+size\+\_\+t \hyperlink{class_print_a922b3bb2a3e42c1b0c5b1d62b3a8fb3f}{print} (const \hyperlink{class_printable}{Printable} \&)
+\item 
+size\+\_\+t \hyperlink{class_print_a36d02f29121121bca22cd51d468dfa9e}{println} (const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$)
+\item 
+size\+\_\+t \hyperlink{class_print_a44007d63e31bec0bd3854eab1796c53d}{println} (const String \&s)
+\item 
+size\+\_\+t \hyperlink{class_print_abf944a191b3d93d87782824496fc9856}{println} (const char\mbox{[}$\,$\mbox{]})
+\item 
+size\+\_\+t \hyperlink{class_print_a6067829b7b76b5a541039c12ae1a9f7d}{println} (char)
+\item 
+size\+\_\+t \hyperlink{class_print_a0fb229c37a731c53ded8e9e832b4a0a6}{println} (unsigned char, int=\hyperlink{_print_8h_afe38ec6126e35e40049e27fdf4586ba5}{D\+E\+C})
+\item 
+size\+\_\+t \hyperlink{class_print_a058fbcd23e761e3d2fbe06bb1a07b737}{println} (int, int=\hyperlink{_print_8h_afe38ec6126e35e40049e27fdf4586ba5}{D\+E\+C})
+\item 
+size\+\_\+t \hyperlink{class_print_ac63f5e2c9a519af617af8880a4912ea7}{println} (unsigned int, int=\hyperlink{_print_8h_afe38ec6126e35e40049e27fdf4586ba5}{D\+E\+C})
+\item 
+size\+\_\+t \hyperlink{class_print_a173af0cd520b7105bcb2d63ab79d246f}{println} (long, int=\hyperlink{_print_8h_afe38ec6126e35e40049e27fdf4586ba5}{D\+E\+C})
+\item 
+size\+\_\+t \hyperlink{class_print_a74c918137834a92d0b82537e90d02ed5}{println} (unsigned long, int=\hyperlink{_print_8h_afe38ec6126e35e40049e27fdf4586ba5}{D\+E\+C})
+\item 
+size\+\_\+t \hyperlink{class_print_a2864f4a5017f1e2e2b8e46a8d185aab0}{println} (double, int=2)
+\item 
+size\+\_\+t \hyperlink{class_print_aec2662333be402d9f95f7e2a8bbf7202}{println} (const \hyperlink{class_printable}{Printable} \&)
+\item 
+size\+\_\+t \hyperlink{class_print_a7a21cd59cb8deef99051130e7852e382}{println} (void)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_print_ae0b8de12769dcf4c9b1fd3e67b3b7552}{set\+Write\+Error} (int err=1)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 34 of file Print.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_print_aacaf064c16179a713ca892501f767628}{}\index{Print@{Print}!Print@{Print}}
+\index{Print@{Print}!Print@{Print}}
+\subsubsection[{Print()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Print} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_print_aacaf064c16179a713ca892501f767628}
+
+
+Definition at line 43 of file Print.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_print_af50f0c1e1c726ef3dee08a84456090b9}{}\index{Print@{Print}!clear\+Write\+Error@{clear\+Write\+Error}}
+\index{clear\+Write\+Error@{clear\+Write\+Error}!Print@{Print}}
+\subsubsection[{clear\+Write\+Error()}]{\setlength{\rightskip}{0pt plus 5cm}void clear\+Write\+Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_print_af50f0c1e1c726ef3dee08a84456090b9}
+
+
+Definition at line 46 of file Print.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{class_print_af50f0c1e1c726ef3dee08a84456090b9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_a207358e5283fd1720a123ed58ec79196}{}\index{Print@{Print}!get\+Write\+Error@{get\+Write\+Error}}
+\index{get\+Write\+Error@{get\+Write\+Error}!Print@{Print}}
+\subsubsection[{get\+Write\+Error()}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Write\+Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_print_a207358e5283fd1720a123ed58ec79196}
+
+
+Definition at line 45 of file Print.\+h.
+
+\hypertarget{class_print_a443a13ae44e1a8930db53fc5161554f9}{}\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection[{print(const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t print (
+\begin{DoxyParamCaption}
+\item[{const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$}]{ifsh}
+\end{DoxyParamCaption}
+)}\label{class_print_a443a13ae44e1a8930db53fc5161554f9}
+
+
+Definition at line 42 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{class_print_a443a13ae44e1a8930db53fc5161554f9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{class_print_a443a13ae44e1a8930db53fc5161554f9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_a2e9a01ff871af146cfbf2f321e60853f}{}\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection[{print(const String \&)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t print (
+\begin{DoxyParamCaption}
+\item[{const String \&}]{s}
+\end{DoxyParamCaption}
+)}\label{class_print_a2e9a01ff871af146cfbf2f321e60853f}
+
+
+Definition at line 54 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{class_print_a2e9a01ff871af146cfbf2f321e60853f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_aae81a9f0e10656d079c8ee3d871f95dd}{}\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection[{print(const char[])}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t print (
+\begin{DoxyParamCaption}
+\item[{const char}]{str\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{class_print_aae81a9f0e10656d079c8ee3d871f95dd}
+
+
+Definition at line 59 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{class_print_aae81a9f0e10656d079c8ee3d871f95dd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_abd72fb37c98f21760aa7882cb34bf86b}{}\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection[{print(char)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t print (
+\begin{DoxyParamCaption}
+\item[{char}]{c}
+\end{DoxyParamCaption}
+)}\label{class_print_abd72fb37c98f21760aa7882cb34bf86b}
+
+
+Definition at line 64 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{class_print_abd72fb37c98f21760aa7882cb34bf86b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_a24bf7a9a27ae741994b38fbf45927a38}{}\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection[{print(unsigned char, int=\+D\+E\+C)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t print (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{b, }
+\item[{int}]{base = {\ttfamily {\bf D\+E\+C}}}
+\end{DoxyParamCaption}
+)}\label{class_print_a24bf7a9a27ae741994b38fbf45927a38}
+
+
+Definition at line 69 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{class_print_a24bf7a9a27ae741994b38fbf45927a38_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_ad485be2c2a9bd124789a58e41533bec3}{}\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection[{print(int, int=\+D\+E\+C)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t print (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{int}]{base = {\ttfamily {\bf D\+E\+C}}}
+\end{DoxyParamCaption}
+)}\label{class_print_ad485be2c2a9bd124789a58e41533bec3}
+
+
+Definition at line 74 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{class_print_ad485be2c2a9bd124789a58e41533bec3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_a5162c987fb51e1f223b92af3ed436d9c}{}\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection[{print(unsigned int, int=\+D\+E\+C)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t print (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{n, }
+\item[{int}]{base = {\ttfamily {\bf D\+E\+C}}}
+\end{DoxyParamCaption}
+)}\label{class_print_a5162c987fb51e1f223b92af3ed436d9c}
+
+
+Definition at line 79 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{class_print_a5162c987fb51e1f223b92af3ed436d9c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_a447df1d390c7dc8af70f7e684963b212}{}\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection[{print(long, int=\+D\+E\+C)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t print (
+\begin{DoxyParamCaption}
+\item[{long}]{n, }
+\item[{int}]{base = {\ttfamily {\bf D\+E\+C}}}
+\end{DoxyParamCaption}
+)}\label{class_print_a447df1d390c7dc8af70f7e684963b212}
+
+
+Definition at line 84 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{class_print_a447df1d390c7dc8af70f7e684963b212_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_ae3b005981b3f34d0f352632204a52edf}{}\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection[{print(unsigned long, int=\+D\+E\+C)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t print (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{n, }
+\item[{int}]{base = {\ttfamily {\bf D\+E\+C}}}
+\end{DoxyParamCaption}
+)}\label{class_print_ae3b005981b3f34d0f352632204a52edf}
+
+
+Definition at line 100 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{class_print_ae3b005981b3f34d0f352632204a52edf_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_aa538defb056f77e8664a6ef29d281a8c}{}\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection[{print(double, int=2)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t print (
+\begin{DoxyParamCaption}
+\item[{double}]{n, }
+\item[{int}]{digits = {\ttfamily 2}}
+\end{DoxyParamCaption}
+)}\label{class_print_aa538defb056f77e8664a6ef29d281a8c}
+
+
+Definition at line 106 of file Print.\+cpp.
+
+\hypertarget{class_print_a922b3bb2a3e42c1b0c5b1d62b3a8fb3f}{}\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection[{print(const Printable \&)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t print (
+\begin{DoxyParamCaption}
+\item[{const {\bf Printable} \&}]{x}
+\end{DoxyParamCaption}
+)}\label{class_print_a922b3bb2a3e42c1b0c5b1d62b3a8fb3f}
+
+
+Definition at line 118 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{class_print_a922b3bb2a3e42c1b0c5b1d62b3a8fb3f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_a36d02f29121121bca22cd51d468dfa9e}{}\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection[{println(const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t println (
+\begin{DoxyParamCaption}
+\item[{const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$}]{ifsh}
+\end{DoxyParamCaption}
+)}\label{class_print_a36d02f29121121bca22cd51d468dfa9e}
+
+
+Definition at line 111 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_print_a36d02f29121121bca22cd51d468dfa9e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_a44007d63e31bec0bd3854eab1796c53d}{}\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection[{println(const String \&s)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t println (
+\begin{DoxyParamCaption}
+\item[{const String \&}]{s}
+\end{DoxyParamCaption}
+)}\label{class_print_a44007d63e31bec0bd3854eab1796c53d}
+
+
+Definition at line 130 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_print_a44007d63e31bec0bd3854eab1796c53d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_abf944a191b3d93d87782824496fc9856}{}\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection[{println(const char[])}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t println (
+\begin{DoxyParamCaption}
+\item[{const char}]{c\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{class_print_abf944a191b3d93d87782824496fc9856}
+
+
+Definition at line 137 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_print_abf944a191b3d93d87782824496fc9856_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_a6067829b7b76b5a541039c12ae1a9f7d}{}\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection[{println(char)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t println (
+\begin{DoxyParamCaption}
+\item[{char}]{c}
+\end{DoxyParamCaption}
+)}\label{class_print_a6067829b7b76b5a541039c12ae1a9f7d}
+
+
+Definition at line 144 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_print_a6067829b7b76b5a541039c12ae1a9f7d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_a0fb229c37a731c53ded8e9e832b4a0a6}{}\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection[{println(unsigned char, int=\+D\+E\+C)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t println (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{b, }
+\item[{int}]{base = {\ttfamily {\bf D\+E\+C}}}
+\end{DoxyParamCaption}
+)}\label{class_print_a0fb229c37a731c53ded8e9e832b4a0a6}
+
+
+Definition at line 151 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_print_a0fb229c37a731c53ded8e9e832b4a0a6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_a058fbcd23e761e3d2fbe06bb1a07b737}{}\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection[{println(int, int=\+D\+E\+C)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t println (
+\begin{DoxyParamCaption}
+\item[{int}]{num, }
+\item[{int}]{base = {\ttfamily {\bf D\+E\+C}}}
+\end{DoxyParamCaption}
+)}\label{class_print_a058fbcd23e761e3d2fbe06bb1a07b737}
+
+
+Definition at line 158 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_print_a058fbcd23e761e3d2fbe06bb1a07b737_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_ac63f5e2c9a519af617af8880a4912ea7}{}\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection[{println(unsigned int, int=\+D\+E\+C)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t println (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{num, }
+\item[{int}]{base = {\ttfamily {\bf D\+E\+C}}}
+\end{DoxyParamCaption}
+)}\label{class_print_ac63f5e2c9a519af617af8880a4912ea7}
+
+
+Definition at line 165 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_print_ac63f5e2c9a519af617af8880a4912ea7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_a173af0cd520b7105bcb2d63ab79d246f}{}\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection[{println(long, int=\+D\+E\+C)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t println (
+\begin{DoxyParamCaption}
+\item[{long}]{num, }
+\item[{int}]{base = {\ttfamily {\bf D\+E\+C}}}
+\end{DoxyParamCaption}
+)}\label{class_print_a173af0cd520b7105bcb2d63ab79d246f}
+
+
+Definition at line 172 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_print_a173af0cd520b7105bcb2d63ab79d246f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_a74c918137834a92d0b82537e90d02ed5}{}\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection[{println(unsigned long, int=\+D\+E\+C)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t println (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{num, }
+\item[{int}]{base = {\ttfamily {\bf D\+E\+C}}}
+\end{DoxyParamCaption}
+)}\label{class_print_a74c918137834a92d0b82537e90d02ed5}
+
+
+Definition at line 179 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_print_a74c918137834a92d0b82537e90d02ed5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_a2864f4a5017f1e2e2b8e46a8d185aab0}{}\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection[{println(double, int=2)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t println (
+\begin{DoxyParamCaption}
+\item[{double}]{num, }
+\item[{int}]{digits = {\ttfamily 2}}
+\end{DoxyParamCaption}
+)}\label{class_print_a2864f4a5017f1e2e2b8e46a8d185aab0}
+
+
+Definition at line 186 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_print_a2864f4a5017f1e2e2b8e46a8d185aab0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_aec2662333be402d9f95f7e2a8bbf7202}{}\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection[{println(const Printable \&)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t println (
+\begin{DoxyParamCaption}
+\item[{const {\bf Printable} \&}]{x}
+\end{DoxyParamCaption}
+)}\label{class_print_aec2662333be402d9f95f7e2a8bbf7202}
+
+
+Definition at line 193 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_print_aec2662333be402d9f95f7e2a8bbf7202_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_a7a21cd59cb8deef99051130e7852e382}{}\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection[{println(void)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t println (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{class_print_a7a21cd59cb8deef99051130e7852e382}
+
+
+Definition at line 123 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{class_print_a7a21cd59cb8deef99051130e7852e382_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_print_a7a21cd59cb8deef99051130e7852e382_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_ae0b8de12769dcf4c9b1fd3e67b3b7552}{}\index{Print@{Print}!set\+Write\+Error@{set\+Write\+Error}}
+\index{set\+Write\+Error@{set\+Write\+Error}!Print@{Print}}
+\subsubsection[{set\+Write\+Error(int err=1)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+Write\+Error (
+\begin{DoxyParamCaption}
+\item[{int}]{err = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{class_print_ae0b8de12769dcf4c9b1fd3e67b3b7552}
+
+
+Definition at line 41 of file Print.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{class_print_ae0b8de12769dcf4c9b1fd3e67b3b7552_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_acde4db2f92186810af3493fd2c7535f0}{}\index{Print@{Print}!write@{write}}
+\index{write@{write}!Print@{Print}}
+\subsubsection[{write(uint8\+\_\+t)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\+\_\+t write (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_print_acde4db2f92186810af3493fd2c7535f0}
+
+
+Implemented in \hyperlink{class_hardware_serial_a0c15a57daf1517586523b8d270d34c7d}{Hardware\+Serial}, \hyperlink{class_u_d_p_acde4db2f92186810af3493fd2c7535f0}{U\+D\+P}, and \hyperlink{class_client_acde4db2f92186810af3493fd2c7535f0}{Client}.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{class_print_acde4db2f92186810af3493fd2c7535f0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_add50e5436017b9c2f1e0d11c9476bf1b}{}\index{Print@{Print}!write@{write}}
+\index{write@{write}!Print@{Print}}
+\subsubsection[{write(const char $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t write (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_print_add50e5436017b9c2f1e0d11c9476bf1b}
+
+
+Definition at line 49 of file Print.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_print_add50e5436017b9c2f1e0d11c9476bf1b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_a7c66fc8d559f4956d4ccea196299bca7}{}\index{Print@{Print}!write@{write}}
+\index{write@{write}!Print@{Print}}
+\subsubsection[{write(const uint8\+\_\+t $\ast$buffer, size\+\_\+t size)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t write (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_print_a7c66fc8d559f4956d4ccea196299bca7}
+
+
+Reimplemented in \hyperlink{class_u_d_p_acd93fd9e345711179a5a2af3d46b8b81}{U\+D\+P}, and \hyperlink{class_client_a7565f7448952b08e42489b3162638f69}{Client}.
+
+
+
+Definition at line 33 of file Print.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_print_a7c66fc8d559f4956d4ccea196299bca7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_print_ab81a6ce741d7baea3821248649bdeaca}{}\index{Print@{Print}!write@{write}}
+\index{write@{write}!Print@{Print}}
+\subsubsection[{write(const char $\ast$buffer, size\+\_\+t size)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t write (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_print_ab81a6ce741d7baea3821248649bdeaca}
+
+
+Definition at line 54 of file Print.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_print_ab81a6ce741d7baea3821248649bdeaca_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Arduino\+U\+N\+O/src/arduino/cores/arduino/\hyperlink{_print_8h}{Print.\+h}\item 
+Arduino\+U\+N\+O/src/arduino/cores/arduino/\hyperlink{_print_8cpp}{Print.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,452 @@
+\hypertarget{_project_main_8cpp}{}\section{Arduino\+U\+N\+O/src/\+Project\+Files/\+Project\+Main.cpp File Reference}
+\label{_project_main_8cpp}\index{Arduino\+U\+N\+O/src/\+Project\+Files/\+Project\+Main.\+cpp@{Arduino\+U\+N\+O/src/\+Project\+Files/\+Project\+Main.\+cpp}}
+
+
+File containing functions for I\+O External.  
+
+
+{\ttfamily \#include $<$Project\+Main.\+h$>$}\\*
+{\ttfamily \#include $<$scheduler\+Config.\+h$>$}\\*
+{\ttfamily \#include $<$P\+W\+M.\+h$>$}\\*
+{\ttfamily \#include $<$avr/io.\+h$>$}\\*
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}I\+O\+\_\+\+H\+A\+L/\+I\+O\+\_\+extern.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+P\+P/lights/lights\+\_\+extern.\+h\char`\"{}}\\*
+Include dependency graph for Project\+Main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_project_main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_task_type__st_type}{Task\+Type\+\_\+st\+Type} $\ast$ \hyperlink{_project_main_8cpp_a612f7225aba66da17398c5472584559d}{task\+Get\+Config\+Ptr} (void)
+\begin{DoxyCompactList}\small\item\em Implementation of the function that returns a pointer to the tasks array. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{_project_main_8cpp_aac54e2201642d6b9c94f85ad2adbc7da}{get\+Nr\+Tasks} (void)
+\begin{DoxyCompactList}\small\item\em Implementation of the function that returns the number of current tasks cheduled to run. \end{DoxyCompactList}\item 
+void \hyperlink{_project_main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup} ()
+\item 
+void \hyperlink{_project_main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop} ()
+\item 
+void \hyperlink{_project_main_8cpp_aa0a2444ea9e75ec2a583b7e8a38560a6}{task20ms} (void)
+\begin{DoxyCompactList}\small\item\em Implementation of function that handle the 20ms requests. \end{DoxyCompactList}\item 
+void \hyperlink{_project_main_8cpp_aca27d12738aa55893e5242ed21ab789c}{task40ms} (void)
+\begin{DoxyCompactList}\small\item\em Implementation of function that handle the 40ms requests. \end{DoxyCompactList}\item 
+void \hyperlink{_project_main_8cpp_ada995e88886fe969d52c9f551201f7bc}{task60ms} (void)
+\begin{DoxyCompactList}\small\item\em Implementation of function that handle the 60ms requests. \end{DoxyCompactList}\item 
+void \hyperlink{_project_main_8cpp_abc513c77d3ae6919b5983e6564643c11}{task100ms} (void)
+\begin{DoxyCompactList}\small\item\em Implementation of function that handle the 100ms requests. \end{DoxyCompactList}\item 
+void \hyperlink{_project_main_8cpp_acf0bcd0e759358b9284f65e0a55bc193}{task1000ms} (void)
+\begin{DoxyCompactList}\small\item\em Implementation of function that handle the 1000ms requests. \end{DoxyCompactList}\item 
+void \hyperlink{_project_main_8cpp_a99eb04bf8fed2beecfb3cb74451416c5}{timer0\+\_\+init} ()
+\begin{DoxyCompactList}\small\item\em Implementation of the function that initialize the timer0. \end{DoxyCompactList}\item 
+void \hyperlink{_project_main_8cpp_abb302081b7dbd40d0fea4bbe53fd9b7b}{timer1\+\_\+init} ()
+\begin{DoxyCompactList}\small\item\em Implementation of the function that initialize the timer1. \end{DoxyCompactList}\item 
+\hyperlink{_project_main_8cpp_ab16889ae984b9b798989a0d239283cac}{I\+S\+R} (T\+I\+M\+E\+R1\+\_\+\+O\+V\+F\+\_\+vect)
+\begin{DoxyCompactList}\small\item\em Implementation of the function that handle timer1 overflow I\+S\+R. \end{DoxyCompactList}\item 
+void \hyperlink{_project_main_8cpp_af9ee60277083a5fd0fe10327f1b4eee7}{P\+W\+M\+\_\+\+Init} ()
+\begin{DoxyCompactList}\small\item\em Implementation of the function that handle timer0 overflow I\+S\+R. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{_project_main_8cpp_ad626e67a0337fbbad267d2ea8187a995}{stui\+\_\+\+Task\+Index}
+\item 
+volatile uint8\+\_\+t \hyperlink{_project_main_8cpp_a771478af671521a8cc845b8efbf0855e}{task\+Time\+Counter\+Flag\+\_\+u8}
+\item 
+volatile uint8\+\_\+t \hyperlink{_project_main_8cpp_aef920dc87f0a96b97b10da1251f9d821}{task\+Time\+Counter\+\_\+u8}
+\item 
+const uint8\+\_\+t \hyperlink{_project_main_8cpp_a364618e091f6af2a4ee81e8a38f2f974}{cui\+\_\+number\+Of\+Tasks} = \hyperlink{_project_main_8cpp_aac54e2201642d6b9c94f85ad2adbc7da}{get\+Nr\+Tasks}()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File containing functions for I\+O External. 
+
+\begin{DoxyAuthor}{Author}
+Adrian 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+26/05/2015 Here typically goes a more extensive explanation of what the header defines. Doxygens tags are words preceeded by either a backslash \textbackslash{} or by an at symbol @. 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See also}
+\href{http://www.stack.nl/~dimitri/doxygen/docblocks.html}{\tt http\+://www.\+stack.\+nl/$\sim$dimitri/doxygen/docblocks.\+html} 
+
+\href{http://www.stack.nl/~dimitri/doxygen/commands.html}{\tt http\+://www.\+stack.\+nl/$\sim$dimitri/doxygen/commands.\+html} 
+\end{DoxySeeAlso}
+
+
+\subsection{Function Documentation}
+\hypertarget{_project_main_8cpp_aac54e2201642d6b9c94f85ad2adbc7da}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!get\+Nr\+Tasks@{get\+Nr\+Tasks}}
+\index{get\+Nr\+Tasks@{get\+Nr\+Tasks}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{get\+Nr\+Tasks(void)}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t get\+Nr\+Tasks (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_aac54e2201642d6b9c94f85ad2adbc7da}
+
+
+Implementation of the function that returns the number of current tasks cheduled to run. 
+
+\begin{DoxyReturn}{Returns}
+number of tasks 
+\end{DoxyReturn}
+
+
+Definition at line 79 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_ab16889ae984b9b798989a0d239283cac}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!I\+S\+R@{I\+S\+R}}
+\index{I\+S\+R@{I\+S\+R}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{I\+S\+R(\+T\+I\+M\+E\+R1\+\_\+\+O\+V\+F\+\_\+vect)}]{\setlength{\rightskip}{0pt plus 5cm}I\+S\+R (
+\begin{DoxyParamCaption}
+\item[{T\+I\+M\+E\+R1\+\_\+\+O\+V\+F\+\_\+vect}]{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_ab16889ae984b9b798989a0d239283cac}
+
+
+Implementation of the function that handle timer1 overflow I\+S\+R. 
+
+Implementation of the function that handle timer1 overflow I\+S\+R \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 239 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_afe461d27b9c48d5921c00d521181f12f}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!loop@{loop}}
+\index{loop@{loop}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{loop()}]{\setlength{\rightskip}{0pt plus 5cm}void loop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_afe461d27b9c48d5921c00d521181f12f}
+
+
+Definition at line 107 of file Project\+Main.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{_project_main_8cpp_afe461d27b9c48d5921c00d521181f12f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_project_main_8cpp_af9ee60277083a5fd0fe10327f1b4eee7}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!P\+W\+M\+\_\+\+Init@{P\+W\+M\+\_\+\+Init}}
+\index{P\+W\+M\+\_\+\+Init@{P\+W\+M\+\_\+\+Init}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{P\+W\+M\+\_\+\+Init()}]{\setlength{\rightskip}{0pt plus 5cm}void P\+W\+M\+\_\+\+Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_af9ee60277083a5fd0fe10327f1b4eee7}
+
+
+Implementation of the function that handle timer0 overflow I\+S\+R. 
+
+Implementation of the function that handle timer0 overflow I\+S\+R \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 256 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!setup@{setup}}
+\index{setup@{setup}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{setup()}]{\setlength{\rightskip}{0pt plus 5cm}void setup (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}
+
+
+Definition at line 93 of file Project\+Main.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{_project_main_8cpp_a4fc01d736fe50cf5b977f755b675f11d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{_project_main_8cpp_a4fc01d736fe50cf5b977f755b675f11d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_project_main_8cpp_acf0bcd0e759358b9284f65e0a55bc193}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!task1000ms@{task1000ms}}
+\index{task1000ms@{task1000ms}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{task1000ms(void)}]{\setlength{\rightskip}{0pt plus 5cm}void task1000ms (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_acf0bcd0e759358b9284f65e0a55bc193}
+
+
+Implementation of function that handle the 1000ms requests. 
+
+Function declaration for tasks which are executed every 1000ms Function declaration for tasks which are executed every 1000ms Alternatively, you can use \#\+Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name.
+
+Implementation of function that handle the 1000ms requests \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Void function with no return. 
+\end{DoxyNote}
+
+
+Definition at line 187 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_abc513c77d3ae6919b5983e6564643c11}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!task100ms@{task100ms}}
+\index{task100ms@{task100ms}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{task100ms(void)}]{\setlength{\rightskip}{0pt plus 5cm}void task100ms (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_abc513c77d3ae6919b5983e6564643c11}
+
+
+Implementation of function that handle the 100ms requests. 
+
+Function declaration for tasks which are executed every 100ms Function declaration for tasks which are executed every 100ms Alternatively, you can use \#\+Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name.
+
+Implementation of function that handle the 100ms requests \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Void function with no return. 
+\end{DoxyNote}
+
+
+Definition at line 176 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_aa0a2444ea9e75ec2a583b7e8a38560a6}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!task20ms@{task20ms}}
+\index{task20ms@{task20ms}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{task20ms(void)}]{\setlength{\rightskip}{0pt plus 5cm}void task20ms (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_aa0a2444ea9e75ec2a583b7e8a38560a6}
+
+
+Implementation of function that handle the 20ms requests. 
+
+Function declaration for tasks which are executed every 20ms Function declaration for tasks which are executed every 20ms. Alternatively, you can use \#\+Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name.
+
+Implementation of function that handle the 20ms requests \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Void function with no return. 
+\end{DoxyNote}
+
+
+Definition at line 133 of file Project\+Main.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_project_main_8cpp_aa0a2444ea9e75ec2a583b7e8a38560a6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_project_main_8cpp_aca27d12738aa55893e5242ed21ab789c}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!task40ms@{task40ms}}
+\index{task40ms@{task40ms}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{task40ms(void)}]{\setlength{\rightskip}{0pt plus 5cm}void task40ms (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_aca27d12738aa55893e5242ed21ab789c}
+
+
+Implementation of function that handle the 40ms requests. 
+
+Function declaration for tasks which are executed every40ms Function declaration for tasks which are executed every 40ms Alternatively, you can use \#\+Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name.
+
+Implementation of function that handle the 40ms requests \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Void function with no return. 
+\end{DoxyNote}
+
+
+Definition at line 150 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_ada995e88886fe969d52c9f551201f7bc}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!task60ms@{task60ms}}
+\index{task60ms@{task60ms}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{task60ms(void)}]{\setlength{\rightskip}{0pt plus 5cm}void task60ms (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_ada995e88886fe969d52c9f551201f7bc}
+
+
+Implementation of function that handle the 60ms requests. 
+
+Function declaration for tasks which are executed every 60ms Function declaration for tasks which are executed every 60ms. Alternatively, you can use \#\+Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name.
+
+Implementation of function that handle the 60ms requests \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Void function with no return. 
+\end{DoxyNote}
+
+
+Definition at line 165 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_a612f7225aba66da17398c5472584559d}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!task\+Get\+Config\+Ptr@{task\+Get\+Config\+Ptr}}
+\index{task\+Get\+Config\+Ptr@{task\+Get\+Config\+Ptr}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{task\+Get\+Config\+Ptr(void)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Type\+\_\+st\+Type}$\ast$ task\+Get\+Config\+Ptr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_a612f7225aba66da17398c5472584559d}
+
+
+Implementation of the function that returns a pointer to the tasks array. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the array of tasks 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+tasks\+\_\+st\mbox{[}\mbox{]}; 
+\end{DoxySeeAlso}
+
+
+Definition at line 70 of file Project\+Main.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{_project_main_8cpp_a612f7225aba66da17398c5472584559d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_project_main_8cpp_a99eb04bf8fed2beecfb3cb74451416c5}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!timer0\+\_\+init@{timer0\+\_\+init}}
+\index{timer0\+\_\+init@{timer0\+\_\+init}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{timer0\+\_\+init()}]{\setlength{\rightskip}{0pt plus 5cm}void timer0\+\_\+init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_a99eb04bf8fed2beecfb3cb74451416c5}
+
+
+Implementation of the function that initialize the timer0. 
+
+Implementation of the function that initialize the timer 0 used in A\+D\+C conversion \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+$<$ digital pin6 is an output for lowbeam
+
+$<$Clear O\+C0\+A on Compare Match
+
+$<$enable interrupt on compare
+
+$<$ sets the prescaler to 1024; 
+
+Definition at line 198 of file Project\+Main.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{_project_main_8cpp_a99eb04bf8fed2beecfb3cb74451416c5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_project_main_8cpp_abb302081b7dbd40d0fea4bbe53fd9b7b}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!timer1\+\_\+init@{timer1\+\_\+init}}
+\index{timer1\+\_\+init@{timer1\+\_\+init}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{timer1\+\_\+init()}]{\setlength{\rightskip}{0pt plus 5cm}void timer1\+\_\+init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_project_main_8cpp_abb302081b7dbd40d0fea4bbe53fd9b7b}
+
+
+Implementation of the function that initialize the timer1. 
+
+Function definition for timer initialization Function implementation for timer initialization. Alternatively, you can use \#\+Box\+\_\+\+The\+\_\+\+Function\+\_\+\+Name.
+
+Implementation of the function that initialize the timer 1 \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 214 of file Project\+Main.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{_project_main_8cpp_abb302081b7dbd40d0fea4bbe53fd9b7b_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_project_main_8cpp_a364618e091f6af2a4ee81e8a38f2f974}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!cui\+\_\+number\+Of\+Tasks@{cui\+\_\+number\+Of\+Tasks}}
+\index{cui\+\_\+number\+Of\+Tasks@{cui\+\_\+number\+Of\+Tasks}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{cui\+\_\+number\+Of\+Tasks}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t cui\+\_\+number\+Of\+Tasks = {\bf get\+Nr\+Tasks}()}\label{_project_main_8cpp_a364618e091f6af2a4ee81e8a38f2f974}
+
+
+Definition at line 87 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_ad626e67a0337fbbad267d2ea8187a995}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!stui\+\_\+\+Task\+Index@{stui\+\_\+\+Task\+Index}}
+\index{stui\+\_\+\+Task\+Index@{stui\+\_\+\+Task\+Index}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{stui\+\_\+\+Task\+Index}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t stui\+\_\+\+Task\+Index}\label{_project_main_8cpp_ad626e67a0337fbbad267d2ea8187a995}
+
+
+Definition at line 84 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_aef920dc87f0a96b97b10da1251f9d821}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!task\+Time\+Counter\+\_\+u8@{task\+Time\+Counter\+\_\+u8}}
+\index{task\+Time\+Counter\+\_\+u8@{task\+Time\+Counter\+\_\+u8}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{task\+Time\+Counter\+\_\+u8}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\+\_\+t task\+Time\+Counter\+\_\+u8}\label{_project_main_8cpp_aef920dc87f0a96b97b10da1251f9d821}
+
+
+Definition at line 86 of file Project\+Main.\+cpp.
+
+\hypertarget{_project_main_8cpp_a771478af671521a8cc845b8efbf0855e}{}\index{Project\+Main.\+cpp@{Project\+Main.\+cpp}!task\+Time\+Counter\+Flag\+\_\+u8@{task\+Time\+Counter\+Flag\+\_\+u8}}
+\index{task\+Time\+Counter\+Flag\+\_\+u8@{task\+Time\+Counter\+Flag\+\_\+u8}!Project\+Main.\+cpp@{Project\+Main.\+cpp}}
+\subsubsection[{task\+Time\+Counter\+Flag\+\_\+u8}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\+\_\+t task\+Time\+Counter\+Flag\+\_\+u8}\label{_project_main_8cpp_a771478af671521a8cc845b8efbf0855e}
+
+
+Definition at line 85 of file Project\+Main.\+cpp.
+

@@ -1,0 +1,7 @@
+<map id="parseInt" name="parseInt">
+<area shape="rect" id="node2" href="$class_stream.html#a6a68a089460a8e332fad1002d36374a5" title="peekNextDigit" alt="" coords="121,56,224,83"/>
+<area shape="rect" id="node3" href="$class_stream.html#a157762e7d29562248c38ecbe6daa2fae" title="timedPeek" alt="" coords="272,31,356,57"/>
+<area shape="rect" id="node6" href="$class_stream.html#a4afd50731ba321d1b9be909cb288a50b" title="read" alt="" coords="291,93,337,120"/>
+<area shape="rect" id="node4" href="$_arduino_8h.html#a1871228c14c912ca1479cf826ddcb07f" title="millis" alt="" coords="404,5,456,32"/>
+<area shape="rect" id="node5" href="$class_stream.html#a9ae768d427519818aa552adf467bf65a" title="peek" alt="" coords="405,56,455,83"/>
+</map>

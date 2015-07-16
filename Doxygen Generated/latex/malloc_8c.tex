@@ -1,0 +1,118 @@
+\hypertarget{malloc_8c}{}\section{Arduino\+U\+N\+O/src/arduino/cores/arduino/avr-\/libc/malloc.c File Reference}
+\label{malloc_8c}\index{Arduino\+U\+N\+O/src/arduino/cores/arduino/avr-\/libc/malloc.\+c@{Arduino\+U\+N\+O/src/arduino/cores/arduino/avr-\/libc/malloc.\+c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}sectionname.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stdlib\+\_\+private.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$avr/io.\+h$>$}\\*
+Include dependency graph for malloc.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{malloc_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sectionname_8h_a70f7ddd644d390df25b53bf3a8d8de21}{A\+T\+T\+R\+I\+B\+U\+T\+E\+\_\+\+C\+L\+I\+B\+\_\+\+S\+E\+C\+T\+I\+O\+N} void $\ast$ \hyperlink{malloc_8c_ae163c920510c66b026064e47d1f7d062}{malloc} (size\+\_\+t len)
+\item 
+\hyperlink{sectionname_8h_a70f7ddd644d390df25b53bf3a8d8de21}{A\+T\+T\+R\+I\+B\+U\+T\+E\+\_\+\+C\+L\+I\+B\+\_\+\+S\+E\+C\+T\+I\+O\+N} void \hyperlink{malloc_8c_a1a8dcb41d44f5554bd369d1e2dea6c5e}{free} (void $\ast$p)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \hyperlink{malloc_8c_affadd67736fd340e893fb22c207de597}{\+\_\+\+\_\+malloc\+\_\+margin} = 128
+\item 
+char $\ast$ \hyperlink{malloc_8c_a9310042b3956282440c091d20cb98c5f}{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+start} = \&\hyperlink{stdlib__private_8h_a6f0660655a57403adb006d3a00999fa8}{\+\_\+\+\_\+heap\+\_\+start}
+\item 
+char $\ast$ \hyperlink{malloc_8c_a4d7b1bf0f75d529cc75229a266132115}{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+end} = \&\hyperlink{stdlib__private_8h_ad10b5e7b4d35c862906719f03eaba242}{\+\_\+\+\_\+heap\+\_\+end}
+\item 
+char $\ast$ \hyperlink{malloc_8c_ad193a2cc121e0d4614a1c21eb463fb56}{\+\_\+\+\_\+brkval}
+\item 
+struct \hyperlink{struct____freelist}{\+\_\+\+\_\+freelist} $\ast$ \hyperlink{malloc_8c_a9cfd748d9cb8a517422fa4e4f0b3320f}{\+\_\+\+\_\+flp}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{malloc_8c_a1a8dcb41d44f5554bd369d1e2dea6c5e}{}\index{malloc.\+c@{malloc.\+c}!free@{free}}
+\index{free@{free}!malloc.\+c@{malloc.\+c}}
+\subsubsection[{free(void $\ast$p)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+T\+T\+R\+I\+B\+U\+T\+E\+\_\+\+C\+L\+I\+B\+\_\+\+S\+E\+C\+T\+I\+O\+N} void free (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{malloc_8c_a1a8dcb41d44f5554bd369d1e2dea6c5e}
+
+
+Definition at line 186 of file malloc.\+c.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{malloc_8c_a1a8dcb41d44f5554bd369d1e2dea6c5e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{malloc_8c_ae163c920510c66b026064e47d1f7d062}{}\index{malloc.\+c@{malloc.\+c}!malloc@{malloc}}
+\index{malloc@{malloc}!malloc.\+c@{malloc.\+c}}
+\subsubsection[{malloc(size\+\_\+t len)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+T\+T\+R\+I\+B\+U\+T\+E\+\_\+\+C\+L\+I\+B\+\_\+\+S\+E\+C\+T\+I\+O\+N} void$\ast$ malloc (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\label{malloc_8c_ae163c920510c66b026064e47d1f7d062}
+
+
+Definition at line 64 of file malloc.\+c.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{malloc_8c_ae163c920510c66b026064e47d1f7d062_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{malloc_8c_ad193a2cc121e0d4614a1c21eb463fb56}{}\index{malloc.\+c@{malloc.\+c}!\+\_\+\+\_\+brkval@{\+\_\+\+\_\+brkval}}
+\index{\+\_\+\+\_\+brkval@{\+\_\+\+\_\+brkval}!malloc.\+c@{malloc.\+c}}
+\subsubsection[{\+\_\+\+\_\+brkval}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ \+\_\+\+\_\+brkval}\label{malloc_8c_ad193a2cc121e0d4614a1c21eb463fb56}
+
+
+Definition at line 59 of file malloc.\+c.
+
+\hypertarget{malloc_8c_a9cfd748d9cb8a517422fa4e4f0b3320f}{}\index{malloc.\+c@{malloc.\+c}!\+\_\+\+\_\+flp@{\+\_\+\+\_\+flp}}
+\index{\+\_\+\+\_\+flp@{\+\_\+\+\_\+flp}!malloc.\+c@{malloc.\+c}}
+\subsubsection[{\+\_\+\+\_\+flp}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \+\_\+\+\_\+freelist}$\ast$ \+\_\+\+\_\+flp}\label{malloc_8c_a9cfd748d9cb8a517422fa4e4f0b3320f}
+
+
+Definition at line 60 of file malloc.\+c.
+
+\hypertarget{malloc_8c_a4d7b1bf0f75d529cc75229a266132115}{}\index{malloc.\+c@{malloc.\+c}!\+\_\+\+\_\+malloc\+\_\+heap\+\_\+end@{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+end}}
+\index{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+end@{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+end}!malloc.\+c@{malloc.\+c}}
+\subsubsection[{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+end}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ \+\_\+\+\_\+malloc\+\_\+heap\+\_\+end = \&{\bf \+\_\+\+\_\+heap\+\_\+end}}\label{malloc_8c_a4d7b1bf0f75d529cc75229a266132115}
+
+
+Definition at line 57 of file malloc.\+c.
+
+\hypertarget{malloc_8c_a9310042b3956282440c091d20cb98c5f}{}\index{malloc.\+c@{malloc.\+c}!\+\_\+\+\_\+malloc\+\_\+heap\+\_\+start@{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+start}}
+\index{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+start@{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+start}!malloc.\+c@{malloc.\+c}}
+\subsubsection[{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+start}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ \+\_\+\+\_\+malloc\+\_\+heap\+\_\+start = \&{\bf \+\_\+\+\_\+heap\+\_\+start}}\label{malloc_8c_a9310042b3956282440c091d20cb98c5f}
+
+
+Definition at line 56 of file malloc.\+c.
+
+\hypertarget{malloc_8c_affadd67736fd340e893fb22c207de597}{}\index{malloc.\+c@{malloc.\+c}!\+\_\+\+\_\+malloc\+\_\+margin@{\+\_\+\+\_\+malloc\+\_\+margin}}
+\index{\+\_\+\+\_\+malloc\+\_\+margin@{\+\_\+\+\_\+malloc\+\_\+margin}!malloc.\+c@{malloc.\+c}}
+\subsubsection[{\+\_\+\+\_\+malloc\+\_\+margin}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t \+\_\+\+\_\+malloc\+\_\+margin = 128}\label{malloc_8c_affadd67736fd340e893fb22c207de597}
+
+
+Definition at line 55 of file malloc.\+c.
+

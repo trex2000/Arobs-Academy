@@ -1,0 +1,6 @@
+<map id="peekNextDigit" name="peekNextDigit">
+<area shape="rect" id="node2" href="$class_stream.html#a157762e7d29562248c38ecbe6daa2fae" title="timedPeek" alt="" coords="156,31,240,57"/>
+<area shape="rect" id="node5" href="$class_stream.html#a4afd50731ba321d1b9be909cb288a50b" title="read" alt="" coords="175,81,221,108"/>
+<area shape="rect" id="node3" href="$_arduino_8h.html#a1871228c14c912ca1479cf826ddcb07f" title="millis" alt="" coords="288,5,340,32"/>
+<area shape="rect" id="node4" href="$class_stream.html#a9ae768d427519818aa552adf467bf65a" title="peek" alt="" coords="289,56,339,83"/>
+</map>

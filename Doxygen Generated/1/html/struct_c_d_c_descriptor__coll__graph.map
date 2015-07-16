@@ -1,0 +1,8 @@
+<map id="CDCDescriptor" name="CDCDescriptor">
+<area shape="rect" id="node2" href="$struct_i_a_d_descriptor.html" title="IADDescriptor" alt="" coords="41,9,144,36"/>
+<area shape="rect" id="node3" href="$struct_endpoint_descriptor.html" title="EndpointDescriptor" alt="" coords="27,84,159,111"/>
+<area shape="rect" id="node4" href="$struct_interface_descriptor.html" title="InterfaceDescriptor" alt="" coords="27,141,158,168"/>
+<area shape="rect" id="node5" href="$struct_a_c_m_functional_descriptor.html" title="ACMFunctionalDescriptor" alt="" coords="7,192,178,219"/>
+<area shape="rect" id="node6" href="$struct_c_d_c_c_s_interface_descriptor.html" title="CDCCSInterfaceDescriptor" alt="" coords="5,249,180,276"/>
+<area shape="rect" id="node7" href="$struct_c_m_functional_descriptor.html" title="CMFunctionalDescriptor" alt="" coords="12,300,173,327"/>
+</map>

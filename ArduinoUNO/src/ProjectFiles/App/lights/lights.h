@@ -16,6 +16,7 @@
  *   You should have received a copy of the GNU Lesser General Public       *
  *   License along with Box.  If not, see <http://www.gnu.org/licenses/>.   *
  ****************************************************************************/
+#pragma once
 
 /**
  * @file lights.h
@@ -33,9 +34,6 @@
 #ifndef _LIGHTS_H_
 #define _LIGHTS_H_
 
-#include "lights_extern.h"
-
-//#include "../../IO_HAL/IO_extern.h"
 
 void test_lights(void);
 

@@ -1,0 +1,297 @@
+\hypertarget{class_i_p_address}{}\section{I\+P\+Address Class Reference}
+\label{class_i_p_address}\index{I\+P\+Address@{I\+P\+Address}}
+
+
+{\ttfamily \#include $<$I\+P\+Address.\+h$>$}
+
+
+
+Inheritance diagram for I\+P\+Address\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{class_i_p_address__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for I\+P\+Address\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{class_i_p_address__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_p_address_a0bfb87befbd8b4cf9ebf348c10a9eaa9}{I\+P\+Address} ()
+\item 
+\hyperlink{class_i_p_address_a00b68db2117680a85111da0791c0479d}{I\+P\+Address} (uint8\+\_\+t first\+\_\+octet, uint8\+\_\+t second\+\_\+octet, uint8\+\_\+t third\+\_\+octet, uint8\+\_\+t fourth\+\_\+octet)
+\item 
+\hyperlink{class_i_p_address_a245b8f4f95796da669d51b400ae2b896}{I\+P\+Address} (uint32\+\_\+t address)
+\item 
+\hyperlink{class_i_p_address_a445de5f4af39b98bf10e8d77832cfe5f}{I\+P\+Address} (const uint8\+\_\+t $\ast$address)
+\item 
+\hyperlink{class_i_p_address_a07a970954bca44bc378188d2a6332f74}{operator uint32\+\_\+t} () const 
+\item 
+bool \hyperlink{class_i_p_address_ad0181169c1fa057bf9ef7862ba9f7f84}{operator==} (const \hyperlink{class_i_p_address}{I\+P\+Address} \&addr) const 
+\item 
+bool \hyperlink{class_i_p_address_a7d473ee4ece3f484491e56ce09096571}{operator==} (const uint8\+\_\+t $\ast$addr) const 
+\item 
+uint8\+\_\+t \hyperlink{class_i_p_address_a3a30e06242fc12a5aed67bfd77d1b2a5}{operator\mbox{[}$\,$\mbox{]}} (int index) const 
+\item 
+uint8\+\_\+t \& \hyperlink{class_i_p_address_a362f02e2923dd74e0fc935eab183429d}{operator\mbox{[}$\,$\mbox{]}} (int index)
+\item 
+\hyperlink{class_i_p_address}{I\+P\+Address} \& \hyperlink{class_i_p_address_ae51d1758e3e7bfdb947bef318c300e7c}{operator=} (const uint8\+\_\+t $\ast$address)
+\item 
+\hyperlink{class_i_p_address}{I\+P\+Address} \& \hyperlink{class_i_p_address_a1485e06a1694bc174704c61e0d44e52f}{operator=} (uint32\+\_\+t address)
+\item 
+virtual size\+\_\+t \hyperlink{class_i_p_address_a4de4b3920775530f38f756b2177a9bca}{print\+To} (\hyperlink{class_print}{Print} \&p) const 
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_i_p_address_a9a150ffc237e50529b3d0d50cc83a4d7}{Ethernet\+Class}
+\item 
+class \hyperlink{class_i_p_address_a480cf93423716d22666c9c3f17177736}{U\+D\+P}
+\item 
+class \hyperlink{class_i_p_address_a5db1c99e2c94b26278f3838c85cdb618}{Client}
+\item 
+class \hyperlink{class_i_p_address_ac2055578ac48afabe5af487878450f68}{Server}
+\item 
+class \hyperlink{class_i_p_address_afef6ad9b691e32ea60d87db719e23e15}{Dhcp\+Class}
+\item 
+class \hyperlink{class_i_p_address_a14acdf960f52e4a43740d57e81a27c40}{D\+N\+S\+Client}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file I\+P\+Address.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_i_p_address_a0bfb87befbd8b4cf9ebf348c10a9eaa9}{}\index{I\+P\+Address@{I\+P\+Address}!I\+P\+Address@{I\+P\+Address}}
+\index{I\+P\+Address@{I\+P\+Address}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{I\+P\+Address()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+P\+Address} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_i_p_address_a0bfb87befbd8b4cf9ebf348c10a9eaa9}
+
+
+Definition at line 23 of file I\+P\+Address.\+cpp.
+
+\hypertarget{class_i_p_address_a00b68db2117680a85111da0791c0479d}{}\index{I\+P\+Address@{I\+P\+Address}!I\+P\+Address@{I\+P\+Address}}
+\index{I\+P\+Address@{I\+P\+Address}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{I\+P\+Address(uint8\+\_\+t first\+\_\+octet, uint8\+\_\+t second\+\_\+octet, uint8\+\_\+t third\+\_\+octet, uint8\+\_\+t fourth\+\_\+octet)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+P\+Address} (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{first\+\_\+octet, }
+\item[{uint8\+\_\+t}]{second\+\_\+octet, }
+\item[{uint8\+\_\+t}]{third\+\_\+octet, }
+\item[{uint8\+\_\+t}]{fourth\+\_\+octet}
+\end{DoxyParamCaption}
+)}\label{class_i_p_address_a00b68db2117680a85111da0791c0479d}
+
+
+Definition at line 28 of file I\+P\+Address.\+cpp.
+
+\hypertarget{class_i_p_address_a245b8f4f95796da669d51b400ae2b896}{}\index{I\+P\+Address@{I\+P\+Address}!I\+P\+Address@{I\+P\+Address}}
+\index{I\+P\+Address@{I\+P\+Address}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{I\+P\+Address(uint32\+\_\+t address)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+P\+Address} (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{address}
+\end{DoxyParamCaption}
+)}\label{class_i_p_address_a245b8f4f95796da669d51b400ae2b896}
+
+
+Definition at line 36 of file I\+P\+Address.\+cpp.
+
+\hypertarget{class_i_p_address_a445de5f4af39b98bf10e8d77832cfe5f}{}\index{I\+P\+Address@{I\+P\+Address}!I\+P\+Address@{I\+P\+Address}}
+\index{I\+P\+Address@{I\+P\+Address}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{I\+P\+Address(const uint8\+\_\+t $\ast$address)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+P\+Address} (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{address}
+\end{DoxyParamCaption}
+)}\label{class_i_p_address_a445de5f4af39b98bf10e8d77832cfe5f}
+
+
+Definition at line 41 of file I\+P\+Address.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_i_p_address_a07a970954bca44bc378188d2a6332f74}{}\index{I\+P\+Address@{I\+P\+Address}!operator uint32\+\_\+t@{operator uint32\+\_\+t}}
+\index{operator uint32\+\_\+t@{operator uint32\+\_\+t}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{operator uint32\+\_\+t() const }]{\setlength{\rightskip}{0pt plus 5cm}operator uint32\+\_\+t (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_i_p_address_a07a970954bca44bc378188d2a6332f74}
+
+
+Definition at line 50 of file I\+P\+Address.\+h.
+
+\hypertarget{class_i_p_address_ae51d1758e3e7bfdb947bef318c300e7c}{}\index{I\+P\+Address@{I\+P\+Address}!operator=@{operator=}}
+\index{operator=@{operator=}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{operator=(const uint8\+\_\+t $\ast$address)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+P\+Address} \& operator= (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{address}
+\end{DoxyParamCaption}
+)}\label{class_i_p_address_ae51d1758e3e7bfdb947bef318c300e7c}
+
+
+Definition at line 46 of file I\+P\+Address.\+cpp.
+
+\hypertarget{class_i_p_address_a1485e06a1694bc174704c61e0d44e52f}{}\index{I\+P\+Address@{I\+P\+Address}!operator=@{operator=}}
+\index{operator=@{operator=}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{operator=(uint32\+\_\+t address)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+P\+Address} \& operator= (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{address}
+\end{DoxyParamCaption}
+)}\label{class_i_p_address_a1485e06a1694bc174704c61e0d44e52f}
+
+
+Definition at line 52 of file I\+P\+Address.\+cpp.
+
+\hypertarget{class_i_p_address_ad0181169c1fa057bf9ef7862ba9f7f84}{}\index{I\+P\+Address@{I\+P\+Address}!operator==@{operator==}}
+\index{operator==@{operator==}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{operator==(const I\+P\+Address \&addr) const }]{\setlength{\rightskip}{0pt plus 5cm}bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\+P\+Address} \&}]{addr}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_i_p_address_ad0181169c1fa057bf9ef7862ba9f7f84}
+
+
+Definition at line 51 of file I\+P\+Address.\+h.
+
+\hypertarget{class_i_p_address_a7d473ee4ece3f484491e56ce09096571}{}\index{I\+P\+Address@{I\+P\+Address}!operator==@{operator==}}
+\index{operator==@{operator==}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{operator==(const uint8\+\_\+t $\ast$addr) const }]{\setlength{\rightskip}{0pt plus 5cm}bool operator== (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{addr}
+\end{DoxyParamCaption}
+) const}\label{class_i_p_address_a7d473ee4ece3f484491e56ce09096571}
+
+
+Definition at line 58 of file I\+P\+Address.\+cpp.
+
+\hypertarget{class_i_p_address_a3a30e06242fc12a5aed67bfd77d1b2a5}{}\index{I\+P\+Address@{I\+P\+Address}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{operator[](int index) const }]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_i_p_address_a3a30e06242fc12a5aed67bfd77d1b2a5}
+
+
+Definition at line 55 of file I\+P\+Address.\+h.
+
+\hypertarget{class_i_p_address_a362f02e2923dd74e0fc935eab183429d}{}\index{I\+P\+Address@{I\+P\+Address}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{operator[](int index)}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t\& operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_i_p_address_a362f02e2923dd74e0fc935eab183429d}
+
+
+Definition at line 56 of file I\+P\+Address.\+h.
+
+\hypertarget{class_i_p_address_a4de4b3920775530f38f756b2177a9bca}{}\index{I\+P\+Address@{I\+P\+Address}!print\+To@{print\+To}}
+\index{print\+To@{print\+To}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{print\+To(\+Print \&p) const }]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t print\+To (
+\begin{DoxyParamCaption}
+\item[{{\bf Print} \&}]{p}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_i_p_address_a4de4b3920775530f38f756b2177a9bca}
+
+
+Implements \hyperlink{class_printable_a95c9f86bb3e38a8743433c80c9250664}{Printable}.
+
+
+
+Definition at line 63 of file I\+P\+Address.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{class_i_p_address_a4de4b3920775530f38f756b2177a9bca_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_i_p_address_a5db1c99e2c94b26278f3838c85cdb618}{}\index{I\+P\+Address@{I\+P\+Address}!Client@{Client}}
+\index{Client@{Client}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{Client}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Client}\hspace{0.3cm}{\ttfamily [friend]}}\label{class_i_p_address_a5db1c99e2c94b26278f3838c85cdb618}
+
+
+Definition at line 66 of file I\+P\+Address.\+h.
+
+\hypertarget{class_i_p_address_afef6ad9b691e32ea60d87db719e23e15}{}\index{I\+P\+Address@{I\+P\+Address}!Dhcp\+Class@{Dhcp\+Class}}
+\index{Dhcp\+Class@{Dhcp\+Class}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{Dhcp\+Class}]{\setlength{\rightskip}{0pt plus 5cm}friend class Dhcp\+Class\hspace{0.3cm}{\ttfamily [friend]}}\label{class_i_p_address_afef6ad9b691e32ea60d87db719e23e15}
+
+
+Definition at line 68 of file I\+P\+Address.\+h.
+
+\hypertarget{class_i_p_address_a14acdf960f52e4a43740d57e81a27c40}{}\index{I\+P\+Address@{I\+P\+Address}!D\+N\+S\+Client@{D\+N\+S\+Client}}
+\index{D\+N\+S\+Client@{D\+N\+S\+Client}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{D\+N\+S\+Client}]{\setlength{\rightskip}{0pt plus 5cm}friend class D\+N\+S\+Client\hspace{0.3cm}{\ttfamily [friend]}}\label{class_i_p_address_a14acdf960f52e4a43740d57e81a27c40}
+
+
+Definition at line 69 of file I\+P\+Address.\+h.
+
+\hypertarget{class_i_p_address_a9a150ffc237e50529b3d0d50cc83a4d7}{}\index{I\+P\+Address@{I\+P\+Address}!Ethernet\+Class@{Ethernet\+Class}}
+\index{Ethernet\+Class@{Ethernet\+Class}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{Ethernet\+Class}]{\setlength{\rightskip}{0pt plus 5cm}friend class Ethernet\+Class\hspace{0.3cm}{\ttfamily [friend]}}\label{class_i_p_address_a9a150ffc237e50529b3d0d50cc83a4d7}
+
+
+Definition at line 64 of file I\+P\+Address.\+h.
+
+\hypertarget{class_i_p_address_ac2055578ac48afabe5af487878450f68}{}\index{I\+P\+Address@{I\+P\+Address}!Server@{Server}}
+\index{Server@{Server}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{Server}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Server}\hspace{0.3cm}{\ttfamily [friend]}}\label{class_i_p_address_ac2055578ac48afabe5af487878450f68}
+
+
+Definition at line 67 of file I\+P\+Address.\+h.
+
+\hypertarget{class_i_p_address_a480cf93423716d22666c9c3f17177736}{}\index{I\+P\+Address@{I\+P\+Address}!U\+D\+P@{U\+D\+P}}
+\index{U\+D\+P@{U\+D\+P}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{U\+D\+P}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf U\+D\+P}\hspace{0.3cm}{\ttfamily [friend]}}\label{class_i_p_address_a480cf93423716d22666c9c3f17177736}
+
+
+Definition at line 65 of file I\+P\+Address.\+h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{class_i_p_address_aac9cc4cbc93c66d4b3e0e9e037695d5a}{}\index{I\+P\+Address@{I\+P\+Address}!bytes@{bytes}}
+\index{bytes@{bytes}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{bytes}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t bytes\mbox{[}4\mbox{]}}\label{class_i_p_address_aac9cc4cbc93c66d4b3e0e9e037695d5a}
+
+
+Definition at line 31 of file I\+P\+Address.\+h.
+
+\hypertarget{class_i_p_address_a07145ae3e31b274cc44076fe1681391f}{}\index{I\+P\+Address@{I\+P\+Address}!dword@{dword}}
+\index{dword@{dword}!I\+P\+Address@{I\+P\+Address}}
+\subsubsection[{dword}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t dword}\label{class_i_p_address_a07145ae3e31b274cc44076fe1681391f}
+
+
+Definition at line 32 of file I\+P\+Address.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Arduino\+U\+N\+O/src/arduino/cores/arduino/\hyperlink{_i_p_address_8h}{I\+P\+Address.\+h}\item 
+Arduino\+U\+N\+O/src/arduino/cores/arduino/\hyperlink{_i_p_address_8cpp}{I\+P\+Address.\+cpp}\end{DoxyCompactItemize}

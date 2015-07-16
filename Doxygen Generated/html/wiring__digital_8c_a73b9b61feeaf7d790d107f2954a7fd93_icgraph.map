@@ -1,0 +1,8 @@
+<map id="digitalWrite" name="digitalWrite">
+<area shape="rect" id="node2" href="$_tone_8cpp.html#aeb6515d3e5c6a2079e5bccb03fc6c4f7" title="noTone" alt="" coords="153,5,217,32"/>
+<area shape="rect" id="node4" href="$wiring__analog_8c.html#a62a628c40d93ea1823a1cdb8cae9e7be" title="analogWrite" alt="" coords="140,56,231,83"/>
+<area shape="rect" id="node5" href="$wiring__shift_8c.html#a1efecc975119046403adc60af645015d" title="shiftIn" alt="" coords="157,107,213,133"/>
+<area shape="rect" id="node6" href="$wiring__shift_8c.html#ac44afc7b9d1ec5feb1179b2e3454690a" title="shiftOut" alt="" coords="152,157,219,184"/>
+<area shape="rect" id="node7" href="$lights__extern_8h.html#ad229d1114d61688d22327eca66eb955f" title="test_lights" alt="" coords="144,208,227,235"/>
+<area shape="rect" id="node3" href="$_tone_8cpp.html#a5686c229bdef50123688ab6cb1404230" title="ISR" alt="" coords="279,5,321,32"/>
+</map>

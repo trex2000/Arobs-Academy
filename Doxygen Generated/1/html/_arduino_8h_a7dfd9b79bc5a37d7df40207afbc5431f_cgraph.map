@@ -1,0 +1,7 @@
+<map id="setup" name="setup">
+<area shape="rect" id="node2" href="$_i_o_8c.html#a1778435697ce5e88277225a1ea85c2d9" title="initIO" alt="" coords="143,5,195,32"/>
+<area shape="rect" id="node3" href="$_project_main_8cpp.html#a99eb04bf8fed2beecfb3cb74451416c5" title="Implementation of the function that initialize the timer0. " alt="" coords="127,56,210,83"/>
+<area shape="rect" id="node4" href="$_i_o_8c.html#a823993b1d47cd88ec002226cbb45ff29" title="Function implementation for analog input from lightsensor. " alt="" coords="128,107,209,133"/>
+<area shape="rect" id="node5" href="$_project_main_8cpp.html#abb302081b7dbd40d0fea4bbe53fd9b7b" title="Implementation of the function that initialize the timer1. " alt="" coords="127,157,210,184"/>
+<area shape="rect" id="node6" href="$_project_main_8cpp.html#a612f7225aba66da17398c5472584559d" title="Implementation of the function that returns a pointer to the tasks array. " alt="" coords="108,208,229,235"/>
+</map>

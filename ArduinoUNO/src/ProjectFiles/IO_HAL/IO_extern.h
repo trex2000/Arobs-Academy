@@ -34,71 +34,14 @@
 #ifndef _IO_EXTERN_
 #define _IO_EXTERN_
 
+#include "Arduino.h"
+
 /**
  * @brief Section for h files inclusion
  *
  * Section for h files inclusion
  */
 #include "IO.h"
-
-
-/**
- * @brief maximum value for PWM
- *
- * maximum value for PWM
- */
-#define MAX_PWM_VALUE  100u
-
-/**
- * @brief maximum value for digital out
- *
- * maximum value for digital out
- */
-#define MAX_DIGITAL_VALUE 1u
-
-/**
- * @brief Enumeration of logical inputs
- *
- * Enumeration of logical inputs.
- */
-typedef enum en_input_pins {
-	EN_SIA_LIGHTSENSOR ,				/**< Lightsensor analogic input */
-	EN_SID_WIFI_CONTROL_UP ,			/**< WifiControl Up. */
-	EN_SID_WIFI_CONTROL_DOWN ,          /**< WifiControl Down*/
-	EN_SID_WIFI_CONTROL_RIGHT ,         /**< WifiControl Right*/
-	EN_SID_WIFI_CONTROL_LEFT ,          /**< WifiControl Left */
-	EN_NUMBER_OF_ELEMENTS_INPUT ,       /**< Number of input pins*/
-} EN_INPUT_PINS;
-
-/**
- * @brief Enumeration of logical outputs
- *
- * Enumeration of logical outputs.
- */
-typedef enum en_output_pins {
-	EN_SOD_MOTOR12_0,					/**< Motor 12 digital output 1 */
-	EN_SOD_MOTOR12_1,				    /**< Motor 12 digital output 2 */
-	EN_SOD_MOTOR12_2,				    /**< Motor 12 digital output 3 */
-	EN_SOD_MOTOR12_3,					/**< Motor 12 digital output 4 */
-	EN_SODPWM_ENABLE_MOTOR1,			/**< Digital out PWM on  Motor1 */
-	EN_SODPWM_ENABLE_MOTOR2,			/**< Digital out PWM on  Motor2 */
-	EN_SOD_LEFT_FLASHER,				/**< Digital out for Left Flasher */
-	EN_SOD_RIGHT_FLASHER,				/**< Digital out for Right Flasher */
-	EN_SOD_LOW_BEAM,					/**< Digital out for Low Beam */
-	EN_NUMBER_OF_ELEMENTS_OUTPUTS       /**< Number of output pins  */
-}EN_OUTPUT_PINS;
-
-/**
- * @brief Enumeration of Ports
- *
- * Enumeration of Ports
- */
-typedef enum en_port_enums
-{
-	EN_PORT_B,			/**< Port B  */
-	EN_PORT_C,			/**< Port C  */
-	EN_PORT_D			/**< Port D  */
-}EN_PORT_ENUMS;
 
 /**
  * @brief A simple stub function to show how links do work.
@@ -113,4 +56,47 @@ typedef enum en_port_enums
  */
 extern uint8_t GetInputPin (EN_INPUT_PINS pinId_en);
 extern void setOutputPin (EN_OUTPUT_PINS pinId_en, uint8_t value_u8);
+/**
+ * @brief Function implementation for analog input from lightsensor
+ *
+ * Function implementation for analog input from lightsensor
+ * @return void
+ */
+extern void setupADC();
+
+//functie de initializare pwm
+extern void initIO();
+
+/**
+ * @brief Function definition for processing output buffer
+ *
+ * Function implementation for processing output buffer.
+ * For functions, automatic links are generated when the parenthesis () follow
+ * the name of the function, like Box_The_Function_Name().
+ * Alternatively, you can use #Box_The_Function_Name.
+ * @return void
+ */
+extern void processOutputBuffer();
+
+/**
+ * @brief Function definition for processing input buffer
+ *
+ * Function implementation for processing input buffer.
+ * For functions, automatic links are generated when the parenthesis () follow
+ * the name of the function, like Box_The_Function_Name().
+ * Alternatively, you can use #Box_The_Function_Name.
+ * @return void
+ */
+extern void processInputBuffer();
+
+/**
+ * @brief Function processes ADC conversion
+ *
+ * Function processes ADC conversion
+ * @return void
+ */
+extern void processADCconversion();
+
+
+
 #endif

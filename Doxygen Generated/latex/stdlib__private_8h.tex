@@ -1,0 +1,104 @@
+\hypertarget{stdlib__private_8h}{}\section{Arduino\+U\+N\+O/src/arduino/cores/arduino/avr-\/libc/stdlib\+\_\+private.h File Reference}
+\label{stdlib__private_8h}\index{Arduino\+U\+N\+O/src/arduino/cores/arduino/avr-\/libc/stdlib\+\_\+private.\+h@{Arduino\+U\+N\+O/src/arduino/cores/arduino/avr-\/libc/stdlib\+\_\+private.\+h}}
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$avr/io.\+h$>$}\\*
+Include dependency graph for stdlib\+\_\+private.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{stdlib__private_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{stdlib__private_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct____freelist}{\+\_\+\+\_\+freelist}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{stdlib__private_8h_ae0885837a1c9259c79859e6bf0c1f0ca}{S\+T\+A\+C\+K\+\_\+\+P\+O\+I\+N\+T\+E\+R}()~((char $\ast$)A\+V\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+P\+O\+I\+N\+T\+E\+R\+\_\+\+R\+E\+G)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{stdlib__private_8h_ad193a2cc121e0d4614a1c21eb463fb56}{\+\_\+\+\_\+brkval}
+\item 
+struct \hyperlink{struct____freelist}{\+\_\+\+\_\+freelist} $\ast$ \hyperlink{stdlib__private_8h_a9cfd748d9cb8a517422fa4e4f0b3320f}{\+\_\+\+\_\+flp}
+\item 
+size\+\_\+t \hyperlink{stdlib__private_8h_affadd67736fd340e893fb22c207de597}{\+\_\+\+\_\+malloc\+\_\+margin}
+\item 
+char $\ast$ \hyperlink{stdlib__private_8h_a9310042b3956282440c091d20cb98c5f}{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+start}
+\item 
+char $\ast$ \hyperlink{stdlib__private_8h_a4d7b1bf0f75d529cc75229a266132115}{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+end}
+\item 
+char \hyperlink{stdlib__private_8h_a6f0660655a57403adb006d3a00999fa8}{\+\_\+\+\_\+heap\+\_\+start}
+\item 
+char \hyperlink{stdlib__private_8h_ad10b5e7b4d35c862906719f03eaba242}{\+\_\+\+\_\+heap\+\_\+end}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{stdlib__private_8h_ae0885837a1c9259c79859e6bf0c1f0ca}{}\index{stdlib\+\_\+private.\+h@{stdlib\+\_\+private.\+h}!S\+T\+A\+C\+K\+\_\+\+P\+O\+I\+N\+T\+E\+R@{S\+T\+A\+C\+K\+\_\+\+P\+O\+I\+N\+T\+E\+R}}
+\index{S\+T\+A\+C\+K\+\_\+\+P\+O\+I\+N\+T\+E\+R@{S\+T\+A\+C\+K\+\_\+\+P\+O\+I\+N\+T\+E\+R}!stdlib\+\_\+private.\+h@{stdlib\+\_\+private.\+h}}
+\subsubsection[{S\+T\+A\+C\+K\+\_\+\+P\+O\+I\+N\+T\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+A\+C\+K\+\_\+\+P\+O\+I\+N\+T\+E\+R(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~((char $\ast$)A\+V\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+P\+O\+I\+N\+T\+E\+R\+\_\+\+R\+E\+G)}\label{stdlib__private_8h_ae0885837a1c9259c79859e6bf0c1f0ca}
+
+
+Definition at line 57 of file stdlib\+\_\+private.\+h.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{stdlib__private_8h_ad193a2cc121e0d4614a1c21eb463fb56}{}\index{stdlib\+\_\+private.\+h@{stdlib\+\_\+private.\+h}!\+\_\+\+\_\+brkval@{\+\_\+\+\_\+brkval}}
+\index{\+\_\+\+\_\+brkval@{\+\_\+\+\_\+brkval}!stdlib\+\_\+private.\+h@{stdlib\+\_\+private.\+h}}
+\subsubsection[{\+\_\+\+\_\+brkval}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ \+\_\+\+\_\+brkval}\label{stdlib__private_8h_ad193a2cc121e0d4614a1c21eb463fb56}
+
+
+Definition at line 59 of file malloc.\+c.
+
+\hypertarget{stdlib__private_8h_a9cfd748d9cb8a517422fa4e4f0b3320f}{}\index{stdlib\+\_\+private.\+h@{stdlib\+\_\+private.\+h}!\+\_\+\+\_\+flp@{\+\_\+\+\_\+flp}}
+\index{\+\_\+\+\_\+flp@{\+\_\+\+\_\+flp}!stdlib\+\_\+private.\+h@{stdlib\+\_\+private.\+h}}
+\subsubsection[{\+\_\+\+\_\+flp}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \+\_\+\+\_\+freelist}$\ast$ \+\_\+\+\_\+flp}\label{stdlib__private_8h_a9cfd748d9cb8a517422fa4e4f0b3320f}
+
+
+Definition at line 60 of file malloc.\+c.
+
+\hypertarget{stdlib__private_8h_ad10b5e7b4d35c862906719f03eaba242}{}\index{stdlib\+\_\+private.\+h@{stdlib\+\_\+private.\+h}!\+\_\+\+\_\+heap\+\_\+end@{\+\_\+\+\_\+heap\+\_\+end}}
+\index{\+\_\+\+\_\+heap\+\_\+end@{\+\_\+\+\_\+heap\+\_\+end}!stdlib\+\_\+private.\+h@{stdlib\+\_\+private.\+h}}
+\subsubsection[{\+\_\+\+\_\+heap\+\_\+end}]{\setlength{\rightskip}{0pt plus 5cm}char \+\_\+\+\_\+heap\+\_\+end}\label{stdlib__private_8h_ad10b5e7b4d35c862906719f03eaba242}
+\hypertarget{stdlib__private_8h_a6f0660655a57403adb006d3a00999fa8}{}\index{stdlib\+\_\+private.\+h@{stdlib\+\_\+private.\+h}!\+\_\+\+\_\+heap\+\_\+start@{\+\_\+\+\_\+heap\+\_\+start}}
+\index{\+\_\+\+\_\+heap\+\_\+start@{\+\_\+\+\_\+heap\+\_\+start}!stdlib\+\_\+private.\+h@{stdlib\+\_\+private.\+h}}
+\subsubsection[{\+\_\+\+\_\+heap\+\_\+start}]{\setlength{\rightskip}{0pt plus 5cm}char \+\_\+\+\_\+heap\+\_\+start}\label{stdlib__private_8h_a6f0660655a57403adb006d3a00999fa8}
+\hypertarget{stdlib__private_8h_a4d7b1bf0f75d529cc75229a266132115}{}\index{stdlib\+\_\+private.\+h@{stdlib\+\_\+private.\+h}!\+\_\+\+\_\+malloc\+\_\+heap\+\_\+end@{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+end}}
+\index{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+end@{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+end}!stdlib\+\_\+private.\+h@{stdlib\+\_\+private.\+h}}
+\subsubsection[{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+end}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ \+\_\+\+\_\+malloc\+\_\+heap\+\_\+end}\label{stdlib__private_8h_a4d7b1bf0f75d529cc75229a266132115}
+
+
+Definition at line 57 of file malloc.\+c.
+
+\hypertarget{stdlib__private_8h_a9310042b3956282440c091d20cb98c5f}{}\index{stdlib\+\_\+private.\+h@{stdlib\+\_\+private.\+h}!\+\_\+\+\_\+malloc\+\_\+heap\+\_\+start@{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+start}}
+\index{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+start@{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+start}!stdlib\+\_\+private.\+h@{stdlib\+\_\+private.\+h}}
+\subsubsection[{\+\_\+\+\_\+malloc\+\_\+heap\+\_\+start}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ \+\_\+\+\_\+malloc\+\_\+heap\+\_\+start}\label{stdlib__private_8h_a9310042b3956282440c091d20cb98c5f}
+
+
+Definition at line 56 of file malloc.\+c.
+
+\hypertarget{stdlib__private_8h_affadd67736fd340e893fb22c207de597}{}\index{stdlib\+\_\+private.\+h@{stdlib\+\_\+private.\+h}!\+\_\+\+\_\+malloc\+\_\+margin@{\+\_\+\+\_\+malloc\+\_\+margin}}
+\index{\+\_\+\+\_\+malloc\+\_\+margin@{\+\_\+\+\_\+malloc\+\_\+margin}!stdlib\+\_\+private.\+h@{stdlib\+\_\+private.\+h}}
+\subsubsection[{\+\_\+\+\_\+malloc\+\_\+margin}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t \+\_\+\+\_\+malloc\+\_\+margin}\label{stdlib__private_8h_affadd67736fd340e893fb22c207de597}
+
+
+Definition at line 55 of file malloc.\+c.
+
