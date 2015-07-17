@@ -69,15 +69,15 @@ uint8_t outputBuffer_u8[EN_NUMBER_OF_ELEMENTS_OUTPUTS];
  * New datatype used in table which connects Logical Outputs Definitions to Physical Outputs Def
  */
 PORT_TYPES_ST const matchingTableOutputPins_acst[EN_NUMBER_OF_ELEMENTS_OUTPUTS] = {
-	{PORTD2, EN_PORT_D, EN_PORT_DO},     /**< SOD_Motor12_0 */
-	{PORTD3, EN_PORT_D, EN_PORT_DO},	 /**<SOD_Motor12_1 */
-	{PORTB6, EN_PORT_B, EN_PORT_DO},     /**<SOD_Motor12_2 */
-	{PORTB7, EN_PORT_B, EN_PORT_DO},     /**<SOD_Motor12_3 */
-	{PORTD3, EN_PORT_D, EN_PORT_DOPWM},  /**<SODPWM_EnableMotor1 */
-	{PORTB3, EN_PORT_B, EN_PORT_DOPWM},  /**<ODPWM_EnableMotor2 */
+	{PORTB2, EN_PORT_B, EN_PORT_DO},     /**< SOD_Motor12_0 */
+	{PORTB1, EN_PORT_B, EN_PORT_DO},	 /**<SOD_Motor12_1 */
+	{PORTD5, EN_PORT_D, EN_PORT_DO},     /**<SOD_Motor12_2 */
+	{PORTD4, EN_PORT_D, EN_PORT_DO},     /**<SOD_Motor12_3 */
+	{PORTB3, EN_PORT_B, EN_PORT_DOPWM},  /**<SODPWM_EnableMotor1 */
+	{PORTD3, EN_PORT_D, EN_PORT_DOPWM},  /**<ODPWM_EnableMotor2 */
 	{PORTC2, EN_PORT_C, EN_PORT_DO},     /**<SOD_LeftFlasher */
 	{PORTC1, EN_PORT_C, EN_PORT_DO},     /**<SOD_RightFlasher */
-	{PORTD4, EN_PORT_D, EN_PORT_DO}      /**<SOD_LowBeam */
+	{PORTD6, EN_PORT_D, EN_PORT_DO}      /**<SOD_LowBeam */
 };
 /**
  * @brief New datatype used in table which connects Logical Input Definitions to Physical Input Def
