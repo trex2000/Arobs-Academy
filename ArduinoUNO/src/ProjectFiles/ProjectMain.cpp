@@ -43,9 +43,23 @@
 #include "IO_extern.h"
 #include "lights_extern.h"
 #include "motors_extern.h"
+
+
 /*
 * Main code called on reset is in  Arduino.h
 */
+
+
+#ifdef ENABLE_DEBUG
+/*
+ * @brief Used to provide debug data through serial port
+ *
+ * Array of tasks and interval of execution
+ */
+ uint8_t debugBuffer_au8[255]; 
+ uint8_t debugArrIndex_u8 = 0;
+#endif
+
 
 /**
  * @brief Array of tasks and interval of execution
@@ -95,6 +109,10 @@ void setup()
 	taskTimeCounter_u8 = 0;	
 	stui_TaskIndex = 0;				
 	taskPtr = taskGetConfigPtr();		
+	#ifdef ENABLE_DEBUG
+		Serial.begin(115200);
+		Serial.println("Serial Debug has started");
+	#endif		
 	initIO(); /*Functia de initializare IO*/
 	setupADC();
 	timer0_init();	
@@ -244,3 +262,59 @@ ISR(TIMER1_OVF_vect) {
 	taskTimeCounterFlag_u8 = 1;
 	taskTimeCounter_u8++;
 }
+
+
+
+#ifdef ENABLE_DEBUG
+/**
+ * @brief Add debug data to buffer that will be sent out through serial port
+ * 
+ * Implementation of the function that handle timer1 overflow ISR
+ * @return 0: not success, 1: success
+ *  
+ */	
+uint8_t AddSerialDebugData(uint8_t Value_lu8)
+{
+	 if (debugArrIndex_u8<255)
+	 {		 
+		 debugBuffer_au8[debugArrIndex_u8] = Value_lu8;
+		 return 1u;
+	 }
+	 else
+	 {		 
+		 //buffer full
+		 return 0u;
+	 }	
+}
+
+/**
+ * @brief Function will try to send out debug info through serial port
+ * * 
+ * @return void
+ *  
+ */	
+void processSerialDebugData()
+{
+	 uint8_t data_lu8;
+	 if (debugArrIndex_u8)
+	 {
+		 if (Serial.availableForWrite()>=1)
+		 {
+		 
+			 data_lu8 = debugBuffer_au8[debugArrIndex_u8];
+			 Serial.write(data_lu8);
+			 debugArrIndex_u8--;
+		 }
+		 else
+		 {
+			 //wait for a round
+		 }		 
+	 }
+	 else
+	 {
+		 //nothing to send out		 
+	 }
+}
+
+
+#endif

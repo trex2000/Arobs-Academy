@@ -16,6 +16,31 @@
 
 #define ARDUINO_MAIN
 
+/*Uncomment this to disable debug through serial port*/
+#define ENABLE_DEBUG 
+
+#ifdef ENABLE_DEBUG
+/**
+ * @brief Add debug data to buffer that will be sent out through serial port
+ * 
+ * Implementation of the function that handle timer1 overflow ISR
+ * @return 0: not success, 1: success
+ *  
+ */	
+uint8_t AddSerialDebugData(uint8_t Value_lu8);
+
+
+/**
+ * @brief Function will try to send out debug info through serial port
+ * * 
+ * @return void
+ *  
+ */
+void processSerialDebugData();
+#endif
+
+
+
 // Disable some warnings for the Arduino files
 #pragma GCC diagnostic push
 //#pragma GCC diagnostic ignored "-Wsign-compare"
