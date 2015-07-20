@@ -56,6 +56,7 @@
  */
 extern uint8_t GetInputPin (EN_INPUT_PINS pinId_en);
 extern void setOutputPin (EN_OUTPUT_PINS pinId_en, uint8_t value_u8);
+extern uint8_t getOutputs(EN_OUTPUT_PINS pinId_en);
 /**
  * @brief Function implementation for analog input from lightsensor
  *

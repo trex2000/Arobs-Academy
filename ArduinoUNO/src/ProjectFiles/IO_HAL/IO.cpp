@@ -69,7 +69,7 @@ uint8_t outputBuffer_u8[EN_NUMBER_OF_ELEMENTS_OUTPUTS];
  * New datatype used in table which connects Logical Outputs Definitions to Physical Outputs Def
  */
 PORT_TYPES_ST const matchingTableOutputPins_acst[EN_NUMBER_OF_ELEMENTS_OUTPUTS] = {
-	{PORTB2, EN_PORT_B, EN_PORT_DO},     /**< SOD_Motor12_0 */
+	{PORTB2, EN_PORT_B, EN_PORT_DO},     /**<SOD_Motor12_0 */
 	{PORTB1, EN_PORT_B, EN_PORT_DO},	 /**<SOD_Motor12_1 */
 	{PORTD5, EN_PORT_D, EN_PORT_DO},     /**<SOD_Motor12_2 */
 	{PORTD4, EN_PORT_D, EN_PORT_DO},     /**<SOD_Motor12_3 */
@@ -85,7 +85,7 @@ PORT_TYPES_ST const matchingTableOutputPins_acst[EN_NUMBER_OF_ELEMENTS_OUTPUTS] 
  * New datatype used in table which connects Logical Input Definitions to Physical Input Def
  */
 PORT_TYPES_ST const matchingTableInputPins_acst[EN_NUMBER_OF_ELEMENTS_INPUT] = {
-	{ADC0D, EN_PORT_C, EN_PORT_AI},     /**< EN_SIA_LIGHTSENSOR */
+	{ADC0D,  EN_PORT_C, EN_PORT_AI},     /**< EN_SIA_LIGHTSENSOR */
 	{PORTD7, EN_PORT_D, EN_PORT_DI}, 	 /**< EN_SID_WIFI_CONTROL_UP */
 	{PORTB0, EN_PORT_B, EN_PORT_DI},	 /**< EN_SID_WIFI_CONTROL_DOWN */
 	{PORTB5, EN_PORT_B, EN_PORT_DI},	 /**< EN_SID_WIFI_CONTROL_RIGHT */
@@ -110,7 +110,7 @@ PORT_TYPES_ST const matchingTableInputPins_acst[EN_NUMBER_OF_ELEMENTS_INPUT] = {
 
 uint8_t GetInputPin (EN_INPUT_PINS pinId_en)
 {	
-			
+		
 	if (pinId_en>=EN_NUMBER_OF_ELEMENTS_INPUT)
 {	
 		
@@ -186,7 +186,16 @@ void setOutputPin (EN_OUTPUT_PINS pinId_en, uint8_t value_u8)
 	}
 }	
 
-
+/*uint8_t getOutputs(EN_OUTPUT_PINS pinId_en){
+	
+		if (pinId_en>=EN_NUMBER_OF_ELEMENTS_OUTPUTS)
+		{
+				return outputBuffer_u8[pinId_en];
+			
+		}
+		
+	
+}*/
 
 /**
  * @brief Function implementation for processing output buffer
@@ -246,24 +255,7 @@ int getValue(uint8_t pin){
 	
 }
 
-//-------------Cod pentru Setare Output PWM-----------------
-int DOPWM_setValue(char pin, int duty)
-{
-	
-	
-	char value;
 
-	//formula pentru duty cycle in procente
-	value = (duty*256)/100;
-	
-	//Setam duty cycle pentru fiecare pin cu registrii OCR2A, OCR2B
-	OCR2A = value;
-	
-	return 0;
-	
-
-	
-}
 
 //functie de initializare pwm
 void initIO()
@@ -286,6 +278,7 @@ void initIO()
 				break;
 				case EN_PORT_D:
 					 DDRD |= (1 << matchingTableOutputPins_acst[Index_len].portVal_u8);
+					
 				break;
 				
 				default:
@@ -294,17 +287,14 @@ void initIO()
 			}
 		}
 		
-	/* SETAM TIMERUL 2 PENTRU Modul PHASE CORRECTED PWM*/
-	//setam Timer Counter Control Register A pe None-inverting mode si PWM Phase Corrected Mode
-	TCCR2A |= (1 << COM2A1) | (0 << COM2A0) | (1 << COM2B1)| (0 << COM2B0);
-	// set none-inverting mode on bytes (7,6,5,4) for timer 2
+			TCCR2A |= (1 << COM2A1) |(1<<COM2B1);
+			// set none-inverting mode
 
-	TCCR2A |= (0 << WGM21) | (1 << WGM20);
-	// set  PWM Phase Corrected Mode using OCR2A TOP value on bytes (1,0)
+			TCCR2A |= (1 << WGM20);
+			// set fast PWM Mode
 
-	// setam Timer Counter Control Register B pe PWM Phase Corrected Mode si cu un prescaler de 64
-	TCCR2B |= (1 << CS22) | (1 << WGM22);
-	// set prescaler to 64 and starts PWM and sets  PWM Phase Corrected Mode
+			TCCR2B |= (1 << CS22) |(1 << CS21)|(1 << CS20);
+			// set prescaler to 1024 and starts PWM
 }
 
 
@@ -362,7 +352,9 @@ void processDigitalOutputPWM(EN_OUTPUT_PINS bufferIndex_len) {
 				break;
 				
 			case EN_SODPWM_ENABLE_MOTOR2:
-				OCR2B = tempValue_lu8;
+			//Serial.write(DDRD);
+			//analogWrite(3,tempValue_lu8);
+				OCR2B =tempValue_lu8;
 				break;
 				
 			default:

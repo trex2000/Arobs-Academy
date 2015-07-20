@@ -111,7 +111,7 @@ void setup()
 	taskPtr = taskGetConfigPtr();		
 	#ifdef ENABLE_DEBUG
 		Serial.begin(115200);
-		Serial.println("Serial Debug has started");
+		//Serial.println("Serial Debug has started");
 	#endif		
 	initIO(); /*Functia de initializare IO*/
 	setupADC();
@@ -120,8 +120,8 @@ void setup()
 	//Application inits:
 	lightsInit();
 	motorsInit();
-	
-}
+
+	}
 
 
 
@@ -156,10 +156,8 @@ void loop()
 void task20ms(void) {
 	processADCconversion();
 	processInputBuffer();
-	processOutputBuffer();
-	
-};
-
+	processOutputBuffer();	
+}
 
 
 /**
@@ -172,6 +170,8 @@ void task20ms(void) {
 void task40ms(void) {
 	lightsCyclic();
 	motorsCyclic();
+	
+	
 	
 	
 };
@@ -195,7 +195,7 @@ void task60ms(void) {
 * @note Void function with no return.
 */
 void task100ms(void) {
-
+	processSerialDebugData();
 };
 
 /**
@@ -206,8 +206,11 @@ void task100ms(void) {
 * @note Void function with no return.
 */
 void task1000ms(void) {
-	
-};
+//uint8_t index_u8;
+//	for(index_u8=0;index_u8<=EN_NUMBER_OF_ELEMENTS_INPUT;index_u8++){
+//		AddSerialDebugData( getOutputs((EN_OUTPUT_PINS)index_u8) );
+//	}
+}
 
 /**
  * @brief Implementation of the function that initialize the timer0 
@@ -278,6 +281,7 @@ uint8_t AddSerialDebugData(uint8_t Value_lu8)
 	 if (debugArrIndex_u8<255)
 	 {		 
 		 debugBuffer_au8[debugArrIndex_u8] = Value_lu8;
+		 debugArrIndex_u8++;
 		 return 1u;
 	 }
 	 else
@@ -300,13 +304,16 @@ void processSerialDebugData()
 	 {
 		 if (Serial.availableForWrite()>=1)
 		 {
-		 
+		
 			 data_lu8 = debugBuffer_au8[debugArrIndex_u8];
 			 Serial.write(data_lu8);
 			 debugArrIndex_u8--;
 		 }
 		 else
 		 {
+			  static uint8_t flag=0;
+			  flag=1-flag;
+			  digitalWrite(6,flag);
 			 //wait for a round
 		 }		 
 	 }

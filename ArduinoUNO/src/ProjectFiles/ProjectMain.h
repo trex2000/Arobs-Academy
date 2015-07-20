@@ -125,5 +125,6 @@ void timer0_init();
  */
 void timer1_init();
 
+extern uint8_t AddSerialDebugData(uint8_t Value_lu8);
 
 #endif /* PROJECTMAIN_H_ */

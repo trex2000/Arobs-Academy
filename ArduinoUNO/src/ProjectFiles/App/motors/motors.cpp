@@ -33,6 +33,7 @@
 
 #include "motors.h"
 #include "IO_extern.h"
+#include "ProjectMain.h"
 
 /**
 * @brief Implementation of bit field
@@ -51,8 +52,6 @@ struct BIT {
 	uint8_t  b6		:1;  // bit 6 single bit
 	uint8_t  b7		:1;  // bit 7 single bit
 };
-
-
 
 
 /**
@@ -163,9 +162,7 @@ void motorsCyclic()
 {	
 	motorsInputsAQ();
 	motorsSM();
-	motorsActuator();
-	
-	
+	motorsActuator();	
 }
 
 /**
@@ -179,11 +176,43 @@ void motorsCyclic()
 void motorsInputsAQ()
 {
 
+	if(GetInputPin(EN_SID_WIFI_CONTROL_UP)){
+		FLAG_DIRECTION_UP=1;
+	}
 	
-	FLAG_DIRECTION_UP=GetInputPin(EN_SID_WIFI_CONTROL_UP);
-	FLAG_DIRECTION_DOWN=GetInputPin(EN_SID_WIFI_CONTROL_DOWN);
-	FLAG_DIRECTION_LEFT=GetInputPin(EN_SID_WIFI_CONTROL_LEFT);
-	FLAG_DIRECTION_RIGHT=GetInputPin(EN_SID_WIFI_CONTROL_RIGHT);
+	else{
+		FLAG_DIRECTION_UP=0;
+	}
+	
+	
+	if(GetInputPin(EN_SID_WIFI_CONTROL_DOWN)){
+		FLAG_DIRECTION_DOWN=1;
+	}
+	
+	else{
+		FLAG_DIRECTION_DOWN=0;
+	}
+	
+	if(GetInputPin(EN_SID_WIFI_CONTROL_LEFT)){
+		FLAG_DIRECTION_LEFT=1;
+	}
+	
+	else{
+		FLAG_DIRECTION_LEFT=0;
+	}
+	
+	if(GetInputPin(EN_SID_WIFI_CONTROL_RIGHT)){
+		FLAG_DIRECTION_RIGHT=1;
+	}
+	
+	else{
+		FLAG_DIRECTION_RIGHT=0;
+	}
+	
+//	FLAG_DIRECTION_UP=GetInputPin(EN_SID_WIFI_CONTROL_UP);
+//	FLAG_DIRECTION_DOWN=GetInputPin(EN_SID_WIFI_CONTROL_DOWN);
+//	FLAG_DIRECTION_LEFT=GetInputPin(EN_SID_WIFI_CONTROL_LEFT);
+//	FLAG_DIRECTION_RIGHT=GetInputPin(EN_SID_WIFI_CONTROL_RIGHT);
 	
 	if (FLAG_DIRECTION_LEFT)
 	{
@@ -242,17 +271,19 @@ void motorsSM()
 		case EN_STATE_ACCELERATION:
 			if ((motorSpeed_u8+MOTOR_SPEED_STEP_UP)<=MAX_MOTOR_SPEED)
 			{
+				
 				motorSpeed_u8+=MOTOR_SPEED_STEP_UP;
 			}
 			else
 			{
+				
 				motorSpeed_u8=MAX_MOTOR_SPEED;
 			}
 		break;
 		case EN_STATE_DECELERATION:
 			if ((motorSpeed_u8-MOTOR_SPEED_STEP_DOWN)>=0)
 			{
-			
+				
 				motorSpeed_u8-=MOTOR_SPEED_STEP_DOWN;
 			
 			}
@@ -277,6 +308,7 @@ void motorsSM()
 	
 	
 	
+	
 }
 
 
@@ -293,19 +325,19 @@ void motorsActuator()
 	
 	if (FLAG_STEERING_LEFT_ACTIVE)
 	{
-		setOutputPin(EN_SODPWM_ENABLE_MOTOR1,0);
-		setOutputPin(EN_SODPWM_ENABLE_MOTOR2,motorSpeed_u8);
+		setOutputPin(EN_SODPWM_ENABLE_MOTOR1, 0);
+		setOutputPin(EN_SODPWM_ENABLE_MOTOR2, motorSpeed_u8);
 	}
 	else
 	{
 		if (FLAG_STEERING_RIGHT_ACTIVE)
 		{
-			setOutputPin(EN_SODPWM_ENABLE_MOTOR1,motorSpeed_u8);
-			setOutputPin(EN_SODPWM_ENABLE_MOTOR2,0);
+			setOutputPin(EN_SODPWM_ENABLE_MOTOR1, motorSpeed_u8);
+			setOutputPin(EN_SODPWM_ENABLE_MOTOR2, 0);
 		}
 		else
 		{
-			setOutputPin(EN_SODPWM_ENABLE_MOTOR1,motorSpeed_u8);
+			setOutputPin(EN_SODPWM_ENABLE_MOTOR1, motorSpeed_u8);
 			setOutputPin(EN_SODPWM_ENABLE_MOTOR2,motorSpeed_u8);
 		}
 	}
